@@ -1,15 +1,19 @@
+"use client";
+
 import { ArrowUpRight, MapPin } from "lucide-react";
 import { portfolio } from "@/data/portfolio";
+import { useI18n } from "@/components/LanguageProvider";
 
 export function Hero() {
   const { identity, hero, socials } = portfolio;
+  const { t } = useI18n();
 
   return (
     <section id="home" className="section-anchor">
       <div className="mx-auto flex min-h-screen max-w-6xl flex-col items-center justify-center px-6 pb-16 pt-28 text-center">
         <span className="animate-fade-in inline-flex items-center gap-2 font-mono text-xs text-silver">
           <span className="h-1.5 w-1.5 rounded-full bg-status" aria-hidden="true" />
-          {hero.status}
+          {t(hero.status)}
         </span>
 
         <h1
@@ -18,7 +22,7 @@ export function Hero() {
         >
           {identity.name}
           <span className="mt-2 block font-mono text-xl font-normal tracking-normal text-silver sm:text-2xl">
-            {identity.title}
+            {t(identity.title)}
           </span>
         </h1>
 
@@ -26,7 +30,7 @@ export function Hero() {
           className="animate-fade-in mt-6 max-w-2xl text-base leading-relaxed text-silver sm:text-lg"
           style={{ animationDelay: "160ms" }}
         >
-          {identity.tagline}
+          {t(identity.tagline)}
         </p>
 
         <div
@@ -37,14 +41,14 @@ export function Hero() {
             href={hero.primaryCta.href}
             className="focus-ring inline-flex items-center gap-2 rounded-md bg-ink px-5 py-2.5 text-sm font-medium text-background transition-all duration-200 hover:bg-white"
           >
-            {hero.primaryCta.label}
+            {t(hero.primaryCta.label)}
             <ArrowUpRight size={15} />
           </a>
           <a
             href={hero.secondaryCta.href}
             className="focus-ring inline-flex items-center gap-2 rounded-md border border-line px-5 py-2.5 text-sm font-medium text-ink transition-colors duration-200 hover:border-ink/60"
           >
-            {hero.secondaryCta.label}
+            {t(hero.secondaryCta.label)}
           </a>
         </div>
 
@@ -54,7 +58,7 @@ export function Hero() {
         >
           <span className="inline-flex items-center gap-1.5">
             <MapPin size={13} className="text-silver" />
-            {identity.location}
+            {t(identity.location)}
           </span>
           <span className="hidden h-3 w-px bg-line sm:block" aria-hidden="true" />
           <a

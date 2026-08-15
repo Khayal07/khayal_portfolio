@@ -4,10 +4,14 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { portfolio } from "@/data/portfolio";
 import { GithubIcon, LinkedinIcon } from "@/components/icons/BrandIcons";
+import { ThemeToggle } from "@/components/ThemeToggle";
+import { LanguageToggle } from "@/components/LanguageToggle";
+import { useI18n } from "@/components/LanguageProvider";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { t } = useI18n();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -20,8 +24,10 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-200 ${
-        scrolled ? "border-line bg-background/95" : "border-line/60 bg-background/70"
+      className={`fixed inset-x-0 top-0 z-50 border-b backdrop-blur-md transition-colors duration-200 ${
+        scrolled
+          ? "border-line bg-background/85"
+          : "border-line/60 bg-background/70"
       }`}
     >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
@@ -40,13 +46,15 @@ export function Navbar() {
                 href={item.href}
                 className="rounded text-sm text-silver transition-colors duration-200 hover:text-ink"
               >
-                {item.label}
+                {t(item.label)}
               </a>
             </li>
           ))}
         </ul>
 
         <div className="hidden items-center gap-2 md:flex">
+          <LanguageToggle />
+          <ThemeToggle />
           <a
             href={socials.github}
             target="_blank"
@@ -78,7 +86,7 @@ export function Navbar() {
       </nav>
 
       {open && (
-        <div className="border-t border-line bg-background md:hidden">
+        <div className="border-t border-line bg-background/95 backdrop-blur-md md:hidden">
           <ul className="flex flex-col gap-1 px-6 py-4">
             {nav.map((item) => (
               <li key={item.href}>
@@ -87,11 +95,13 @@ export function Navbar() {
                   onClick={() => setOpen(false)}
                   className="block rounded-md px-3 py-2 text-sm text-silver transition-colors duration-200 hover:bg-raised hover:text-ink"
                 >
-                  {item.label}
+                  {t(item.label)}
                 </a>
               </li>
             ))}
-            <li className="mt-2 flex gap-2 px-3">
+            <li className="mt-2 flex flex-wrap items-center gap-2 px-3">
+              <LanguageToggle />
+              <ThemeToggle />
               <a
                 href={socials.github}
                 target="_blank"

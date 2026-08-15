@@ -1,6 +1,9 @@
+"use client";
+
 import { ExternalLink, ArrowUpRight } from "lucide-react";
 import { GithubIcon } from "@/components/icons/BrandIcons";
 import type { Project } from "@/data/portfolio";
+import { useI18n } from "@/components/LanguageProvider";
 
 interface ProjectCardProps {
   project: Project;
@@ -8,11 +11,13 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, index }: ProjectCardProps) {
+  const { t } = useI18n();
+
   return (
     <article className="group relative flex flex-col bg-background p-6 transition-colors duration-200 hover:bg-card">
       <div className="flex items-center justify-between">
         <span className="font-mono text-xs text-silver">
-          {project.category}
+          {t(project.category)}
         </span>
         <ArrowUpRight
           size={15}
@@ -21,9 +26,11 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         />
       </div>
 
-      <h3 className="mt-6 text-base font-medium text-ink">{project.title}</h3>
+      <h3 className="mt-6 text-base font-medium text-ink">
+        {t(project.title)}
+      </h3>
       <p className="mt-2 flex-1 text-sm leading-relaxed text-silver">
-        {project.description}
+        {t(project.description)}
       </p>
 
       <ul className="mt-6 flex flex-wrap gap-1.5">
@@ -60,7 +67,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
               className="focus-ring inline-flex items-center gap-1.5 rounded-md border border-line px-2.5 py-1.5 font-mono text-xs text-silver transition-colors duration-200 hover:border-ink/60 hover:text-ink"
             >
               <ExternalLink size={13} />
-              Live Demo
+              {t("Live Demo")}
             </a>
           )}
         </div>

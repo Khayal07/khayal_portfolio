@@ -5,6 +5,7 @@ import { portfolio, projectCategories } from "@/data/portfolio";
 import type { ProjectCategory } from "@/data/portfolio";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ProjectCard } from "@/components/ProjectCard";
+import { useI18n } from "@/components/LanguageProvider";
 
 type Filter = ProjectCategory | "All";
 
@@ -12,6 +13,7 @@ const filters: Filter[] = ["All", ...projectCategories];
 
 export function Projects() {
   const [active, setActive] = useState<Filter>("All");
+  const { t } = useI18n();
 
   const projects = portfolio.projects;
   const filtered =
@@ -22,13 +24,17 @@ export function Projects() {
       <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
         <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
           <SectionHeading
-            eyebrow="projects"
-            title="Selected works"
-            subtitle="Systems built with intent, from retrieval pipelines to production services."
+            eyebrow={t("projects")}
+            title={t("Selected works")}
+            subtitle={t(
+              "Systems built with intent, from retrieval pipelines to production services."
+            )}
           />
           <p className="shrink-0 font-mono text-xs text-silver">
             {String(filtered.length).padStart(2, "0")}{" "}
-            <span className="text-silver/70">/ {active}</span>
+            <span className="text-silver/70">
+              / {active === "All" ? t("All") : t(active)}
+            </span>
           </p>
         </div>
 
@@ -44,7 +50,7 @@ export function Projects() {
                   : "border-line text-silver hover:border-ink/50 hover:text-ink"
               }`}
             >
-              {filter}
+              {filter === "All" ? t("All") : t(filter)}
             </button>
           ))}
         </div>

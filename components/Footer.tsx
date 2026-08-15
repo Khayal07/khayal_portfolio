@@ -1,15 +1,19 @@
+"use client";
+
 import { portfolio } from "@/data/portfolio";
 import { GithubIcon, LinkedinIcon } from "@/components/icons/BrandIcons";
+import { useI18n } from "@/components/LanguageProvider";
 
 export function Footer() {
   const { identity, socials } = portfolio;
+  const { t } = useI18n();
   const year = new Date().getFullYear();
 
   return (
     <footer className="border-t border-line/70">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-6 sm:flex-row">
         <p className="font-mono text-xs text-silver">
-          © {year} {identity.name} · {identity.title}
+          © {year} {identity.name} · {t(identity.title)}
         </p>
         <div className="flex items-center gap-2">
           <a

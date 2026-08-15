@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Cpu,
   Database,
@@ -8,6 +10,7 @@ import {
 } from "lucide-react";
 import { portfolio } from "@/data/portfolio";
 import { SectionHeading } from "@/components/SectionHeading";
+import { useI18n } from "@/components/LanguageProvider";
 
 const capabilityIcons: Record<string, LucideIcon> = {
   "RAG & Vector Search": FileSearch,
@@ -17,6 +20,8 @@ const capabilityIcons: Record<string, LucideIcon> = {
 };
 
 export function Capabilities() {
+  const { t } = useI18n();
+
   return (
     <section
       id="capabilities"
@@ -24,9 +29,11 @@ export function Capabilities() {
     >
       <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
         <SectionHeading
-          eyebrow="capabilities"
-          title="AI capabilities"
-          subtitle="The core competencies I engineer around when building intelligent products."
+          eyebrow={t("capabilities")}
+          title={t("AI capabilities")}
+          subtitle={t(
+            "The core competencies I engineer around when building intelligent products."
+          )}
         />
 
         <div className="mt-14 grid grid-cols-1 gap-px border border-line bg-line sm:grid-cols-2">
@@ -46,10 +53,10 @@ export function Capabilities() {
                   </span>
                 </div>
                 <h3 className="mt-6 text-base font-medium text-ink">
-                  {capability.title}
+                  {t(capability.title)}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-silver">
-                  {capability.description}
+                  {t(capability.description)}
                 </p>
                 <ul className="mt-5 flex flex-wrap gap-1.5">
                   {capability.tech.map((tech) => (

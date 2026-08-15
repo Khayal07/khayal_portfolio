@@ -1,17 +1,23 @@
+"use client";
+
 import { ArrowUpRight, GraduationCap } from "lucide-react";
 import { portfolio } from "@/data/portfolio";
 import { SectionHeading } from "@/components/SectionHeading";
+import { useI18n } from "@/components/LanguageProvider";
 
 export function Education() {
   const { education } = portfolio;
+  const { t } = useI18n();
 
   return (
     <section id="education" className="section-anchor border-t border-line/70">
       <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
         <SectionHeading
-          eyebrow="education"
-          title="Education"
-          subtitle="Formal and intensive training behind the engineering practice."
+          eyebrow={t("education")}
+          title={t("Education")}
+          subtitle={t(
+            "Formal and intensive training behind the engineering practice."
+          )}
         />
 
         <div className="mt-14 grid grid-cols-1 gap-px border border-line bg-line lg:grid-cols-2">
@@ -22,7 +28,7 @@ export function Education() {
             >
               <div className="flex items-center justify-between gap-4">
                 <span className="font-mono text-xs text-silver">
-                  {entry.period}
+                  {t(entry.period)}
                 </span>
                 <span className="font-mono text-xs text-silver">
                   {String(i + 1).padStart(2, "0")}
@@ -38,13 +44,13 @@ export function Education() {
                     {entry.institution}
                   </h3>
                   <p className="mt-1 font-mono text-xs text-silver">
-                    {entry.degree}
+                    {t(entry.degree)}
                   </p>
                 </div>
               </div>
 
               <p className="mt-4 flex-1 text-sm leading-relaxed text-silver">
-                {entry.description}
+                {t(entry.description)}
               </p>
 
               {entry.credentialUrl && (
@@ -54,7 +60,7 @@ export function Education() {
                   rel="noopener noreferrer"
                   className="focus-ring mt-6 inline-flex w-fit items-center gap-1.5 rounded-md border border-line px-3 py-1.5 font-mono text-xs text-silver transition-colors duration-200 hover:border-ink/60 hover:text-ink"
                 >
-                  View Diploma
+                  {t("View Diploma")}
                   <ArrowUpRight size={13} />
                 </a>
               )}

@@ -1,10 +1,14 @@
+"use client";
+
 import { ArrowUpRight } from "lucide-react";
 import { portfolio } from "@/data/portfolio";
 import { SectionHeading } from "@/components/SectionHeading";
 import { GithubIcon, LinkedinIcon } from "@/components/icons/BrandIcons";
+import { useI18n } from "@/components/LanguageProvider";
 
 export function Contact() {
   const { identity, socials } = portfolio;
+  const { t } = useI18n();
 
   return (
     <section id="contact" className="section-anchor border-t border-line/70">
@@ -12,9 +16,11 @@ export function Contact() {
         <div className="mx-auto flex max-w-xl flex-col items-center text-center">
           <SectionHeading
             align="center"
-            eyebrow="contact"
-            title="Let&apos;s build something together."
-            subtitle="Have a project in mind, or want to talk about RAG, multi-agent systems, or backend architecture? Reach out."
+            eyebrow={t("contact")}
+            title={t("Let's build something together.")}
+            subtitle={t(
+              "Have a project in mind, or want to talk about RAG, multi-agent systems, or backend architecture? Reach out."
+            )}
           />
 
           <a
