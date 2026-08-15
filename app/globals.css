@@ -48,12 +48,6 @@ body {
 }
 
 @layer components {
-  .surface {
-    background-color: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 0.75rem;
-  }
-
   .eyebrow {
     font-family: var(--font-geist-mono), ui-monospace, monospace;
     font-size: 0.75rem;
@@ -69,14 +63,5 @@ body {
   .focus-ring:focus-visible {
     box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--ink);
     outline: none;
-  }
-}
-
-@layer utilities {
-  .grid-faint {
-    background-image: linear-gradient(var(--line) 1px, transparent 1px),
-      linear-gradient(90deg, var(--line) 1px, transparent 1px);
-    background-size: 64px 64px;
-    background-position: center top;
   }
 }
