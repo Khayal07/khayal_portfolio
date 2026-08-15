@@ -69,7 +69,7 @@ export const portfolio = {
     },
   },
   contact: {
-    formAccessKey: "YOUR_WEB3FORMS_ACCESS_KEY",
+    formAccessKey: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "",
   },
   about: {
     paragraphs: [
