@@ -9,13 +9,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#08080A",
-        card: "#121215",
-        raised: "#18181B",
-        line: "#27272A",
-        ink: "#F4F4F5",
-        silver: "#A1A1AA",
-        status: "#22C55E",
+        background: "rgb(var(--background) / <alpha-value>)",
+        card: "rgb(var(--card) / <alpha-value>)",
+        raised: "rgb(var(--raised) / <alpha-value>)",
+        line: "rgb(var(--line) / <alpha-value>)",
+        ink: "rgb(var(--ink) / <alpha-value>)",
+        silver: "rgb(var(--silver) / <alpha-value>)",
+        status: "rgb(var(--status) / <alpha-value>)",
       },
       fontFamily: {
         sans: [

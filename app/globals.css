@@ -3,12 +3,25 @@
 @tailwind utilities;
 
 :root {
-  --background: #08080a;
-  --card: #121215;
-  --raised: #18181b;
-  --line: #27272a;
-  --ink: #f4f4f5;
-  --silver: #a1a1aa;
+  color-scheme: dark;
+  --background: 12 13 16;
+  --card: 22 23 29;
+  --raised: 30 32 39;
+  --line: 39 39 42;
+  --ink: 244 244 245;
+  --silver: 161 161 170;
+  --status: 34 197 94;
+}
+
+.light {
+  color-scheme: light;
+  --background: 250 250 250;
+  --card: 255 255 255;
+  --raised: 244 244 245;
+  --line: 228 228 231;
+  --ink: 9 9 11;
+  --silver: 82 82 91;
+  --status: 22 163 74;
 }
 
 html {
@@ -16,16 +29,17 @@ html {
 }
 
 body {
-  background-color: var(--background);
-  color: var(--ink);
+  background-color: rgb(var(--background));
+  color: rgb(var(--ink));
   font-family: var(--font-geist-sans), Inter, ui-sans-serif, system-ui,
     sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 ::selection {
-  background: rgba(244, 244, 245, 0.16);
+  background: rgb(var(--ink) / 0.14);
 }
 
 ::-webkit-scrollbar {
@@ -34,17 +48,17 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--background);
+  background: rgb(var(--background));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--line);
+  background: rgb(var(--line));
   border-radius: 9999px;
-  border: 2px solid var(--background);
+  border: 2px solid rgb(var(--background));
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3f3f46;
+  background: rgb(var(--silver));
 }
 
 @layer components {
@@ -53,7 +67,7 @@ body {
     font-size: 0.75rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--silver);
+    color: rgb(var(--silver));
   }
 
   .section-anchor {
@@ -61,7 +75,7 @@ body {
   }
 
   .focus-ring:focus-visible {
-    box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--ink);
+    box-shadow: 0 0 0 2px rgb(var(--background)), 0 0 0 4px rgb(var(--ink));
     outline: none;
   }
 }
