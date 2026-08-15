@@ -7,7 +7,10 @@ export interface Project {
   category: ProjectCategory;
 }
 
-export type ProjectCategory = "AI / Agents" | "Backend & Apps";
+export type ProjectCategory = 
+  | "AI & Agentic Systems" 
+  | "AI Tools & Applications" 
+  | "Machine Learning & Analytics";
 
 export interface SkillGroup {
   category: string;
@@ -25,27 +28,36 @@ export interface Capability {
   tech: string[];
 }
 
+export interface Education {
+  institution: string;
+  degree: string;
+  period: string;
+  description: string;
+  credentialUrl?: string;
+}
+
 export const portfolio = {
   identity: {
-    name: "Khayal",
+    name: "Khayal Ismayilzada",
     title: "AI Engineer",
     tagline:
-      "Building intelligent systems, scalable backend architectures, and production-ready AI applications.",
+      "Building intelligent systems, multi-agent architectures, and production-ready RAG pipelines.",
     email: "khayal.izada39@gmail.com",
-    location: "Baku, Azerbaijan",
+    location: "Sumqayit, Azerbaijan",
   },
   socials: {
     github: "https://github.com/Khayal07",
-    linkedin: "https://www.linkedin.com/in/khayal",
+    linkedin: "https://www.linkedin.com/in/khayal-ismayilzada-891882338",
   },
   nav: [
     { label: "About", href: "#about" },
+    { label: "Education", href: "#education" },
     { label: "Projects", href: "#projects" },
     { label: "Capabilities", href: "#capabilities" },
     { label: "Contact", href: "#contact" },
   ] satisfies NavItem[],
   hero: {
-    status: "Available for projects & full-time roles",
+    status: "Available for AI Engineering projects & roles",
     primaryCta: {
       label: "View Projects",
       href: "#projects",
@@ -57,115 +69,129 @@ export const portfolio = {
   },
   about: {
     paragraphs: [
-      "I am an AI Engineering student passionate about bridging the gap between cutting-edge machine learning research and functional software systems. My core focus lies in Retrieval-Augmented Generation (RAG), multi-agent architectures, robust API development, and data pipelines.",
-      "I enjoy designing clean, scalable backend architectures with FastAPI, PostgreSQL, and Docker, while crafting intuitive client interfaces. Whether optimizing local models or deploying cloud services, I focus on building reliable and meaningful software.",
+      "I am an AI Engineer focused on bridging the gap between cutting-edge LLMs and production-ready software systems. My core expertise centers around Retrieval-Augmented Generation (RAG), multi-agent workflows, vector search pipelines, and practical AI integrations.",
+      "I leverage modern Python frameworks, vector databases, and containerized architectures to deploy fast, reliable, and scalable intelligent solutions tailored to complex domain problems.",
     ],
   },
+  education: [
+    {
+      institution: "Azerbaijan State Oil and Industry University (ASOIU)",
+      degree: "B.Sc. in Computer Engineering",
+      period: "2024 — Present (3rd Year)",
+      description:
+        "Focusing on computer architecture, machine learning fundamentals, algorithm design, and software engineering principles.",
+    },
+    {
+      institution: "Div Academy",
+      degree: "AI Engineering Professional Diploma",
+      period: "2024 — 2025 (8-Month Intensive)",
+      description:
+        "Specialized hands-on program covering LLM architectures, RAG systems, multi-agent workflows, and end-to-end AI application engineering.",
+      credentialUrl: "/diploma.pdf",
+    },
+  ] satisfies Education[],
   projects: [
     {
-      title: "RAG Research Assistant",
+      title: "MemoryLens — AI Semantic Search Engine",
       description:
-        "Document Q&A system that chunks papers, indexes them into a vector store, and answers grounded questions with source citations.",
-      tech: ["Python", "LangChain", "ChromaDB", "FastAPI", "Docker"],
-      github: "#",
-      demo: "#",
-      category: "AI / Agents",
+        "An AI-powered search system designed to retrieve movies, games, books, or media from vague, partial memory fragments (e.g., 'twelve people voting in one room') using vector search and confidence scoring.",
+      tech: ["FastAPI", "React", "PostgreSQL", "Semantic Search", "Tailwind CSS", "Docker"],
+      github: "https://github.com/Khayal07/MemoryLens",
+      demo: "https://memory-lens-teal.vercel.app",
+      category: "AI Tools & Applications",
     },
     {
-      title: "Local LLM Chat Client",
+      title: "Voyagent — AI Multi-Agent Travel Planner",
       description:
-        "Desktop interface for running and switching between local open-source models, with streaming responses and custom prompts.",
-      tech: ["Python", "PySide6", "Ollama", "Vector Embeddings"],
-      github: "#",
-      demo: "#",
-      category: "AI / Agents",
+        "An AI travel orchestrator powered by 4 specialized agents (Interest, Budget, Logistics, Planner) that negotiate in real-time via Server-Sent Events (SSE) to generate optimized itineraries with interactive map visualization.",
+      tech: ["FastAPI", "Multi-Agent Systems", "TypeScript", "SSE", "OpenStreetMap", "Docker"],
+      github: "https://github.com/Khayal07/Voyagent-",
+      category: "AI & Agentic Systems",
     },
     {
-      title: "Vector Search API",
+      title: "Study Cost Planner Agent",
       description:
-        "REST service exposing semantic search over collections, with embedding generation, similarity scoring, and metadata filters.",
-      tech: ["Python", "FastAPI", "ChromaDB", "LLM APIs", "Docker"],
-      github: "#",
-      demo: "#",
-      category: "AI / Agents",
+        "An AI-powered multi-agent platform that estimates international education costs, discovers scholarship opportunities, and builds personalized study budgets grounded in verified, cited sources.",
+      tech: ["FastAPI", "Next.js", "LangChain", "PostgreSQL", "pgvector", "Docker"],
+      github: "https://github.com/Khayal07/study-cost-planner-agent",
+      category: "AI & Agentic Systems",
     },
     {
-      title: "Agent Workflow Engine",
+      title: "Multi-Output Insurance Purchase Prediction Pipeline",
       description:
-        "Orchestration layer that chains tool-using agents, manages conversation state, and routes tasks across multiple LLM backends.",
-      tech: ["Python", "LangChain", "LLM APIs", "Docker"],
-      github: "#",
-      demo: "#",
-      category: "AI / Agents",
+        "An end-to-end multi-output Machine Learning pipeline predicting customer policy choices across 7 distinct components simultaneously, featuring behavioral feature engineering and gradient boosting achieving 92.53% accuracy.",
+      tech: ["Python", "Machine Learning", "Feature Engineering", "Ensemble Learning", "Jupyter"],
+      github: "https://github.com/Khayal07/Insurance-Product-Purchase-Prediction-ML",
+      category: "Machine Learning & Analytics",
     },
     {
-      title: "Order Service Backend",
+      title: "Smart Git CLI",
       description:
-        "Production-style REST API with auth, pagination, async workers, and PostgreSQL persistence behind containerized deployment.",
-      tech: ["FastAPI", "PostgreSQL", "Docker", "SQL"],
-      github: "#",
-      demo: "#",
-      category: "Backend & Apps",
+        "A lightweight developer CLI tool that inspects local git diffs to automatically generate structured Conventional Commit messages and release notes using LLM automation.",
+      tech: ["Python", "Typer", "OpenAI API", "Git", "CLI"],
+      github: "https://github.com/Khayal07/Smart-Git-CLI",
+      category: "AI Tools & Applications",
     },
     {
-      title: "Data Pipeline Toolkit",
+      title: "OmniSearch AI — Desktop Spotlight Overlay",
       description:
-        "CLI and dashboard for scheduling ETL jobs, validating datasets, and visualizing pipeline health across environments.",
-      tech: ["Python", "SQL", "C/C++", "Next.js", "Tailwind CSS"],
-      github: "#",
-      demo: "#",
-      category: "Backend & Apps",
+        "A lightweight, Raycast-inspired Windows search overlay triggered by a global hotkey (Alt + Space). Supports multi-provider AI streaming across OpenAI, Gemini, and local Ollama models.",
+      tech: ["Python", "PySide6", "Qt6", "OpenAI API", "Gemini API", "Ollama"],
+      github: "https://github.com/Khayal07/omnisearch-ai",
+      category: "AI Tools & Applications",
     },
   ] satisfies Project[],
   skills: [
     {
-      category: "Programming & Backend",
-      skills: ["Python", "FastAPI", "SQL", "Docker", "C/C++"],
-    },
-    {
-      category: "AI & Data",
+      category: "AI & Machine Learning",
       skills: [
         "LangChain",
-        "ChromaDB",
         "RAG Pipelines",
+        "Multi-Agent Systems",
+        "ChromaDB",
         "Vector Embeddings",
-        "LLM APIs",
+        "LLM APIs / Ollama",
       ],
     },
     {
-      category: "Frontend & Tools",
-      skills: ["Next.js", "Tailwind CSS", "Git", "Linux"],
+      category: "Backend & Systems",
+      skills: ["Python", "FastAPI", "PostgreSQL", "Docker", "SQL", "C/C++"],
+    },
+    {
+      category: "Tools & Frameworks",
+      skills: ["PySide6", "Streamlit", "Git", "Linux", "Next.js", "Tailwind CSS"],
     },
   ] satisfies SkillGroup[],
   capabilities: [
     {
-      title: "RAG Pipelines",
+      title: "RAG & Vector Search",
       description:
-        "Ground LLM responses in private and domain-specific knowledge through chunking, vector retrieval, and citation-aware generation.",
-      tech: ["LangChain", "ChromaDB", "Embeddings"],
+        "Designing context-aware retrieval architectures with advanced chunking, metadata filtering, and embedding optimization.",
+      tech: ["LangChain", "ChromaDB", "Vector Embeddings"],
     },
     {
       title: "Multi-Agent Workflows",
       description:
-        "Orchestrate agent graphs that decompose tasks, call tools, and coordinate across specialized sub-agents with shared state.",
-      tech: ["Tool Calling", "State Machines", "Routing"],
+        "Building autonomous agent graphs with custom tool usage, shared state management, and reliable decision routing.",
+      tech: ["Agentic State", "Tool Calling", "Orchestration"],
     },
     {
-      title: "Vector Databases",
+      title: "AI API Microservices",
       description:
-        "Design and tune vector stores for semantic search and similarity at scale, including hybrid and metadata-filtered queries.",
-      tech: ["ChromaDB", "pgvector", "HNSW"],
+        "Packaging LLM workflows into containerized REST APIs with streaming endpoints and async task execution.",
+      tech: ["FastAPI", "Docker", "PostgreSQL"],
     },
     {
-      title: "LLM Orchestration",
+      title: "Desktop AI Tools",
       description:
-        "Route prompts across local and hosted models, manage context windows and streaming, and close the loop with evaluation.",
-      tech: ["FastAPI", "Streaming", "LLM APIs"],
+        "Developing responsive local desktop utilities and CLI agents with GUI integrations for seamless workflow automation.",
+      tech: ["PySide6", "Typer", "Python"],
     },
   ] satisfies Capability[],
 };
 
 export const projectCategories: ProjectCategory[] = [
-  "AI / Agents",
-  "Backend & Apps",
+  "AI & Agentic Systems",
+  "AI Tools & Applications",
+  "Machine Learning & Analytics",
 ];
