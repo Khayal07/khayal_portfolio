@@ -23,11 +23,11 @@ export function Hero() {
         </span>
 
         <h1
-          className="mt-8 animate-fade-up text-5xl font-semibold tracking-tight text-balance sm:text-6xl lg:text-7xl"
+          className="mt-8 animate-fade-up text-5xl font-semibold leading-tight tracking-tight text-balance sm:text-6xl lg:text-7xl"
           style={{ animationDelay: "100ms" }}
         >
           {identity.name.split(" ")[0]}
-          <span className="text-gradient"> {identity.title}</span>
+          <span className="text-gradient block">{identity.title}</span>
         </h1>
 
         <p

@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Khayal — Developer Portfolio
+
+A modern, dark-mode developer portfolio built with Next.js 14 (App Router), Tailwind CSS, and Lucide React icons. Clean glassmorphism cards, ambient glow accents, and smooth hover transitions throughout.
+
+## Tech Stack
+
+- [Next.js 14](https://nextjs.org) — App Router, static rendering
+- [Tailwind CSS](https://tailwindcss.com) — utility-first styling with a custom dark theme
+- [Lucide React](https://lucide.dev) — iconography
+- TypeScript
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command          | Description                    |
+| ---------------- | ------------------------------ |
+| `npm run dev`    | Start the development server   |
+| `npm run build`  | Create a production build      |
+| `npm run start`  | Serve the production build     |
+| `npm run lint`   | Lint and check code quality    |
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+├── app/
+│   ├── globals.css        # Theme tokens, glass utilities, scrollbar
+│   ├── layout.tsx         # Metadata + fonts
+│   └── page.tsx           # Composes all sections
+├── components/
+│   ├── Navbar.tsx         # Sticky glassmorphic navigation
+│   ├── Hero.tsx           # Status badge, CTAs, terminal card
+│   ├── About.tsx          # Narrative + quick facts
+│   ├── Projects.tsx       # Filterable project grid (client-side)
+│   ├── ProjectCard.tsx    # Project card with tech tags + links
+│   ├── Skills.tsx         # Skill category grids
+│   ├── Contact.tsx        # Email card + mailto-composer form
+│   ├── Footer.tsx         # Social links + back-to-top
+│   └── icons/             # Brand icons (GitHub, LinkedIn)
+├── data/
+│   └── portfolio.ts       # ← All editable content lives here
+└── tailwind.config.ts     # Dark palette, glow shadows, animations
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Customization
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Everything user-facing lives in a single file: `data/portfolio.ts`.
 
-## Deploy on Vercel
+- **Identity & contact** — name, title, tagline, email, location
+- **Socials** — GitHub and LinkedIn URLs
+- **Navigation** — labels and anchor links
+- **Projects** — title, description, tech stack, GitHub/demo links, category
+- **Skills** — grouped categories and individual skills
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Edit the file and the site updates instantly — no component changes required.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deploy
+
+The site is fully static and can be deployed to any host. The cleanest path is Vercel:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
