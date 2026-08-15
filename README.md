@@ -1,13 +1,39 @@
-# Khayal — Developer Portfolio
+# Khayal Ismayilzada — AI Engineer Portfolio
 
-A monochrome, engineering-focused developer portfolio built with Next.js 14 (App Router), Tailwind CSS, and Lucide React icons. Sharp hairlines, precise grid alignment, restrained micro-interactions, and a strict dark palette inspired by Linear and Vercel.
+A production-ready, single-page developer portfolio built with Next.js 14 (App Router),
+TypeScript, and Tailwind CSS. The interface follows a strict Linear / Vercel-inspired
+minimalist engineering aesthetic: monochrome dark + light palettes, hairline borders,
+precise grid alignment, and restrained micro-interactions — no neon glows, no ambient
+decor, no template clichés.
+
+## Key Features
+
+- **Multi-language Support** — English by default with a one-click **EN | AZ**
+  (Azerbaijani) switcher in the navbar. All visible copy renders through a lightweight
+  dictionary in `lib/i18n.ts`; unmapped strings gracefully fall back to English.
+- **Theme Switcher** — refined dark mode built on a slate/zinc palette (`#0c0d10`
+  background, `#16171d` cards, `#27272a` borders) and a crisp light mode (`#fafafa`
+  background, `#09090b` text, `#e4e4e7` borders). Theming is token-driven via CSS
+  custom properties, persisted to `localStorage`, with a pre-hydration script to
+  prevent flash-of-wrong-theme (FOUC).
+- **Education & Credentials** — a dedicated education section with degree titles,
+  duration tags, and a verified **View Diploma** link that opens `/diploma.pdf` in a
+  new tab.
+- **Filterable Showcase** — a project grid with category filtering across
+  *AI & Agentic Systems*, *AI Tools & Applications*, and *Machine Learning & Analytics*,
+  alongside an "All" view. Cards expose exact tech-stack pills and sharp GitHub /
+  Live Demo links.
+- **Fully Responsive** — sticky navbar with a subtle `backdrop-blur` glass effect,
+  mobile menu, and adaptive grids across all breakpoints.
 
 ## Tech Stack
 
-- [Next.js 14](https://nextjs.org) — App Router, static rendering
-- [Tailwind CSS](https://tailwindcss.com) — utility-first styling with a custom dark theme
-- [Lucide React](https://lucide.dev) — iconography
-- TypeScript
+- [Next.js 14](https://nextjs.org) — App Router, fully static rendering
+- [TypeScript](https://www.typescriptlang.org) — strict typing throughout
+- [Tailwind CSS](https://tailwindcss.com) — utility-first styling, design-token driven
+- [Lucide React](https://lucide.dev) — iconography (custom SVG brand icons for GitHub/LinkedIn)
+- Theme & language state — lightweight custom providers (`ThemeProvider`,
+  `LanguageProvider`) backed by CSS variables and `localStorage`
 
 ## Getting Started
 
@@ -31,36 +57,51 @@ Open [http://localhost:3000](http://localhost:3000) with your browser.
 
 ```
 ├── app/
-│   ├── globals.css        # Design tokens, typography, focus ring, scrollbar
-│   ├── layout.tsx         # Metadata + fonts
-│   └── page.tsx           # Composes all sections
+│   ├── globals.css        # Design tokens (CSS vars), theming, scrollbar, focus ring
+│   ├── layout.tsx         # Fonts, metadata, providers, FOUC guard script
+│   └── page.tsx           # Composes all sections in order
 ├── components/
-│   ├── Navbar.tsx         # Fixed hairline navigation
-│   ├── Hero.tsx           # Status dot, primary title, actions
-│   ├── About.tsx          # Editorial split with mono quick facts
+│   ├── Navbar.tsx         # Fixed glass navbar + theme/lang toggles + socials
+│   ├── Hero.tsx           # Status dot, name/title, tagline, CTAs
+│   ├── About.tsx          # Editorial split + mono quick-facts table
+│   ├── Education.tsx      # Education cards with "View Diploma" links
 │   ├── Projects.tsx       # Filterable project grid (client-side)
-│   ├── ProjectCard.tsx    # Project card with tech pills + links
+│   ├── ProjectCard.tsx    # Project cards with tech pills + GitHub/Demo links
 │   ├── Capabilities.tsx   # AI competencies grid
 │   ├── Contact.tsx        # Single-click mail action + socials
-│   ├── Footer.tsx         # Hairline footer
+│   ├── Footer.tsx         # Hairline footer with back-to-top
+│   ├── ThemeProvider.tsx / ThemeToggle.tsx     # Dark/light switching
+│   ├── LanguageProvider.tsx / LanguageToggle.tsx # EN | AZ switching
 │   └── icons/             # Brand icons (GitHub, LinkedIn)
 ├── data/
 │   └── portfolio.ts       # ← All editable content lives here
-└── tailwind.config.ts     # Monochrome palette, font stacks, animations
+├── lib/
+│   └── i18n.ts            # Azerbaijani dictionary + translate helper
+├── public/
+│   └── diploma.pdf        # Verified diploma asset (education credentialUrl)
+└── tailwind.config.ts     # Palette, font stacks, animations
 ```
 
-## Customization
+## Data Configuration
 
-Everything user-facing lives in a single file: `data/portfolio.ts`.
+Every piece of user-facing content is centralized in **`data/portfolio.ts`** — no
+component edits required to customize the site.
 
 - **Identity & contact** — name, title, tagline, email, location
 - **Socials** — GitHub and LinkedIn URLs
-- **Navigation** — labels and anchor links
+- **Navigation** — navbar labels and anchor links
+- **Hero** — status message and call-to-action buttons
+- **About** — narrative paragraphs
+- **Education** — institutions, degrees, duration tags, optional `credentialUrl`
 - **Projects** — title, description, tech stack, GitHub/demo links, category
 - **Capabilities** — AI competencies with descriptions and tech tags
 - **Skills** — grouped categories and individual skills
 
-Edit the file and the site updates instantly — no component changes required.
+### Translating Content
+
+English is the source of truth in `data/portfolio.ts`. Azerbaijani translations live
+in the `azContent` dictionary inside `lib/i18n.ts`, keyed by the exact English string.
+Add a new key to translate a string; anything unmapped renders in English automatically.
 
 ## Deploy
 
