@@ -40,15 +40,16 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         <span className="font-mono text-xs text-silver">
           {String(index + 1).padStart(2, "0")}
         </span>
-        <div className="flex gap-1.5">
+        <div className="flex items-center gap-1.5">
           <a
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`${project.title} source code`}
-            className="rounded-md border border-line p-2 text-silver transition-colors duration-200 hover:border-ink/60 hover:text-ink"
+            aria-label={`${project.title} GitHub repository`}
+            className="focus-ring inline-flex items-center gap-1.5 rounded-md border border-line px-2.5 py-1.5 font-mono text-xs text-silver transition-colors duration-200 hover:border-ink/60 hover:text-ink"
           >
-            <GithubIcon size={14} />
+            <GithubIcon size={13} />
+            GitHub
           </a>
           {project.demo && (
             <a
@@ -56,9 +57,10 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${project.title} live demo`}
-              className="rounded-md border border-line p-2 text-silver transition-colors duration-200 hover:border-ink/60 hover:text-ink"
+              className="focus-ring inline-flex items-center gap-1.5 rounded-md border border-line px-2.5 py-1.5 font-mono text-xs text-silver transition-colors duration-200 hover:border-ink/60 hover:text-ink"
             >
-              <ExternalLink size={14} />
+              <ExternalLink size={13} />
+              Live Demo
             </a>
           )}
         </div>
