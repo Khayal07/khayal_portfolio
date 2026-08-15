@@ -29,7 +29,7 @@ export function Navbar() {
           href="#home"
           className="focus-ring rounded font-mono text-sm font-semibold tracking-tight text-ink"
         >
-          {identity.name}
+          {identity.name.split(" ")[0]}
           <span className="text-silver">.</span>
         </a>
 

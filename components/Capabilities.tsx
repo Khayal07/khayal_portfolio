@@ -1,15 +1,20 @@
 import {
+  Cpu,
   Database,
   FileSearch,
   Layers,
   Network,
-  Workflow,
   type LucideIcon,
 } from "lucide-react";
 import { portfolio } from "@/data/portfolio";
 import { SectionHeading } from "@/components/SectionHeading";
 
-const capabilityIcons: LucideIcon[] = [FileSearch, Network, Database, Workflow];
+const capabilityIcons: Record<string, LucideIcon> = {
+  "RAG & Vector Search": FileSearch,
+  "Multi-Agent Workflows": Network,
+  "AI API Microservices": Database,
+  "Desktop AI Tools": Cpu,
+};
 
 export function Capabilities() {
   return (
@@ -26,7 +31,7 @@ export function Capabilities() {
 
         <div className="mt-14 grid grid-cols-1 gap-px border border-line bg-line sm:grid-cols-2">
           {portfolio.capabilities.map((capability, i) => {
-            const Icon = capabilityIcons[i] ?? Layers;
+            const Icon = capabilityIcons[capability.title] ?? Layers;
             return (
               <div
                 key={capability.title}
