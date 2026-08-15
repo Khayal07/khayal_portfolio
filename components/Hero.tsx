@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight, MapPin } from "lucide-react";
+import { ArrowUpRight, Download, MapPin } from "lucide-react";
 import { portfolio } from "@/data/portfolio";
 import { useI18n } from "@/components/LanguageProvider";
 
@@ -49,6 +49,15 @@ export function Hero() {
             className="focus-ring inline-flex items-center gap-2 rounded-md border border-line px-5 py-2.5 text-sm font-medium text-ink transition-colors duration-200 hover:border-ink/60"
           >
             {t(hero.secondaryCta.label)}
+          </a>
+          <a
+            href={identity.cvUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="focus-ring inline-flex items-center gap-2 rounded-md border border-line px-5 py-2.5 text-sm font-medium text-ink transition-colors duration-200 hover:border-ink/60"
+          >
+            <Download size={15} />
+            {t("Download CV")}
           </a>
         </div>
 

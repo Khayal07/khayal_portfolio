@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Download, Menu, X } from "lucide-react";
 import { portfolio } from "@/data/portfolio";
 import { GithubIcon, LinkedinIcon } from "@/components/icons/BrandIcons";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -53,6 +53,15 @@ export function Navbar() {
         </ul>
 
         <div className="hidden items-center gap-2 md:flex">
+          <a
+            href={identity.cvUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="focus-ring inline-flex items-center gap-1.5 rounded-md border border-line px-3 py-2 text-sm text-silver transition-colors duration-200 hover:border-ink/60 hover:text-ink"
+          >
+            <Download size={14} />
+            <span className="hidden lg:inline">{t("Download CV")}</span>
+          </a>
           <LanguageToggle />
           <ThemeToggle />
           <a
@@ -99,6 +108,18 @@ export function Navbar() {
                 </a>
               </li>
             ))}
+            <li className="mt-2 px-3">
+              <a
+                href={identity.cvUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+                className="focus-ring inline-flex items-center gap-2 rounded-md border border-line px-3 py-2 text-sm text-silver transition-colors duration-200 hover:border-ink/60 hover:text-ink"
+              >
+                <Download size={14} />
+                {t("Download CV")}
+              </a>
+            </li>
             <li className="mt-2 flex flex-wrap items-center gap-2 px-3">
               <LanguageToggle />
               <ThemeToggle />

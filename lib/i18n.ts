@@ -3,18 +3,19 @@ export type Locale = "en" | "az";
 export const azContent: Record<string, string> = {
   "AI Engineer": "AI Mühəndis",
   "Building intelligent systems, multi-agent architectures, and production-ready RAG pipelines.":
-    "İntellektual sistemlər, multi-agent arxitekturalar və istehsal səviyyəsində RAG pipeline-lar qururam.",
+    "İntellektual sistemlər, çox-agentli arxitekturalar və istehsalat səviyyəli RAG həlləri hazırlayıram.",
   "Available for AI Engineering projects & roles":
-    "AI mühəndisliyi layihələri və vəzifələri üçün mövcudam",
+    "AI Mühəndisliyi layihələri və vakansiyaları üçün açıqdır",
   "View Projects": "Layihələrə Bax",
   "Get In Touch": "Əlaqə Saxla",
+  "Download CV": "CV-ni Yüklə",
   "Sumqayit, Azerbaijan": "Sumqayıt, Azərbaycan",
 
   "I am an AI Engineer focused on bridging the gap between cutting-edge LLMs and production-ready software systems. My core expertise centers around Retrieval-Augmented Generation (RAG), multi-agent workflows, vector search pipelines, and practical AI integrations.":
-    "Mən müasir LLM-lər ilə istehsal səviyyəsindəki proqram sistemləri arasında körpü qurmağa fokuslanmış AI Mühəndisiyəm. Əsas ixtisasım Retrieval-Augmented Generation (RAG), multi-agent iş axınları, vektor axtarış pipeline-ları və praktik AI inteqrasiyaları üzərindədir.",
+    "Süni intellekt mühəndisi olaraq əsas diqqətim müasir Böyük Dil Modellərini (LLM) real proqram təminatı sistemlərinə inteqrasiya etməkdir. retrieval-augmented generation (RAG), çox-agentli iş axınları və vektor axtarış sistemləri sahəsində təcrübəyə malikəm.",
   "I leverage modern Python frameworks, vector databases, and containerized architectures to deploy fast, reliable, and scalable intelligent solutions tailored to complex domain problems.":
     "Mürəkkəb sahə problemlərinə uyğun sürətli, etibarlı və miqyaslanan intellektual həllər qurmaq üçün müasir Python freymvorkları, vektor verilənlər bazaları və konteyner arxitekturalarından istifadə edirəm.",
-  about: "haqqımda",
+  about: "Haqqımda",
   "Work that bridges research and production.":
     "Araşdırma ilə istehsalı birləşdirən iş.",
   location: "ünvan",
@@ -24,7 +25,7 @@ export const azContent: Record<string, string> = {
   "API Development": "API İnkişafı",
   "Data Pipelines": "Data Pipeline-lar",
 
-  education: "təhsil",
+  education: "Təhsil",
   Education: "Təhsil",
   "Formal and intensive training behind the engineering practice.":
     "Mühəndislik praktikasının arxasındakı formal və intensiv təlim.",
@@ -39,7 +40,7 @@ export const azContent: Record<string, string> = {
   "2024 — 2025 (8-Month Intensive)": "2024 — 2025 (8 aylıq intensiv)",
   "View Diploma": "Diploma Bax",
 
-  projects: "layihələr",
+  projects: "Layihələr",
   "Selected works": "Seçilmiş işlər",
   "Systems built with intent, from retrieval pipelines to production services.":
     "Məqsədyönlü qurulmuş sistemlər — retrieval pipeline-lardan istehsal xidmətlərinə qədər.",
@@ -72,8 +73,8 @@ export const azContent: Record<string, string> = {
   "A lightweight, Raycast-inspired Windows search overlay triggered by a global hotkey (Alt + Space). Supports multi-provider AI streaming across OpenAI, Gemini, and local Ollama models.":
     "Qlobal isti düymə (Alt + Space) ilə çağırılan, Raycast-dən ilhamlanan yüngül Windows axtarış overlay-i. OpenAI, Gemini və lokal Ollama modellərində multi-provayder AI streaming-i dəstəkləyir.",
 
-  capabilities: "imkanlar",
-  "AI capabilities": "AI imkanları",
+  capabilities: "Bacarıqlar və İmkanlar",
+  "AI capabilities": "Bacarıqlar və İmkanlar",
   "The core competencies I engineer around when building intelligent products.":
     "İntellektual məhsullar qurarkən üzərində mühəndislik etdiyim əsas kompetensiyalar.",
   "RAG & Vector Search": "RAG & Vektor Axtarış",
@@ -89,10 +90,20 @@ export const azContent: Record<string, string> = {
   "Developing responsive local desktop utilities and CLI agents with GUI integrations for seamless workflow automation.":
     "Fasiləsiz iş axını avtomatlaşdırması üçün GUI inteqrasiyalı, cavabverən lokal desktop alətləri və CLI agentlər hazırlayıram.",
 
-  contact: "əlaqə",
+  contact: "Əlaqə",
   "Let's build something together.": "Gəlin birlikdə bir şey quraq.",
   "Have a project in mind, or want to talk about RAG, multi-agent systems, or backend architecture? Reach out.":
-    "Ağlında bir layihə var, yoxsa RAG, multi-agent sistemlər və ya backend arxitekturası haqqında danışmaq istəyirsən? Əlaqə saxla.",
+    "Ağlınızda bir proyekt var, yoxsa RAG və agent sistemləri haqqında danışmaq istəyirsiniz? Mesaj yazın.",
+  "Your name": "Adınız",
+  "Your email": "E-poçt ünvanınız",
+  "Your message": "Mesajınız",
+  "Send Message": "Mesajı Göndər",
+  "Sending...": "Göndərilir...",
+  "Your message has been sent successfully!": "Mesajınız uğurla çatdırıldı!",
+  "Something went wrong. Please try again later.":
+    "Xəta baş verdi. Zəhmət olmasa bir az sonra yenidən cəhd edin.",
+  "Contact form is not configured yet.":
+    "Əlaqə formu hələ konfiqurasiya olunmayıb.",
 
   About: "Haqqımda",
   Projects: "Layihələr",

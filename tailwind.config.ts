@@ -16,6 +16,7 @@ const config: Config = {
         ink: "rgb(var(--ink) / <alpha-value>)",
         silver: "rgb(var(--silver) / <alpha-value>)",
         status: "rgb(var(--status) / <alpha-value>)",
+        danger: "rgb(var(--danger) / <alpha-value>)",
       },
       fontFamily: {
         sans: [

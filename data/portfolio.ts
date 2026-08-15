@@ -44,6 +44,7 @@ export const portfolio = {
       "Building intelligent systems, multi-agent architectures, and production-ready RAG pipelines.",
     email: "khayal.izada39@gmail.com",
     location: "Sumqayit, Azerbaijan",
+    cvUrl: "/cv.pdf",
   },
   socials: {
     github: "https://github.com/Khayal07",
@@ -66,6 +67,9 @@ export const portfolio = {
       label: "Get In Touch",
       href: "#contact",
     },
+  },
+  contact: {
+    formAccessKey: "YOUR_WEB3FORMS_ACCESS_KEY",
   },
   about: {
     paragraphs: [
