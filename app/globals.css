@@ -3,14 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --base: #090d16;
-  --base-deep: #060910;
-  --surface: #0d1322;
-  --border: #1b2436;
-  --text: #e6eaf2;
-  --muted: #94a0b8;
-  --accent: #6366f1;
-  --accent-cyan: #22d3ee;
+  --background: #08080a;
+  --card: #121215;
+  --raised: #18181b;
+  --line: #27272a;
+  --ink: #f4f4f5;
+  --silver: #a1a1aa;
 }
 
 html {
@@ -18,64 +16,67 @@ html {
 }
 
 body {
-  color: var(--text);
-  background-color: var(--base);
-  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  background-color: var(--background);
+  color: var(--ink);
+  font-family: var(--font-geist-sans), Inter, ui-sans-serif, system-ui,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background: rgba(99, 102, 241, 0.4);
-  color: #ffffff;
+  background: rgba(244, 244, 245, 0.16);
 }
 
 ::-webkit-scrollbar {
   width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--base-deep);
+  background: var(--background);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #232e45;
+  background: var(--line);
   border-radius: 9999px;
-  border: 2px solid var(--base-deep);
+  border: 2px solid var(--background);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent);
+  background: #3f3f46;
 }
 
 @layer components {
-  .glass {
-    background: rgba(13, 19, 34, 0.6);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(27, 36, 54, 0.8);
+  .surface {
+    background-color: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 0.75rem;
+  }
+
+  .eyebrow {
+    font-family: var(--font-geist-mono), ui-monospace, monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--silver);
   }
 
   .section-anchor {
     scroll-margin-top: 5rem;
   }
+
+  .focus-ring:focus-visible {
+    box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--ink);
+    outline: none;
+  }
 }
 
 @layer utilities {
-  .text-gradient {
-    background: linear-gradient(135deg, #818cf8 0%, #22d3ee 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-
-  .bg-glow-radial {
-    background: radial-gradient(
-      ellipse at center,
-      rgba(99, 102, 241, 0.14) 0%,
-      transparent 65%
-    );
-  }
-
-  .text-balance {
-    text-wrap: balance;
+  .grid-faint {
+    background-image: linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 64px 64px;
+    background-position: center top;
   }
 }
