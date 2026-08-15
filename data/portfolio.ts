@@ -19,6 +19,12 @@ export interface NavItem {
   href: string;
 }
 
+export interface Capability {
+  title: string;
+  description: string;
+  tech: string[];
+}
+
 export const portfolio = {
   identity: {
     name: "Khayal",
@@ -30,12 +36,12 @@ export const portfolio = {
   },
   socials: {
     github: "https://github.com/Khayal07",
-    linkedin: "https://www.linkedin.com",
+    linkedin: "https://www.linkedin.com/in/khayal",
   },
   nav: [
     { label: "About", href: "#about" },
     { label: "Projects", href: "#projects" },
-    { label: "Skills", href: "#skills" },
+    { label: "Capabilities", href: "#capabilities" },
     { label: "Contact", href: "#contact" },
   ] satisfies NavItem[],
   hero: {
@@ -131,6 +137,32 @@ export const portfolio = {
       skills: ["Next.js", "Tailwind CSS", "Git", "Linux"],
     },
   ] satisfies SkillGroup[],
+  capabilities: [
+    {
+      title: "RAG Pipelines",
+      description:
+        "Ground LLM responses in private and domain-specific knowledge through chunking, vector retrieval, and citation-aware generation.",
+      tech: ["LangChain", "ChromaDB", "Embeddings"],
+    },
+    {
+      title: "Multi-Agent Workflows",
+      description:
+        "Orchestrate agent graphs that decompose tasks, call tools, and coordinate across specialized sub-agents with shared state.",
+      tech: ["Tool Calling", "State Machines", "Routing"],
+    },
+    {
+      title: "Vector Databases",
+      description:
+        "Design and tune vector stores for semantic search and similarity at scale, including hybrid and metadata-filtered queries.",
+      tech: ["ChromaDB", "pgvector", "HNSW"],
+    },
+    {
+      title: "LLM Orchestration",
+      description:
+        "Route prompts across local and hosted models, manage context windows and streaming, and close the loop with evaluation.",
+      tech: ["FastAPI", "Streaming", "LLM APIs"],
+    },
+  ] satisfies Capability[],
 };
 
 export const projectCategories: ProjectCategory[] = [
