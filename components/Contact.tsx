@@ -1,98 +1,50 @@
-"use client";
-
-import { useState, type FormEvent } from "react";
-import { Mail, Send } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { portfolio } from "@/data/portfolio";
 import { SectionHeading } from "@/components/SectionHeading";
+import { GithubIcon, LinkedinIcon } from "@/components/icons/BrandIcons";
 
 export function Contact() {
-  const { identity } = portfolio;
-  const email = identity.email;
-
-  const [name, setName] = useState("");
-  const [sender, setSender] = useState("");
-  const [message, setMessage] = useState("");
-  const [sent, setSent] = useState(false);
-
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const subject = encodeURIComponent(`Portfolio inquiry from ${name}`);
-    const body = encodeURIComponent(
-      `${message}\n\n— ${name}\nReply to: ${sender}`
-    );
-    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
-    setSent(true);
-    setTimeout(() => setSent(false), 4000);
-  };
-
-  const inputClasses =
-    "w-full rounded-xl border border-base-border bg-base-surface px-4 py-3 text-sm text-white placeholder:text-muted outline-none transition-all duration-300 focus:border-accent-violet/60 focus:shadow-glow-sm";
+  const { identity, socials } = portfolio;
 
   return (
-    <section id="contact" className="section-anchor py-20 sm:py-28">
-      <div className="mx-auto max-w-6xl px-6">
-        <SectionHeading
-          eyebrow="contact"
-          title="Let&apos;s Work Together"
-          subtitle="Have a project in mind or want to chat about AI systems, RAG pipelines, or backend architecture? Reach out."
-        />
+    <section id="contact" className="section-anchor border-t border-line/70">
+      <div className="mx-auto max-w-6xl px-6 py-24 sm:py-32">
+        <div className="mx-auto flex max-w-xl flex-col items-center text-center">
+          <SectionHeading
+            align="center"
+            eyebrow="contact"
+            title="Let&apos;s build something together."
+            subtitle="Have a project in mind, or want to talk about RAG, multi-agent systems, or backend architecture? Reach out."
+          />
 
-        <div className="mx-auto grid max-w-3xl gap-6 sm:grid-cols-2">
           <a
-            href={`mailto:${email}`}
-            className="glass group flex flex-col items-start justify-between gap-6 rounded-2xl p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-accent-violet/50 hover:shadow-glow"
+            href={`mailto:${identity.email}`}
+            className="focus-ring mt-10 inline-flex w-full items-center justify-center gap-2 rounded-md bg-ink px-6 py-3 text-sm font-medium text-background transition-all duration-200 hover:bg-white sm:w-auto"
           >
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-base-border bg-base-elevated">
-              <Mail size={20} className="text-accent-cyan" />
-            </div>
-            <div>
-              <p className="text-sm font-medium text-white group-hover:text-accent-violet">
-                {email}
-              </p>
-              <p className="mt-1 text-xs text-muted">
-                Prefer email? Write to me directly — no forms required.
-              </p>
-            </div>
+            {identity.email}
+            <ArrowUpRight size={15} />
           </a>
 
-          <form
-            onSubmit={handleSubmit}
-            className="glass flex flex-col gap-4 rounded-2xl p-6 shadow-card"
-          >
-            <div className="flex flex-col gap-4 sm:flex-row">
-              <input
-                type="text"
-                required
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder="Your name"
-                className={inputClasses}
-              />
-              <input
-                type="email"
-                required
-                value={sender}
-                onChange={(e) => setSender(e.target.value)}
-                placeholder="Your email"
-                className={inputClasses}
-              />
-            </div>
-            <textarea
-              required
-              rows={5}
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              placeholder="Tell me about your project…"
-              className={`${inputClasses} resize-none`}
-            />
-            <button
-              type="submit"
-              className="group inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-accent-violet to-accent-cyan px-6 py-3 text-sm font-medium text-white shadow-glow-sm transition-all duration-300 hover:shadow-glow hover:brightness-110"
+          <div className="mt-4 flex items-center gap-2">
+            <a
+              href={socials.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="focus-ring inline-flex items-center gap-2 rounded-md border border-line px-4 py-2 text-sm text-silver transition-colors duration-200 hover:border-ink/60 hover:text-ink"
             >
-              <Send size={16} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              {sent ? "Opening your email client…" : "Send message"}
-            </button>
-          </form>
+              <GithubIcon size={14} />
+              GitHub
+            </a>
+            <a
+              href={socials.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="focus-ring inline-flex items-center gap-2 rounded-md border border-line px-4 py-2 text-sm text-silver transition-colors duration-200 hover:border-ink/60 hover:text-ink"
+            >
+              <LinkedinIcon size={14} />
+              LinkedIn
+            </a>
+          </div>
         </div>
       </div>
     </section>

@@ -18,13 +18,13 @@ export function BackToTop() {
       type="button"
       aria-label="Back to top"
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className={`fixed bottom-6 right-6 z-50 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-r from-accent-violet to-accent-cyan text-white shadow-glow transition-all duration-300 hover:brightness-110 ${
+      className={`fixed bottom-6 right-6 z-50 rounded-md border border-line bg-background p-3 text-silver transition-all duration-200 hover:border-ink/60 hover:text-ink ${
         visible
           ? "translate-y-0 opacity-100"
-          : "pointer-events-none translate-y-4 opacity-0"
+          : "pointer-events-none translate-y-2 opacity-0"
       }`}
     >
-      <ArrowUp size={20} />
+      <ArrowUp size={15} />
     </button>
   );
 }
