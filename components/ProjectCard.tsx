@@ -1,60 +1,54 @@
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, ArrowUpRight } from "lucide-react";
 import { GithubIcon } from "@/components/icons/BrandIcons";
 import type { Project } from "@/data/portfolio";
 
-export function ProjectCard({ project }: { project: Project }) {
+interface ProjectCardProps {
+  project: Project;
+  index: number;
+}
+
+export function ProjectCard({ project, index }: ProjectCardProps) {
   return (
-    <article className="glass group flex flex-col rounded-2xl p-6 shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:border-accent-violet/50 hover:shadow-glow">
-      <div className="flex items-start justify-between gap-4">
-        <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-base-border bg-base-elevated transition-colors duration-300 group-hover:border-accent-violet/40">
-          <svg
-            viewBox="0 0 24 24"
-            width="20"
-            height="20"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            className="text-accent-violet"
-            aria-hidden="true"
-          >
-            <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z" />
-          </svg>
-        </div>
-        <span className="rounded-full border border-base-border bg-base-surface px-3 py-1 font-mono text-[11px] uppercase tracking-wide text-accent-cyan">
+    <article className="group relative flex flex-col bg-background p-6 transition-colors duration-200 hover:bg-card">
+      <div className="flex items-center justify-between">
+        <span className="font-mono text-xs text-silver">
           {project.category}
         </span>
+        <ArrowUpRight
+          size={15}
+          className="text-silver opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+          aria-hidden="true"
+        />
       </div>
 
-      <h3 className="mt-5 text-lg font-semibold text-white transition-colors duration-300 group-hover:text-accent-violet">
-        {project.title}
-      </h3>
-      <p className="mt-2 text-sm leading-relaxed text-muted">
+      <h3 className="mt-6 text-base font-medium text-ink">{project.title}</h3>
+      <p className="mt-2 flex-1 text-sm leading-relaxed text-silver">
         {project.description}
       </p>
 
-      <ul className="mt-5 flex flex-wrap gap-2">
+      <ul className="mt-6 flex flex-wrap gap-1.5">
         {project.tech.map((tech) => (
           <li key={tech}>
-            <span className="inline-block rounded-full border border-base-border bg-base-surface px-2.5 py-1 font-mono text-xs text-muted transition-colors duration-300 hover:border-accent-cyan/40 hover:text-accent-cyan">
+            <span className="inline-block rounded border border-line px-2 py-1 font-mono text-[11px] text-silver transition-colors duration-200 group-hover:border-ink/50 group-hover:text-ink">
               {tech}
             </span>
           </li>
         ))}
       </ul>
 
-      <div className="mt-6 flex items-center justify-between border-t border-base-border/70 pt-5">
-        <span className="font-mono text-xs text-muted">
-          {project.tech.length} technologies
+      <div className="mt-6 flex items-center justify-between border-t border-line/70 pt-4">
+        <span className="font-mono text-xs text-silver">
+          {String(index + 1).padStart(2, "0")}
         </span>
-        <div className="flex gap-2">
+        <div className="flex gap-1.5">
           <a
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`${project.title} source code`}
-            className="rounded-lg border border-base-border bg-base-surface p-2.5 text-muted transition-all duration-300 hover:border-accent-violet/50 hover:text-white hover:shadow-glow-sm"
+            className="rounded-md border border-line p-2 text-silver transition-colors duration-200 hover:border-ink/60 hover:text-ink"
           >
-            <GithubIcon size={17} />
+            <GithubIcon size={14} />
           </a>
           {project.demo && (
             <a
@@ -62,9 +56,9 @@ export function ProjectCard({ project }: { project: Project }) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${project.title} live demo`}
-              className="rounded-lg border border-base-border bg-base-surface p-2.5 text-muted transition-all duration-300 hover:border-accent-cyan/50 hover:text-white hover:shadow-glow-sm"
+              className="rounded-md border border-line p-2 text-silver transition-colors duration-200 hover:border-ink/60 hover:text-ink"
             >
-              <ExternalLink size={17} />
+              <ExternalLink size={14} />
             </a>
           )}
         </div>

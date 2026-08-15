@@ -18,24 +18,30 @@ export function Projects() {
     active === "All" ? projects : projects.filter((p) => p.category === active);
 
   return (
-    <section id="projects" className="section-anchor py-20 sm:py-28">
-      <div className="mx-auto max-w-6xl px-6">
-        <SectionHeading
-          eyebrow="projects"
-          title="Selected Works"
-          subtitle="A collection of AI systems, backend services, and developer tools I have designed and built."
-        />
+    <section id="projects" className="section-anchor border-t border-line/70">
+      <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
+        <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
+          <SectionHeading
+            eyebrow="projects"
+            title="Selected works"
+            subtitle="Systems built with intent, from retrieval pipelines to production services."
+          />
+          <p className="shrink-0 font-mono text-xs text-silver">
+            {String(filtered.length).padStart(2, "0")}{" "}
+            <span className="text-silver/70">/ {active}</span>
+          </p>
+        </div>
 
-        <div className="mb-10 flex flex-wrap items-center justify-center gap-3">
+        <div className="mb-8 mt-8 flex flex-wrap gap-2 md:mt-10">
           {filters.map((filter) => (
             <button
               key={filter}
               type="button"
               onClick={() => setActive(filter)}
-              className={`rounded-full px-5 py-2 font-mono text-sm transition-all duration-300 ${
+              className={`rounded-full border px-4 py-1.5 font-mono text-xs transition-colors duration-200 ${
                 active === filter
-                  ? "bg-gradient-to-r from-accent-violet to-accent-cyan text-white shadow-glow-sm"
-                  : "glass text-muted hover:border-accent-violet/50 hover:text-white"
+                  ? "border-ink/70 bg-card text-ink"
+                  : "border-line text-silver hover:border-ink/50 hover:text-ink"
               }`}
             >
               {filter}
@@ -43,9 +49,9 @@ export function Projects() {
           ))}
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {filtered.map((project) => (
-            <ProjectCard key={project.title} project={project} />
+        <div className="grid grid-cols-1 gap-px border border-line bg-line md:grid-cols-2 lg:grid-cols-3">
+          {filtered.map((project, i) => (
+            <ProjectCard key={project.title} project={project} index={i} />
           ))}
         </div>
       </div>

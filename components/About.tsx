@@ -1,10 +1,9 @@
-import { Mail, MapPin, Sparkles } from "lucide-react";
 import { portfolio } from "@/data/portfolio";
 import { SectionHeading } from "@/components/SectionHeading";
 
 const focusAreas = [
-  "Retrieval-Augmented Generation",
-  "Multi-Agent Architectures",
+  "RAG Pipelines",
+  "Multi-Agent Systems",
   "API Development",
   "Data Pipelines",
 ];
@@ -13,62 +12,46 @@ export function About() {
   const { identity, about } = portfolio;
 
   return (
-    <section id="about" className="section-anchor py-20 sm:py-28">
-      <div className="mx-auto max-w-6xl px-6">
-        <SectionHeading
-          eyebrow="about"
-          title="About Me"
-          subtitle="Where machine learning research meets production software."
-        />
-
-        <div className="grid items-start gap-10 lg:grid-cols-[1.5fr_1fr]">
-          <div className="space-y-5 text-lg leading-relaxed text-muted lg:text-[17px]">
-            {about.paragraphs.map((paragraph, i) => (
-              <p key={i}>{paragraph}</p>
-            ))}
-          </div>
-
-          <aside className="glass rounded-2xl p-6 shadow-card">
-            <h3 className="font-mono text-sm uppercase tracking-wider text-accent-cyan">
-              Quick facts
-            </h3>
-            <ul className="mt-5 space-y-4">
-              <li>
-                <dt className="flex items-center gap-2 text-xs uppercase tracking-wider text-muted">
-                  <MapPin size={14} className="text-accent-violet" />
-                  Location
-                </dt>
-                <dd className="mt-1 text-sm font-medium text-white">
+    <section id="about" className="section-anchor border-t border-line/70">
+      <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
+        <div className="grid gap-12 lg:grid-cols-[1fr_1.35fr] lg:gap-24">
+          <div>
+            <SectionHeading
+              eyebrow="about"
+              title="Work that bridges research and production."
+            />
+            <dl className="mt-10 font-mono text-xs">
+              <div className="flex items-baseline justify-between gap-6 border-b border-line/60 py-3">
+                <dt className="text-silver">location</dt>
+                <dd className="text-right text-ink">
                   {identity.location}
                 </dd>
-              </li>
-              <li>
-                <dt className="flex items-center gap-2 text-xs uppercase tracking-wider text-muted">
-                  <Mail size={14} className="text-accent-violet" />
-                  Email
-                </dt>
-                <dd className="mt-1 text-sm font-medium text-white">
-                  {identity.email}
-                </dd>
-              </li>
-              <li>
-                <dt className="flex items-center gap-2 text-xs uppercase tracking-wider text-muted">
-                  <Sparkles size={14} className="text-accent-violet" />
-                  Focus areas
-                </dt>
-                <dd className="mt-2 flex flex-wrap gap-2">
+              </div>
+              <div className="flex items-baseline justify-between gap-6 border-b border-line/60 py-3">
+                <dt className="text-silver">email</dt>
+                <dd className="text-right text-ink">{identity.email}</dd>
+              </div>
+              <div className="flex items-start justify-between gap-6 border-b border-line/60 py-3">
+                <dt className="pt-1 text-silver">focus</dt>
+                <dd className="flex max-w-[16rem] flex-wrap justify-end gap-1.5">
                   {focusAreas.map((area) => (
                     <span
                       key={area}
-                      className="rounded-full border border-base-border bg-base-surface px-3 py-1 font-mono text-xs text-muted"
+                      className="rounded border border-line px-2 py-1 text-[11px] text-silver"
                     >
                       {area}
                     </span>
                   ))}
                 </dd>
-              </li>
-            </ul>
-          </aside>
+              </div>
+            </dl>
+          </div>
+
+          <div className="space-y-5 text-sm leading-relaxed text-silver sm:text-base">
+            {about.paragraphs.map((paragraph, i) => (
+              <p key={i}>{paragraph}</p>
+            ))}
+          </div>
         </div>
       </div>
     </section>
