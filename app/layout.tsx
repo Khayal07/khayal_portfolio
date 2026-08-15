@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { portfolio } from "@/data/portfolio";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -14,9 +15,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Khayal | AI Engineer",
-  description:
-    "Building intelligent systems, scalable backend architectures, and production-ready AI applications.",
+  title: `${portfolio.identity.name} | ${portfolio.identity.title}`,
+  description: portfolio.identity.tagline,
 };
 
 export default function RootLayout({
