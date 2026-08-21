@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import { portfolio } from "@/data/portfolio";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { LanguageProvider } from "@/components/LanguageProvider";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -37,6 +38,7 @@ export default function RootLayout({
         <ThemeProvider>
           <LanguageProvider>{children}</LanguageProvider>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
