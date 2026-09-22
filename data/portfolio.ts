@@ -118,6 +118,16 @@ export const portfolio = {
       verifyUrl: "https://www.hackerrank.com/certificates/16eb12093ef7",
       skills: ["SQL", "Relational Databases", "Data Querying"],
     },
+    {
+      id: "hackerrank-python-basic",
+      title: "Python (Basic) Certificate",
+      issuer: "HackerRank",
+      issueDate: "Sep 2026",
+      credentialId: "A46B41B62517",
+      pdfUrl: "/certificates/hackerrank-python-basic.pdf",
+      verifyUrl: "https://www.hackerrank.com/certificates/a46b41b62517",
+      skills: ["Python", "Control Flow", "OOP", "Data Structures"]
+    },
   ] satisfies Certification[],
   projects: [
     {
