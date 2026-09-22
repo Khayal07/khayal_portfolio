@@ -40,6 +40,16 @@ export const azContent: Record<string, string> = {
   "2024 — 2025 (8-Month Intensive)": "2024 — 2025 (8 aylıq intensiv)",
   "View Diploma": "Diploma Bax",
 
+  certifications: "Sertifikatlar",
+  Certifications: "Sertifikatlar",
+  "Industry-recognized credentials validating core technical skills.":
+    "Əsas texniki bacarıqları təsdiqləyən beynəlxalq tanınmış etimadnamələr.",
+  "Credential ID": "Etimadnamə ID",
+  "View PDF": "PDF-ə Bax",
+  Verify: "Doğrula",
+  "SQL (Basic) Certificate": "SQL (Əsas) Sertifikatı",
+  "Sep 2026": "Sen 2026",
+
   projects: "Layihələr",
   "Selected works": "Seçilmiş işlər",
   "Systems built with intent, from retrieval pipelines to production services.":

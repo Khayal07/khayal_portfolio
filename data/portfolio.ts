@@ -36,6 +36,17 @@ export interface Education {
   credentialUrl?: string;
 }
 
+export interface Certification {
+  id: string;
+  title: string;
+  issuer: string;
+  issueDate: string;
+  credentialId: string;
+  pdfUrl: string;
+  verifyUrl: string;
+  skills: string[];
+}
+
 export const portfolio = {
   identity: {
     name: "Khayal Ismayilzada",
@@ -49,10 +60,12 @@ export const portfolio = {
   socials: {
     github: "https://github.com/Khayal07",
     linkedin: "https://www.linkedin.com/in/khayal-ismayilzada-891882338",
+    hackerrank: "https://www.hackerrank.com/profile/khayal_izada39",
   },
   nav: [
     { label: "About", href: "#about" },
     { label: "Education", href: "#education" },
+    { label: "Certifications", href: "#certifications" },
     { label: "Projects", href: "#projects" },
     { label: "Capabilities", href: "#capabilities" },
     { label: "Contact", href: "#contact" },
@@ -94,6 +107,18 @@ export const portfolio = {
       credentialUrl: "/diploma.pdf",
     },
   ] satisfies Education[],
+  certifications: [
+    {
+      id: "hackerrank-sql-basic",
+      title: "SQL (Basic) Certificate",
+      issuer: "HackerRank",
+      issueDate: "Sep 2026",
+      credentialId: "16EB12093EF7",
+      pdfUrl: "/certificates/hackerrank-sql-basic.pdf",
+      verifyUrl: "https://www.hackerrank.com/certificates/16eb12093ef7",
+      skills: ["SQL", "Relational Databases", "Data Querying"],
+    },
+  ] satisfies Certification[],
   projects: [
     {
       title: "MemoryLens — AI Semantic Search Engine",
