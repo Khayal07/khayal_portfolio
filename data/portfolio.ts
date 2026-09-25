@@ -108,15 +108,15 @@ export const portfolio = {
     },
   ] satisfies Education[],
   certifications: [
-    {
-      id: "hackerrank-sql-basic",
-      title: "SQL (Basic) Certificate",
+     {
+      id: "hackerrank-sql-intermediate",
+      title: "SQL (Intermediate) Certificate",
       issuer: "HackerRank",
       issueDate: "Sep 2026",
-      credentialId: "16EB12093EF7",
-      pdfUrl: "/certificates/hackerrank-sql-basic.pdf",
-      verifyUrl: "https://www.hackerrank.com/certificates/16eb12093ef7",
-      skills: ["SQL", "Relational Databases", "Data Querying"],
+      credentialId: "D0E4C7DFFC4B",
+      pdfUrl: "/certificates/hackerrank-sql-intermediate.pdf",
+      verifyUrl: "https://www.hackerrank.com/certificates/d0e4c7dffc4b",
+      skills: ["Advanced SQL", "Complex Joins", "Subqueries", "Window Functions"]
     },
     {
       id: "hackerrank-python-basic",
@@ -127,6 +127,16 @@ export const portfolio = {
       pdfUrl: "/certificates/hackerrank-python-basic.pdf",
       verifyUrl: "https://www.hackerrank.com/certificates/a46b41b62517",
       skills: ["Python", "Control Flow", "OOP", "Data Structures"]
+    },
+    {
+      id: "hackerrank-sql-basic",
+      title: "SQL (Basic) Certificate",
+      issuer: "HackerRank",
+      issueDate: "Sep 2026",
+      credentialId: "16EB12093EF7",
+      pdfUrl: "/certificates/hackerrank-sql-basic.pdf",
+      verifyUrl: "https://www.hackerrank.com/certificates/16eb12093ef7",
+      skills: ["SQL", "Relational Databases", "Data Querying"],
     },
   ] satisfies Certification[],
   projects: [
