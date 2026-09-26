@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Download, Menu, X } from "lucide-react";
 import { portfolio } from "@/data/portfolio";
+import Logo from "@/components/Logo";
 import { GithubIcon, LinkedinIcon } from "@/components/icons/BrandIcons";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { LanguageToggle } from "@/components/LanguageToggle";
@@ -33,8 +34,9 @@ export function Navbar() {
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <a
           href="#home"
-          className="focus-ring rounded font-mono text-sm font-semibold tracking-tight text-ink"
+          className="focus-ring flex items-center gap-2 rounded font-mono text-sm font-semibold tracking-tight text-ink"
         >
+          <Logo className="h-7 w-7 shrink-0" />
           {identity.name.split(" ")[0]}
           <span className="text-silver">.</span>
         </a>
