@@ -108,6 +108,16 @@ export const portfolio = {
     },
   ] satisfies Education[],
   certifications: [
+      {
+      id: "hackerrank-sql-advanced",
+      title: "SQL (Advanced) Certificate",
+      issuer: "HackerRank",
+      issueDate: "Sep 2026",
+      credentialId: "CD7A6E1E202A",
+      pdfUrl: "/certificates/hackerrank-sql-advanced.pdf",
+      verifyUrl: "https://www.hackerrank.com/certificates/cd7a6e1e202a",
+      skills: ["Query Optimization", "Data Modeling", "Database Indexing", "Window Functions", "SQL Performance Tuning"]
+    },
      {
       id: "hackerrank-sql-intermediate",
       title: "SQL (Intermediate) Certificate",
