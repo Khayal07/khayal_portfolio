@@ -139,6 +139,16 @@ export const portfolio = {
       skills: ["Python", "Control Flow", "OOP", "Data Structures"]
     },
     {
+      id: "hackerrank-problem-solving-basic",
+      title: "Problem Solving (Basic) Certificate",
+      issuer: "HackerRank",
+      issueDate: "Oct 2026",
+      credentialId: "DBA8AB788B5B",
+      pdfUrl: "/certificates/hackerrank-problem-solving-basic.pdf",
+      verifyUrl: "https://www.hackerrank.com/certificates/dba8ab788b5b",
+      skills: ["Data Structures", "Algorithms", "Problem Solving", "Time Complexity"]
+    },
+    {
       id: "hackerrank-sql-basic",
       title: "SQL (Basic) Certificate",
       issuer: "HackerRank",
