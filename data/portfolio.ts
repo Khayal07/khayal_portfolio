@@ -40,10 +40,18 @@ export interface Certification {
   id: string;
   title: string;
   issuer: string;
+  platform: "HackerRank" | "Kaggle";
   issueDate: string;
   credentialId: string;
-  pdfUrl: string;
+  /** PDF path, or undefined when the credential is an image */
+  pdfUrl?: string;
+  /** Image path for image-based certificates (e.g. Kaggle PNG) */
+  imageUrl?: string;
   verifyUrl: string;
+  /** Optional third-party profile / repo link shown as an extra button */
+  profileUrl?: string;
+  /** Label for the profileUrl button */
+  profileLabel?: string;
   skills: string[];
 }
 
@@ -108,50 +116,68 @@ export const portfolio = {
     },
   ] satisfies Education[],
   certifications: [
-      {
+    {
+      id: "kaggle-python",
+      title: "Python Certificate",
+      issuer: "Kaggle",
+      platform: "Kaggle",
+      issueDate: "Oct 2026",
+      credentialId: "Kaggle Verified",
+      imageUrl: "/certificates/kaggle-python.png",
+      verifyUrl: "https://www.kaggle.com/learn/certification/xyalsmaylzad/python",
+      profileUrl: "https://github.com/Khayal07/kaggle-ai-roadmap",
+      profileLabel: "GitHub",
+      skills: ["Python", "Data Structures", "Control Flow", "Functions", "External Libraries"],
+    },
+    {
       id: "hackerrank-sql-advanced",
       title: "SQL (Advanced) Certificate",
       issuer: "HackerRank",
+      platform: "HackerRank",
       issueDate: "Sep 2026",
       credentialId: "CD7A6E1E202A",
       pdfUrl: "/certificates/hackerrank-sql-advanced.pdf",
       verifyUrl: "https://www.hackerrank.com/certificates/cd7a6e1e202a",
-      skills: ["Query Optimization", "Data Modeling", "Database Indexing", "Window Functions", "SQL Performance Tuning"]
+      skills: ["Query Optimization", "Data Modeling", "Database Indexing", "Window Functions", "SQL Performance Tuning"],
     },
-     {
+    {
       id: "hackerrank-sql-intermediate",
       title: "SQL (Intermediate) Certificate",
       issuer: "HackerRank",
+      platform: "HackerRank",
       issueDate: "Sep 2026",
       credentialId: "D0E4C7DFFC4B",
       pdfUrl: "/certificates/hackerrank-sql-intermediate.pdf",
       verifyUrl: "https://www.hackerrank.com/certificates/d0e4c7dffc4b",
-      skills: ["Advanced SQL", "Complex Joins", "Subqueries", "Window Functions"]
+      skills: ["Advanced SQL", "Complex Joins", "Subqueries", "Window Functions"],
     },
     {
       id: "hackerrank-python-basic",
       title: "Python (Basic) Certificate",
       issuer: "HackerRank",
+      platform: "HackerRank",
       issueDate: "Sep 2026",
       credentialId: "A46B41B62517",
       pdfUrl: "/certificates/hackerrank-python-basic.pdf",
       verifyUrl: "https://www.hackerrank.com/certificates/a46b41b62517",
-      skills: ["Python", "Control Flow", "OOP", "Data Structures"]
+      skills: ["Python", "Control Flow", "OOP", "Data Structures"],
     },
     {
       id: "hackerrank-problem-solving-basic",
       title: "Problem Solving (Basic) Certificate",
       issuer: "HackerRank",
+      platform: "HackerRank",
       issueDate: "Oct 2026",
       credentialId: "DBA8AB788B5B",
       pdfUrl: "/certificates/hackerrank-problem-solving-basic.pdf",
       verifyUrl: "https://www.hackerrank.com/certificates/dba8ab788b5b",
-      skills: ["Data Structures", "Algorithms", "Problem Solving", "Time Complexity"]
+      skills: ["Data Structures", "Algorithms", "Problem Solving", "Time Complexity"],
     },
     {
       id: "hackerrank-sql-basic",
       title: "SQL (Basic) Certificate",
       issuer: "HackerRank",
+      platform: "HackerRank",
       issueDate: "Sep 2026",
       credentialId: "16EB12093EF7",
       pdfUrl: "/certificates/hackerrank-sql-basic.pdf",
