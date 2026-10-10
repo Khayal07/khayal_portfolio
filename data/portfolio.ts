@@ -117,6 +117,19 @@ export const portfolio = {
   ] satisfies Education[],
   certifications: [
     {
+      id: "kaggle-intro-to-machine-learning",
+      title: "Intro to Machine Learning",
+      issuer: "Kaggle",
+      issueDate: "Oct 2026",
+      platform: "Kaggle",
+      credentialId: "Kaggle Verified",
+      imageUrl: "/certificates/kaggle-intro-to-machine-learning.png",
+      verifyUrl: "https://www.kaggle.com/learn/certification/xyalsmaylzad/intro-to-machine-learning",
+      profileUrl: "https://github.com/Khayal07/kaggle-ai-roadmap/tree/main/03_machine_learning",
+      profileLabel: "GitHub",
+      skills: ["Machine Learning", "Decision Trees", "Random Forests", "Model Validation", "Scikit-Learn"]
+    },
+    {
       id: "kaggle-python",
       title: "Python Certificate",
       issuer: "Kaggle",
@@ -125,7 +138,7 @@ export const portfolio = {
       credentialId: "Kaggle Verified",
       imageUrl: "/certificates/kaggle-python.png",
       verifyUrl: "https://www.kaggle.com/learn/certification/xyalsmaylzad/python",
-      profileUrl: "https://github.com/Khayal07/kaggle-ai-roadmap",
+      profileUrl: "https://github.com/Khayal07/kaggle-ai-roadmap/tree/main/01_python",
       profileLabel: "GitHub",
       skills: ["Python", "Data Structures", "Control Flow", "Functions", "External Libraries"],
     },
