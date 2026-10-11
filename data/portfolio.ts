@@ -154,6 +154,19 @@ export const portfolio = {
       skills: ["Query Optimization", "Data Modeling", "Database Indexing", "Window Functions", "SQL Performance Tuning"],
     },
     {
+      id: "kaggle-pandas",
+      title: "Pandas Certificate",
+      issuer: "Kaggle",
+      issueDate: "Oct 2026",
+      platform: "Kaggle",
+      credentialId: "Kaggle Verified",
+      imageUrl: "/certificates/kaggle-pandas.png",
+      verifyUrl: "https://www.kaggle.com/learn/certification/xyalsmaylzad/pandas",
+      profileUrl: "https://github.com/Khayal07/kaggle-ai-roadmap/tree/main/02_pandas",
+      profileLabel: "GitHub",
+      skills: ["Pandas", "Data Manipulation", "Data Cleaning", "Data Analysis", "Python"]
+    },
+    {
       id: "hackerrank-sql-intermediate",
       title: "SQL (Intermediate) Certificate",
       issuer: "HackerRank",
