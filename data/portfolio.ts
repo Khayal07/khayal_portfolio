@@ -117,6 +117,19 @@ export const portfolio = {
   ] satisfies Education[],
   certifications: [
     {
+      id: "kaggle-intermediate-machine-learning",
+      title: "Intermediate Machine Learning",
+      issuer: "Kaggle",
+      issueDate: "Oct 2026",
+      platform: "Kaggle",
+      credentialId: "Kaggle Verified",
+      imageUrl: "/certificates/kaggle-intermediate-machine-learning.png",
+      verifyUrl: "https://www.kaggle.com/learn/certification/xyalsmaylzad/intermediate-machine-learning",
+      profileUrl: "https://github.com/Khayal07/kaggle-ai-roadmap/tree/main/04_intermediate_machine_learning",
+      profileLabel: "GitHub",
+      skills: ["XGBoost", "Pipelines", "Cross-Validation", "Data Leakage", "Categorical Variables", "Missing Values"]
+    },
+    {
       id: "kaggle-intro-to-machine-learning",
       title: "Intro to Machine Learning",
       issuer: "Kaggle",
