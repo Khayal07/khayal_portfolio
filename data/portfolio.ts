@@ -114,6 +114,13 @@ export const portfolio = {
         "Specialized hands-on program covering LLM architectures, RAG systems, multi-agent workflows, and end-to-end AI application engineering.",
       credentialUrl: "/diploma.pdf",
     },
+    {
+      institution: "AI Academy",
+      degree: "Artificial Intelligence Program",
+      period: "2026 – Present",
+      description:
+        "Intensive 10-month program structured into 4 months of foundational mathematics for AI (linear algebra, calculus, probability & statistics) followed by 6 months of advanced engineering programming and AI systems development.",
+    },
   ] satisfies Education[],
   certifications: [
     {
