@@ -220,6 +220,19 @@ export const portfolio = {
       skills: ["Data Structures", "Algorithms", "Problem Solving", "Time Complexity"],
     },
     {
+      id: "kaggle-data-visualization",
+      title: "Data Visualization",
+      issuer: "Kaggle",
+      issueDate: "Nov 2026",
+      platform: "Kaggle",
+      credentialId: "Kaggle Verified",
+      imageUrl: "/certificates/kaggle-data-visualization.png",
+      verifyUrl: "https://www.kaggle.com/learn/certification/xyalsmaylzad/data-visualization",
+      profileUrl: "https://github.com/Khayal07/kaggle-ai-roadmap/tree/main/05_data_visualization",
+      profileLabel: "GitHub",
+      skills: ["Data Visualization", "Seaborn", "Matplotlib", "Data Analysis", "Python"]
+    },
+    {
       id: "hackerrank-sql-basic",
       title: "SQL (Basic) Certificate",
       issuer: "HackerRank",
