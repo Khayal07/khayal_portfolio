@@ -268,7 +268,7 @@ export const portfolio = {
     {
       title: "Multi-Output Insurance Purchase Prediction Pipeline",
       description:
-        "An end-to-end multi-output Machine Learning pipeline predicting customer policy choices across 7 distinct components simultaneously, featuring behavioral feature engineering and gradient boosting achieving 92.53% accuracy.",
+        "An end-to-end multi-output Machine Learning pipeline predicting customer policy choices across 7 distinct components simultaneously, featuring behavioral feature engineering and gradient boosting, reaching 92.53% average accuracy across the 7 components.",
       tech: ["Python", "Machine Learning", "Feature Engineering", "Ensemble Learning", "Jupyter"],
       github: "https://github.com/Khayal07/Insurance-Product-Purchase-Prediction-ML",
       category: "Machine Learning & Analytics",

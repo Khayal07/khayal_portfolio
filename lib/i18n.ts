@@ -85,8 +85,8 @@ export const azContent: Record<string, string> = {
     "Beynəlxalq təhsil xərclərini hesablayan, təqaüd imkanlarını aşkarlayan və təsdiqlənmiş, istinadlı mənbələrə əsaslanan fərdiləşdirilmiş təhsil büdcələri quran AI multi-agent platformasıdır.",
   "Multi-Output Insurance Purchase Prediction Pipeline":
     "Multi-Çıxışlı Sığorta Alış Proqnozu Pipeline-ı",
-  "An end-to-end multi-output Machine Learning pipeline predicting customer policy choices across 7 distinct components simultaneously, featuring behavioral feature engineering and gradient boosting achieving 92.53% accuracy.":
-    "Müştərilərin siyasət seçimlərini 7 fərqli komponent üzrə eyni anda proqnozlaşdıran, davranış xüsusiyyət mühəndisliyi və gradient boosting ilə 92.53% dəqiqliyə çatan end-to-end Machine Learning pipeline-ıdır.",
+  "An end-to-end multi-output Machine Learning pipeline predicting customer policy choices across 7 distinct components simultaneously, featuring behavioral feature engineering and gradient boosting, reaching 92.53% average accuracy across the 7 components.":
+    "Müştərilərin siyasət seçimlərini 7 fərqli komponent üzrə eyni anda proqnozlaşdıran, davranış xüsusiyyət mühəndisliyi və gradient boosting ilə 7 komponent üzrə orta hesabla 92.53% dəqiqliyə çatan end-to-end Machine Learning pipeline-ıdır.",
   "Smart Git CLI": "Smart Git CLI",
   "A lightweight developer CLI tool that inspects local git diffs to automatically generate structured Conventional Commit messages and release notes using LLM automation.":
     "Lokal git diff-lərini analiz edib LLM avtomatlaşdırması ilə strukturlaşdırılmış Conventional Commit mesajları və buraxılış qeydləri avtomatik yaradan yüngül developer CLI alətidir.",
