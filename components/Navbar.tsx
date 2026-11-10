@@ -41,7 +41,7 @@ export function Navbar() {
           <span className="-ml-1.5 text-accent">.</span>
         </a>
 
-        <ul className="hidden items-center gap-7 md:flex">
+        <ul className="hidden items-center gap-6 lg:flex xl:gap-7">
           {nav.map((item) => (
             <li key={item.href}>
               <a
@@ -54,7 +54,7 @@ export function Navbar() {
           ))}
         </ul>
 
-        <div className="hidden items-center gap-2 md:flex">
+        <div className="hidden items-center gap-2 lg:flex">
           <a
             href={identity.cvUrl}
             target="_blank"
@@ -62,7 +62,7 @@ export function Navbar() {
             className="focus-ring inline-flex items-center gap-1.5 rounded-md border border-line px-3 py-2 text-sm text-silver transition-colors duration-200 hover:border-accent hover:text-ink"
           >
             <Download size={14} />
-            <span className="hidden lg:inline">{t("Download CV")}</span>
+            <span className="hidden xl:inline">{t("Download CV")}</span>
           </a>
           <LanguageToggle />
           <ThemeToggle />
@@ -86,18 +86,22 @@ export function Navbar() {
           </a>
         </div>
 
-        <button
-          type="button"
-          aria-label="Toggle menu"
-          onClick={() => setOpen((v) => !v)}
-          className="focus-ring rounded-md border border-line p-2 text-silver transition-colors duration-200 hover:text-ink md:hidden"
-        >
-          {open ? <X size={16} /> : <Menu size={16} />}
-        </button>
+        <div className="flex items-center gap-2 lg:hidden">
+          <LanguageToggle />
+          <button
+            type="button"
+            aria-label="Toggle menu"
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+            className="focus-ring rounded-md border border-line p-2 text-silver transition-colors duration-200 hover:text-ink"
+          >
+            {open ? <X size={16} /> : <Menu size={16} />}
+          </button>
+        </div>
       </nav>
 
       {open && (
-        <div className="border-t border-line bg-background/95 backdrop-blur-md md:hidden">
+        <div className="border-t border-line bg-background/95 backdrop-blur-md lg:hidden">
           <ul className="flex flex-col gap-1 px-6 py-4">
             {nav.map((item) => (
               <li key={item.href}>
@@ -123,7 +127,6 @@ export function Navbar() {
               </a>
             </li>
             <li className="mt-2 flex flex-wrap items-center gap-2 px-3">
-              <LanguageToggle />
               <ThemeToggle />
               <a
                 href={socials.github}
