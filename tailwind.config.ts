@@ -47,8 +47,13 @@ const config: Config = {
       },
       animation: {
         "fade-in": "fade-in 0.6s ease-out both",
+        blink: "blink 1.1s linear infinite",
       },
       keyframes: {
+        blink: {
+          "0%, 49%": { opacity: "1" },
+          "50%, 100%": { opacity: "0" },
+        },
         "fade-in": {
           "0%": { opacity: "0", transform: "translateY(8px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },

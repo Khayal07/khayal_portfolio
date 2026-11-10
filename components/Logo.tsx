@@ -1,36 +1,51 @@
-export default function Logo({ className = "w-7 h-7" }: { className?: string }) {
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
+const REST = "hayal";
+
+export default function Logo({ href = "#home" }: { href?: string }) {
+  const [shown, setShown] = useState(0);
+  const target = useRef(0);
+  const timer = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  useEffect(() => () => {
+    if (timer.current) clearInterval(timer.current);
+  }, []);
+
+  const run = (to: number) => {
+    target.current = to;
+    if (timer.current) clearInterval(timer.current);
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setShown(to);
+      return;
+    }
+
+    timer.current = setInterval(() => {
+      setShown((n) => {
+        const next = n + Math.sign(target.current - n);
+        if (next === target.current && timer.current) clearInterval(timer.current);
+        return next;
+      });
+    }, to > 0 ? 70 : 45);
+  };
+
   return (
-    <svg
-      viewBox="0 0 100 100"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
+    <a
+      href={href}
+      onMouseEnter={() => run(REST.length)}
+      onMouseLeave={() => run(0)}
+      onFocus={() => run(REST.length)}
+      onBlur={() => run(0)}
+      className="focus-ring inline-flex w-[7.2ch] items-baseline rounded font-mono text-lg font-medium tracking-tight text-ink"
     >
-      <rect width="100" height="100" rx="20" style={{ fill: "rgb(var(--ink))" }} />
-      <path
-        d="M20 0V100M40 0V100M60 0V100M80 0V100"
-        style={{ stroke: "rgb(var(--silver) / 0.35)" }}
-        strokeWidth="0.5"
+      <span aria-hidden="true">k{REST.slice(0, shown)}</span>
+      <span className="sr-only">Khayal</span>
+      <span
+        aria-hidden="true"
+        className="ml-px inline-block h-[0.16em] w-[0.6em] bg-accent motion-safe:animate-blink"
       />
-      <path
-        d="M0 20H100M0 40H100M0 60H100M0 80H100"
-        style={{ stroke: "rgb(var(--silver) / 0.35)" }}
-        strokeWidth="0.5"
-      />
-      <path
-        d="M30 25V75"
-        style={{ stroke: "rgb(var(--background))" }}
-        strokeWidth="6"
-        strokeLinecap="round"
-      />
-      <path
-        d="M68 28L42 50L68 72"
-        style={{ stroke: "rgb(var(--background))" }}
-        strokeWidth="6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <circle cx="68" cy="28" r="4" style={{ fill: "rgb(var(--accent))" }} />
-    </svg>
+    </a>
   );
 }
