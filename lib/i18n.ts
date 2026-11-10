@@ -89,19 +89,19 @@ export const azContent: Record<string, string> = {
 
   "MemoryLens — AI Semantic Search Engine":
     "MemoryLens — AI Semantik Axtarış Mühərriki",
-  "An AI-powered search system designed to retrieve movies, games, books, or media from vague, partial memory fragments (e.g., 'twelve people voting in one room') using vector search and confidence scoring.":
-    "Qeyri-dəqiq, parça-parça yaddaş fraqmentlərindən (məs., 'bir otaqda on iki nəfər səs verir') vektor axtarışı və etimad skorlaması ilə filmlər, oyunlar, kitablar və ya media tapan AI axtarış sistemidir.",
+  "Finds movies, series, songs, books, games and actors from half-remembered fragments. Hybrid retrieval, cross-encoder reranking and LLM reasoning lift top-1 accuracy from 54% to 92% on a 48-query benchmark.":
+    "Yarımçıq xatırlanan fraqmentlərdən film, serial, mahnı, kitab, oyun və aktyorları tapır. Hibrid axtarış, cross-encoder reranking və LLM reasoning 48 sorğuluq benchmark-da top-1 dəqiqliyi 54%-dən 92%-ə qaldırır.",
   "Voyagent — AI Multi-Agent Travel Planner":
     "Voyagent — AI Multi-Agent Səyahət Planlayıcısı",
-  "An AI travel orchestrator powered by 4 specialized agents (Interest, Budget, Logistics, Planner) that negotiate in real-time via Server-Sent Events (SSE) to generate optimized itineraries with interactive map visualization.":
-    "Server-Sent Events (SSE) vasitəsilə real vaxtda qarşılıqlı işləyən 4 ixtisaslaşmış agent (Maraq, Büdcə, Logistika, Planlayıcı) ilə optimallaşdırılmış səyahət planları və interaktiv xəritə vizuallaşdırması hazırlayan AI orkestratorudur.",
+  "Four agents plan a trip together: Interest proposes places, Budget and Logistics object when the plan breaks the budget or the schedule, and Planner builds the timed route. The negotiation streams live over SSE onto an interactive map.":
+    "Dörd agent birlikdə səyahət planlayır: Interest yerlər təklif edir, Budget və Logistics plan büdcəni və ya cədvəli pozanda etiraz edir, Planner isə vaxtı bölünmüş marşrutu qurur. Bütün danışıqlar SSE ilə canlı olaraq interaktiv xəritəyə ötürülür.",
   "Study Cost Planner Agent": "Təhsil Xərci Planlayıcı Agent",
-  "An AI-powered multi-agent platform that estimates international education costs, discovers scholarship opportunities, and builds personalized study budgets grounded in verified, cited sources.":
-    "Beynəlxalq təhsil xərclərini hesablayan, təqaüd imkanlarını aşkarlayan və təsdiqlənmiş, istinadlı mənbələrə əsaslanan fərdiləşdirilmiş təhsil büdcələri quran AI multi-agent platformasıdır.",
+  "Nine-agent platform that plans studying abroad end to end: total real cost, scholarship eligibility, net cost after aid and an application plan. The LLM handles language, Python handles every number, and each figure cites its source.":
+    "Xaricdə təhsili başdan sona planlayan doqquz agentli platforma: real ümumi xərc, təqaüdə uyğunluq, yardımdan sonrakı xalis xərc və müraciət planı. Dil işini LLM, bütün hesablamaları Python görür və hər rəqəm öz mənbəyinə istinad edir.",
   "Multi-Output Insurance Purchase Prediction Pipeline":
     "Multi-Çıxışlı Sığorta Alış Proqnozu Pipeline-ı",
-  "An end-to-end multi-output Machine Learning pipeline predicting customer policy choices across 7 distinct components simultaneously, featuring behavioral feature engineering and gradient boosting, reaching 92.53% average accuracy across the 7 components.":
-    "Müştərilərin siyasət seçimlərini 7 fərqli komponent üzrə eyni anda proqnozlaşdıran, davranış xüsusiyyət mühəndisliyi və gradient boosting ilə 7 komponent üzrə orta hesabla 92.53% dəqiqliyə çatan end-to-end Machine Learning pipeline-ıdır.",
+  "End-to-end multi-output pipeline that predicts 7 insurance policy options at once from quote-journey logs. Benchmarked against the 92.48% last-quote baseline: tuned XGBoost reaches 92.54% and beats it on 6 of 7 options, with the biggest gain on the hardest target.":
+    "Sığorta təklif loglarından 7 polis seçimini eyni anda proqnozlaşdıran end-to-end multi-output pipeline. 92.48%-lik last-quote baseline ilə müqayisə olunub: tənzimlənmiş XGBoost 92.54%-ə çatır və 7 seçimdən 6-da baseline-ı keçir, ən böyük qazanc ən çətin hədəfdədir.",
   "Smart Git CLI": "Smart Git CLI",
   "A lightweight developer CLI tool that inspects local git diffs to automatically generate structured Conventional Commit messages and release notes using LLM automation.":
     "Lokal git diff-lərini analiz edib LLM avtomatlaşdırması ilə strukturlaşdırılmış Conventional Commit mesajları və buraxılış qeydləri avtomatik yaradan yüngül developer CLI alətidir.",

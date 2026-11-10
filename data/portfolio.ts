@@ -256,8 +256,8 @@ export const portfolio = {
     {
       title: "MemoryLens — AI Semantic Search Engine",
       description:
-        "An AI-powered search system designed to retrieve movies, games, books, or media from vague, partial memory fragments (e.g., 'twelve people voting in one room') using vector search and confidence scoring.",
-      tech: ["FastAPI", "React", "PostgreSQL", "Semantic Search", "Tailwind CSS", "Docker"],
+        "Finds movies, series, songs, books, games and actors from half-remembered fragments. Hybrid retrieval, cross-encoder reranking and LLM reasoning lift top-1 accuracy from 54% to 92% on a 48-query benchmark.",
+      tech: ["FastAPI", "React", "PostgreSQL", "pgvector", "Redis", "sentence-transformers", "Docker"],
       github: "https://github.com/Khayal07/MemoryLens",
       diagram: {
         nodes: [
@@ -284,8 +284,8 @@ export const portfolio = {
     {
       title: "Voyagent — AI Multi-Agent Travel Planner",
       description:
-        "An AI travel orchestrator powered by 4 specialized agents (Interest, Budget, Logistics, Planner) that negotiate in real-time via Server-Sent Events (SSE) to generate optimized itineraries with interactive map visualization.",
-      tech: ["FastAPI", "Multi-Agent Systems", "TypeScript", "SSE", "OpenStreetMap", "Docker"],
+        "Four agents plan a trip together: Interest proposes places, Budget and Logistics object when the plan breaks the budget or the schedule, and Planner builds the timed route. The negotiation streams live over SSE onto an interactive map.",
+      tech: ["FastAPI", "React", "PostgreSQL", "SSE", "Leaflet", "OpenStreetMap", "Docker"],
       github: "https://github.com/Khayal07/Voyagent-",
       diagram: {
         nodes: [
@@ -305,8 +305,8 @@ export const portfolio = {
     {
       title: "Study Cost Planner Agent",
       description:
-        "An AI-powered multi-agent platform that estimates international education costs, discovers scholarship opportunities, and builds personalized study budgets grounded in verified, cited sources.",
-      tech: ["FastAPI", "Next.js", "LangChain", "PostgreSQL", "pgvector", "Docker"],
+        "Nine-agent platform that plans studying abroad end to end: total real cost, scholarship eligibility, net cost after aid and an application plan. The LLM handles language, Python handles every number, and each figure cites its source.",
+      tech: ["FastAPI", "Next.js", "PostgreSQL", "pgvector", "fastembed", "Docker"],
       github: "https://github.com/Khayal07/study-cost-planner-agent",
       diagram: {
         nodes: [
@@ -329,8 +329,8 @@ export const portfolio = {
     {
       title: "Multi-Output Insurance Purchase Prediction Pipeline",
       description:
-        "An end-to-end multi-output Machine Learning pipeline predicting customer policy choices across 7 distinct components simultaneously, featuring behavioral feature engineering and gradient boosting, reaching 92.53% average accuracy across the 7 components.",
-      tech: ["Python", "Machine Learning", "Feature Engineering", "Ensemble Learning", "Jupyter"],
+        "End-to-end multi-output pipeline that predicts 7 insurance policy options at once from quote-journey logs. Benchmarked against the 92.48% last-quote baseline: tuned XGBoost reaches 92.54% and beats it on 6 of 7 options, with the biggest gain on the hardest target.",
+      tech: ["Python", "XGBoost", "CatBoost", "scikit-learn", "SHAP", "Feature Engineering"],
       github: "https://github.com/Khayal07/Insurance-Product-Purchase-Prediction-ML",
       diagram: {
         nodes: [
