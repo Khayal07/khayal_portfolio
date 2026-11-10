@@ -11,13 +11,14 @@ export const azContent: Record<string, string> = {
   "Download CV": "CV-ni Yüklə",
   "Sumqayit, Azerbaijan": "Sumqayıt, Azərbaycan",
 
-  "I am an AI Engineer focused on bridging the gap between cutting-edge LLMs and production-ready software systems. My core expertise centers around Retrieval-Augmented Generation (RAG), multi-agent workflows, vector search pipelines, and practical AI integrations.":
-    "Süni intellekt mühəndisi olaraq əsas diqqətim müasir Böyük Dil Modellərini (LLM) real proqram təminatı sistemlərinə inteqrasiya etməkdir. retrieval-augmented generation (RAG), çox-agentli iş axınları və vektor axtarış sistemləri sahəsində təcrübəyə malikəm.",
-  "I leverage modern Python frameworks, vector databases, and containerized architectures to deploy fast, reliable, and scalable intelligent solutions tailored to complex domain problems.":
-    "Mürəkkəb sahə problemlərinə uyğun sürətli, etibarlı və miqyaslanan intellektual həllər qurmaq üçün müasir Python freymvorkları, vektor verilənlər bazaları və konteyner arxitekturalarından istifadə edirəm.",
+  "I'm a Computer Engineering student at ASOIU and a graduate of the Div Academy AI Engineering program. I build AI systems end to end: retrieval pipelines, multi-agent backends, and the APIs and interfaces around them.":
+    "ADNSU-da Kompüter Mühəndisliyi tələbəsiyəm və Div Academy-nin AI Engineering proqramını bitirmişəm. AI sistemlərini başdan sona qururam: retrieval pipeline-lar, çox-agentli backend-lər, onların ətrafındakı API və interfeyslər.",
+  "Recent work includes Voyagent, where four agents plan a trip together and stream their progress over SSE; Study Cost Planner, a multi-agent cost estimator grounded in cited sources; and MemoryLens, a semantic search engine that finds media from vague descriptions. My default stack is Python, FastAPI, PostgreSQL with pgvector, and Docker.":
+    "Son işlərimdən: Voyagent — dörd agentin birlikdə səyahət planladığı və gedişatı SSE ilə canlı ötürdüyü sistem; Study Cost Planner — istinad edilmiş mənbələrə əsaslanan çox-agentli xərc hesablayıcısı; MemoryLens — qeyri-dəqiq təsvirlərdən film, kitab və oyun tapan semantik axtarış mühərriki. Əsas stack-im Python, FastAPI, PostgreSQL + pgvector və Docker-dir.",
+  "Right now I'm strengthening the math behind machine learning at AI Academy and I'm open to AI engineering roles and projects.":
+    "Hazırda AI Academy-də maşın öyrənməsinin riyazi əsaslarını gücləndirirəm və AI mühəndisliyi üzrə vakansiya və layihələrə açığam.",
   about: "Haqqımda",
-  "Work that bridges research and production.":
-    "Araşdırma ilə istehsalı birləşdirən iş.",
+  "I build AI systems end to end.": "AI sistemlərini başdan sona qururam.",
   studying: "təhsil",
   focus: "yönüm",
   stack: "stack",
@@ -38,7 +39,7 @@ export const azContent: Record<string, string> = {
     "AI Mühəndisliyi üzrə Peşəkar Diplom",
   "Specialized hands-on program covering LLM architectures, RAG systems, multi-agent workflows, and end-to-end AI application engineering.":
     "LLM arxitekturaları, RAG sistemləri, multi-agent iş axınları və tamdövrə AI tətbiq mühəndisliyini əhatə edən praktik xüsusi proqram.",
-  "2024 — 2025 (8-Month Intensive)": "2024 — 2025 (8 aylıq intensiv)",
+  "2024 — 2026 (8-Month Intensive)": "2024 — 2026 (8 aylıq intensiv)",
   "View Diploma": "Diploma Bax",
 
   certifications: "Sertifikatlar",

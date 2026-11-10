@@ -85,8 +85,9 @@ export const portfolio = {
     focus: ["RAG Pipelines", "Multi-Agent Systems", "Semantic Search", "ML Pipelines"],
     stack: ["Python", "FastAPI", "LangChain", "PostgreSQL", "pgvector", "ChromaDB", "Docker", "Next.js", "scikit-learn"],
     paragraphs: [
-      "I am an AI Engineer focused on bridging the gap between cutting-edge LLMs and production-ready software systems. My core expertise centers around Retrieval-Augmented Generation (RAG), multi-agent workflows, vector search pipelines, and practical AI integrations.",
-      "I leverage modern Python frameworks, vector databases, and containerized architectures to deploy fast, reliable, and scalable intelligent solutions tailored to complex domain problems.",
+      "I'm a Computer Engineering student at ASOIU and a graduate of the Div Academy AI Engineering program. I build AI systems end to end: retrieval pipelines, multi-agent backends, and the APIs and interfaces around them.",
+      "Recent work includes Voyagent, where four agents plan a trip together and stream their progress over SSE; Study Cost Planner, a multi-agent cost estimator grounded in cited sources; and MemoryLens, a semantic search engine that finds media from vague descriptions. My default stack is Python, FastAPI, PostgreSQL with pgvector, and Docker.",
+      "Right now I'm strengthening the math behind machine learning at AI Academy and I'm open to AI engineering roles and projects.",
     ],
   },
   education: [
@@ -100,7 +101,7 @@ export const portfolio = {
     {
       institution: "Div Academy",
       degree: "AI Engineering Professional Diploma",
-      period: "2024 — 2025 (8-Month Intensive)",
+      period: "2024 — 2026 (8-Month Intensive)",
       description:
         "Specialized hands-on program covering LLM architectures, RAG systems, multi-agent workflows, and end-to-end AI application engineering.",
       credentialUrl: "/diploma.pdf",

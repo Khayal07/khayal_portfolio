@@ -15,7 +15,7 @@ export function About() {
           <div>
             <SectionHeading
               eyebrow={t("about")}
-              title={t("Work that bridges research and production.")}
+              title={t("I build AI systems end to end.")}
             />
             <dl className="mt-10 font-mono text-xs">
               <div className="flex items-baseline justify-between gap-6 border-b border-line/60 py-3">
