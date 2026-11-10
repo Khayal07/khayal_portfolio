@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { ExternalLink, ArrowUpRight } from "lucide-react";
 import { GithubIcon } from "@/components/icons/BrandIcons";
@@ -13,18 +14,37 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project, index }: ProjectCardProps) {
   const { t } = useI18n();
+  const [shot, setShot] = useState(0);
+  const images = project.images ?? [];
 
   return (
     <article className="group relative flex flex-col bg-background p-6 transition-colors duration-200 hover:bg-card">
-      {project.image && (
+      {images.length > 0 && (
         <div className="relative -mx-6 -mt-6 mb-6 aspect-video overflow-hidden border-b border-line bg-card">
           <Image
-            src={project.image}
-            alt={`${project.title} preview`}
+            key={images[shot]}
+            src={images[shot]}
+            alt={`${project.title} screenshot ${shot + 1}`}
             fill
             sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
             className="object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]"
           />
+          {images.length > 1 && (
+            <div className="absolute inset-x-0 bottom-2 flex justify-center gap-1.5">
+              {images.map((src, i) => (
+                <button
+                  key={src}
+                  type="button"
+                  onClick={() => setShot(i)}
+                  aria-label={`${t("Show screenshot")} ${i + 1}`}
+                  aria-current={i === shot}
+                  className={`focus-ring h-1.5 rounded-full transition-all duration-200 ${
+                    i === shot ? "w-5 bg-white" : "w-1.5 bg-white/50 hover:bg-white/80"
+                  }`}
+                />
+              ))}
+            </div>
+          )}
         </div>
       )}
       <div className="flex items-center justify-between">

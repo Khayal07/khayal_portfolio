@@ -4,8 +4,8 @@ export interface Project {
   tech: string[];
   github: string;
   demo?: string;
-  /** Screenshot or diagram under public/projects/, 16:9 works best */
-  image?: string;
+  /** Screenshots under public/projects/, 16:9 works best; first one is the cover */
+  images?: string[];
   category: ProjectCategory;
 }
 
@@ -242,6 +242,11 @@ export const portfolio = {
       tech: ["FastAPI", "React", "PostgreSQL", "Semantic Search", "Tailwind CSS", "Docker"],
       github: "https://github.com/Khayal07/MemoryLens",
       demo: "https://memory-lens-teal.vercel.app",
+      images: [
+        "/projects/memorylens.jpg",
+        "/projects/memorylens-search.jpg",
+        "/projects/memorylens-categories.jpg",
+      ],
       category: "AI Tools & Applications",
     },
     {

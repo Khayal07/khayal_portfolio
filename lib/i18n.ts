@@ -70,6 +70,7 @@ export const azContent: Record<string, string> = {
   "AI Tools & Applications": "AI Alətləri & Tətbiqləri",
   "Machine Learning & Analytics": "Maşın Öyrənməsi & Analitika",
   "Live Demo": "Canlı Demo",
+  "Show screenshot": "Ekran görüntüsü",
 
   "MemoryLens — AI Semantic Search Engine":
     "MemoryLens — AI Semantik Axtarış Mühərriki",
