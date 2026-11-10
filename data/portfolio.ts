@@ -70,7 +70,7 @@ export const portfolio = {
     { label: "Contact", href: "#contact" },
   ] satisfies NavItem[],
   hero: {
-    status: "Available for AI Engineering projects & roles",
+    status: "Open to AI engineering roles & projects",
     primaryCta: {
       label: "View Projects",
       href: "#projects",

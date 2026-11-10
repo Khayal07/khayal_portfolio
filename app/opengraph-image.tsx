@@ -6,7 +6,7 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default function OpengraphImage() {
-  const { identity } = portfolio;
+  const { identity, hero } = portfolio;
 
   return new ImageResponse(
     (
@@ -25,7 +25,7 @@ export default function OpengraphImage() {
       >
         <div style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 24, color: "#a1a1aa" }}>
           <div style={{ width: 10, height: 10, borderRadius: 999, background: "#22c55e" }} />
-          Open to AI engineering roles
+          {hero.status}
         </div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>

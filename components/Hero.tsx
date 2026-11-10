@@ -10,9 +10,12 @@ export function Hero() {
 
   return (
     <section id="home" className="section-anchor">
-      <div className="mx-auto flex min-h-screen max-w-6xl flex-col items-center justify-center px-6 pb-16 pt-28 text-center">
-        <span className="animate-fade-in inline-flex items-center gap-2 font-mono text-xs text-silver">
-          <span className="h-1.5 w-1.5 rounded-full bg-status" aria-hidden="true" />
+      <div className="mx-auto flex min-h-[78svh] max-w-6xl flex-col items-center justify-center px-6 pb-12 pt-28 text-center">
+        <span className="animate-fade-in max-w-full text-balance font-mono text-xs text-silver">
+          <span
+            className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-status align-middle"
+            aria-hidden="true"
+          />
           {t(hero.status)}
         </span>
 
@@ -62,7 +65,7 @@ export function Hero() {
         </div>
 
         <div
-          className="animate-fade-in mt-16 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 font-mono text-xs text-silver"
+          className="animate-fade-in mt-12 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 font-mono text-xs text-silver"
           style={{ animationDelay: "320ms" }}
         >
           <span className="inline-flex items-center gap-1.5">

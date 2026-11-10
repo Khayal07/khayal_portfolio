@@ -4,8 +4,8 @@ export const azContent: Record<string, string> = {
   "AI Engineer": "AI Mühəndis",
   "Building intelligent systems, multi-agent architectures, and production-ready RAG pipelines.":
     "İntellektual sistemlər, çox-agentli arxitekturalar və istehsalat səviyyəli RAG həlləri hazırlayıram.",
-  "Available for AI Engineering projects & roles":
-    "AI Mühəndisliyi layihələri və vakansiyaları üçün açıqdır",
+  "Open to AI engineering roles & projects":
+    "AI mühəndisliyi rolları və layihələrə açığam",
   "View Projects": "Layihələrə Bax",
   "Get In Touch": "Əlaqə Saxla",
   "Download CV": "CV-ni Yüklə",
