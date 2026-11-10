@@ -15,6 +15,9 @@ const config: Config = {
         line: "rgb(var(--line) / <alpha-value>)",
         ink: "rgb(var(--ink) / <alpha-value>)",
         silver: "rgb(var(--silver) / <alpha-value>)",
+        accent: "rgb(var(--accent) / <alpha-value>)",
+        "accent-soft": "rgb(var(--accent-soft) / <alpha-value>)",
+        grid: "rgb(var(--grid) / <alpha-value>)",
         status: "rgb(var(--status) / <alpha-value>)",
         danger: "rgb(var(--danger) / <alpha-value>)",
       },
@@ -25,6 +28,13 @@ const config: Config = {
           "ui-sans-serif",
           "system-ui",
           "-apple-system",
+          "sans-serif",
+        ],
+        display: [
+          '"Bricolage Grotesque"',
+          "var(--font-geist-sans)",
+          "ui-sans-serif",
+          "system-ui",
           "sans-serif",
         ],
         mono: [
