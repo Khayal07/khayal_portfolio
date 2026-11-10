@@ -18,12 +18,13 @@ export const azContent: Record<string, string> = {
   about: "Haqqımda",
   "Work that bridges research and production.":
     "Araşdırma ilə istehsalı birləşdirən iş.",
-  location: "ünvan",
-  email: "e-poçt",
+  studying: "təhsil",
   focus: "yönüm",
+  stack: "stack",
+  "B.Sc. Computer Engineering, ASOIU": "Kompüter Mühəndisliyi (B.Sc.), ADNSU",
+  "Semantic Search": "Semantik Axtarış",
+  "ML Pipelines": "ML Pipeline-lar",
   "Multi-Agent Systems": "Multi-Agent Sistemlər",
-  "API Development": "API İnkişafı",
-  "Data Pipelines": "Data Pipeline-lar",
 
   education: "Təhsil",
   Education: "Təhsil",
@@ -92,23 +93,6 @@ export const azContent: Record<string, string> = {
   "A lightweight, Raycast-inspired Windows search overlay triggered by a global hotkey (Alt + Space). Supports multi-provider AI streaming across OpenAI, Gemini, and local Ollama models.":
     "Qlobal isti düymə (Alt + Space) ilə çağırılan, Raycast-dən ilhamlanan yüngül Windows axtarış overlay-i. OpenAI, Gemini və lokal Ollama modellərində multi-provayder AI streaming-i dəstəkləyir.",
 
-  capabilities: "Bacarıqlar və İmkanlar",
-  "AI capabilities": "Bacarıqlar və İmkanlar",
-  "The core competencies I engineer around when building intelligent products.":
-    "İntellektual məhsullar qurarkən üzərində mühəndislik etdiyim əsas kompetensiyalar.",
-  "RAG & Vector Search": "RAG & Vektor Axtarış",
-  "Designing context-aware retrieval architectures with advanced chunking, metadata filtering, and embedding optimization.":
-    "Qabaqcıl chunking, metadata filtrləmə və embedding optimizasiyası ilə kontekstə həssas retrieval arxitekturaları dizayn edirəm.",
-  "Multi-Agent Workflows": "Multi-Agent İş Axınları",
-  "Building autonomous agent graphs with custom tool usage, shared state management, and reliable decision routing.":
-    "Fərdi alət istifadəsi, paylaşılan state idarəetməsi və etibarlı qərar marşrutlaşdırması ilə muxtar agent qrafikləri qururam.",
-  "AI API Microservices": "AI API Mikroservisləri",
-  "Packaging LLM workflows into containerized REST APIs with streaming endpoints and async task execution.":
-    "LLM iş axınlarını streaming endpointlər və asinxron tapşırıq icrası ilə konteynerli REST API-lərə çevirirəm.",
-  "Desktop AI Tools": "Desktop AI Alətləri",
-  "Developing responsive local desktop utilities and CLI agents with GUI integrations for seamless workflow automation.":
-    "Fasiləsiz iş axını avtomatlaşdırması üçün GUI inteqrasiyalı, cavabverən lokal desktop alətləri və CLI agentlər hazırlayıram.",
-
   contact: "Əlaqə",
   "Let's build something together.": "Gəlin birlikdə bir şey quraq.",
   "Have a project in mind, or want to talk about RAG, multi-agent systems, or backend architecture? Reach out.":
@@ -126,7 +110,6 @@ export const azContent: Record<string, string> = {
 
   About: "Haqqımda",
   Projects: "Layihələr",
-  Capabilities: "İmkanlar",
   Contact: "Əlaqə",
 };
 

@@ -12,20 +12,9 @@ export type ProjectCategory =
   | "AI Tools & Applications" 
   | "Machine Learning & Analytics";
 
-export interface SkillGroup {
-  category: string;
-  skills: string[];
-}
-
 export interface NavItem {
   label: string;
   href: string;
-}
-
-export interface Capability {
-  title: string;
-  description: string;
-  tech: string[];
 }
 
 export interface Education {
@@ -75,7 +64,6 @@ export const portfolio = {
     { label: "Projects", href: "#projects" },
     { label: "Education", href: "#education" },
     { label: "Certifications", href: "#certifications" },
-    { label: "Capabilities", href: "#capabilities" },
     { label: "Contact", href: "#contact" },
   ] satisfies NavItem[],
   hero: {
@@ -93,6 +81,9 @@ export const portfolio = {
     formAccessKey: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "",
   },
   about: {
+    studying: "B.Sc. Computer Engineering, ASOIU",
+    focus: ["RAG Pipelines", "Multi-Agent Systems", "Semantic Search", "ML Pipelines"],
+    stack: ["Python", "FastAPI", "LangChain", "PostgreSQL", "pgvector", "ChromaDB", "Docker", "Next.js", "scikit-learn"],
     paragraphs: [
       "I am an AI Engineer focused on bridging the gap between cutting-edge LLMs and production-ready software systems. My core expertise centers around Retrieval-Augmented Generation (RAG), multi-agent workflows, vector search pipelines, and practical AI integrations.",
       "I leverage modern Python frameworks, vector databases, and containerized architectures to deploy fast, reliable, and scalable intelligent solutions tailored to complex domain problems.",
@@ -290,53 +281,6 @@ export const portfolio = {
       category: "AI Tools & Applications",
     },
   ] satisfies Project[],
-  skills: [
-    {
-      category: "AI & Machine Learning",
-      skills: [
-        "LangChain",
-        "RAG Pipelines",
-        "Multi-Agent Systems",
-        "ChromaDB",
-        "Vector Embeddings",
-        "LLM APIs / Ollama",
-      ],
-    },
-    {
-      category: "Backend & Systems",
-      skills: ["Python", "FastAPI", "PostgreSQL", "Docker", "SQL", "C/C++"],
-    },
-    {
-      category: "Tools & Frameworks",
-      skills: ["PySide6", "Streamlit", "Git", "Linux", "Next.js", "Tailwind CSS"],
-    },
-  ] satisfies SkillGroup[],
-  capabilities: [
-    {
-      title: "RAG & Vector Search",
-      description:
-        "Designing context-aware retrieval architectures with advanced chunking, metadata filtering, and embedding optimization.",
-      tech: ["LangChain", "ChromaDB", "Vector Embeddings"],
-    },
-    {
-      title: "Multi-Agent Workflows",
-      description:
-        "Building autonomous agent graphs with custom tool usage, shared state management, and reliable decision routing.",
-      tech: ["Agentic State", "Tool Calling", "Orchestration"],
-    },
-    {
-      title: "AI API Microservices",
-      description:
-        "Packaging LLM workflows into containerized REST APIs with streaming endpoints and async task execution.",
-      tech: ["FastAPI", "Docker", "PostgreSQL"],
-    },
-    {
-      title: "Desktop AI Tools",
-      description:
-        "Developing responsive local desktop utilities and CLI agents with GUI integrations for seamless workflow automation.",
-      tech: ["PySide6", "Typer", "Python"],
-    },
-  ] satisfies Capability[],
 };
 
 export const projectCategories: ProjectCategory[] = [
