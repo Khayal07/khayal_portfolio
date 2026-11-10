@@ -34,11 +34,11 @@ export function Navbar() {
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <a
           href="#home"
-          className="focus-ring flex items-center gap-2 rounded font-mono text-sm font-semibold tracking-tight text-ink"
+          className="focus-ring flex items-center gap-2 rounded font-display text-base font-medium tracking-tight text-ink"
         >
           <Logo className="h-7 w-7 shrink-0" />
           {identity.name.split(" ")[0]}
-          <span className="text-silver">.</span>
+          <span className="-ml-1.5 text-accent">.</span>
         </a>
 
         <ul className="hidden items-center gap-7 md:flex">

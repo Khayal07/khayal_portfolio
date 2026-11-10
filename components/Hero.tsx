@@ -20,11 +20,11 @@ export function Hero() {
         </span>
 
         <h1
-          className="animate-fade-in mt-8 text-5xl font-medium tracking-tight text-ink sm:text-6xl lg:text-7xl"
+          className="animate-fade-in mt-8 text-5xl font-medium tracking-[-0.035em] text-ink sm:text-6xl lg:text-7xl"
           style={{ animationDelay: "80ms" }}
         >
           {identity.name}
-          <span className="mt-2 block font-mono text-xl font-normal tracking-normal text-silver sm:text-2xl">
+          <span className="mt-3 block font-display text-xl font-normal tracking-tight text-accent sm:text-2xl">
             {t(identity.title)}
           </span>
         </h1>
@@ -42,7 +42,7 @@ export function Hero() {
         >
           <a
             href={hero.primaryCta.href}
-            className="focus-ring inline-flex items-center gap-2 rounded-md bg-ink px-5 py-2.5 text-sm font-medium text-background transition-all duration-200 hover:bg-white"
+            className="focus-ring inline-flex items-center gap-2 rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-card transition-colors duration-200 hover:bg-accent/90"
           >
             {t(hero.primaryCta.label)}
             <ArrowUpRight size={15} />

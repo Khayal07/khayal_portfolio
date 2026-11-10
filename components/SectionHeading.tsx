@@ -16,7 +16,7 @@ export function SectionHeading({
       className={align === "center" ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}
     >
       <p className="eyebrow">{`// ${eyebrow}`}</p>
-      <h2 className="mt-3 text-2xl font-medium tracking-tight text-ink sm:text-3xl">
+      <h2 className="mt-3 text-3xl font-medium text-ink sm:text-4xl">
         {title}
       </h2>
       {subtitle && (
