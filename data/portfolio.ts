@@ -72,9 +72,9 @@ export const portfolio = {
   },
   nav: [
     { label: "About", href: "#about" },
+    { label: "Projects", href: "#projects" },
     { label: "Education", href: "#education" },
     { label: "Certifications", href: "#certifications" },
-    { label: "Projects", href: "#projects" },
     { label: "Capabilities", href: "#capabilities" },
     { label: "Contact", href: "#contact" },
   ] satisfies NavItem[],
