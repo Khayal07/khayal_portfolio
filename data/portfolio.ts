@@ -104,7 +104,7 @@ export const portfolio = {
     {
       institution: "Div Academy",
       degree: "AI Engineering Professional Diploma",
-      period: "2024 — 2026 (8-Month Intensive)",
+      period: "Oct 2025 — 2026 (8-Month Intensive)",
       description:
         "Specialized hands-on program covering LLM architectures, RAG systems, multi-agent workflows, and end-to-end AI application engineering.",
       credentialUrl: "/diploma.pdf",

@@ -39,7 +39,7 @@ export const azContent: Record<string, string> = {
     "AI Mühəndisliyi üzrə Peşəkar Diplom",
   "Specialized hands-on program covering LLM architectures, RAG systems, multi-agent workflows, and end-to-end AI application engineering.":
     "LLM arxitekturaları, RAG sistemləri, multi-agent iş axınları və tamdövrə AI tətbiq mühəndisliyini əhatə edən praktik xüsusi proqram.",
-  "2024 — 2026 (8-Month Intensive)": "2024 — 2026 (8 aylıq intensiv)",
+  "Oct 2025 — 2026 (8-Month Intensive)": "Okt 2025 — 2026 (8 aylıq intensiv)",
   "View Diploma": "Diploma Bax",
 
   certifications: "Sertifikatlar",
