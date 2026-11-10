@@ -46,7 +46,7 @@ export function Projects() {
               onClick={() => setActive(filter)}
               className={`rounded-full border px-4 py-1.5 font-mono text-xs transition-colors duration-200 ${
                 active === filter
-                  ? "border-ink/70 bg-card text-ink"
+                  ? "border-accent bg-card text-ink"
                   : "border-line text-silver hover:border-ink/50 hover:text-ink"
               }`}
             >
@@ -55,7 +55,7 @@ export function Projects() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 gap-px border border-line bg-line md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {filtered.map((project, i) => (
             <ProjectCard key={project.title} project={project} index={i} />
           ))}

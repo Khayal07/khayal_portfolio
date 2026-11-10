@@ -84,6 +84,8 @@ export const azContent: Record<string, string> = {
   "Machine Learning & Analytics": "Maşın Öyrənməsi & Analitika",
   "Live Demo": "Canlı Demo",
   "Show screenshot": "Ekran görüntüsü",
+  architecture: "arxitektura",
+  screenshots: "şəkillər",
 
   "MemoryLens — AI Semantic Search Engine":
     "MemoryLens — AI Semantik Axtarış Mühərriki",

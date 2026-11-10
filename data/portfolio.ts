@@ -1,11 +1,29 @@
+export interface DiagramNode {
+  id: string;
+  label: string;
+  /** Position in a 300x160 canvas */
+  x: number;
+  y: number;
+  w?: number;
+  accent?: boolean;
+}
+
+export interface Diagram {
+  nodes: DiagramNode[];
+  edges: [string, string][];
+  caption?: string;
+}
+
 export interface Project {
   title: string;
   description: string;
   tech: string[];
   github: string;
   demo?: string;
-  /** Screenshots under public/projects/, 16:9 works best; first one is the cover */
+  /** Screenshots under public/projects/, 16:10 works best */
   images?: string[];
+  /** Architecture sketch shown on the card's first tab */
+  diagram?: Diagram;
   category: ProjectCategory;
 }
 
