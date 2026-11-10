@@ -20,11 +20,11 @@ export function Education() {
           )}
         />
 
-        <div className="mt-14 grid grid-cols-1 gap-px border border-line bg-line lg:grid-cols-2">
+        <div className="mt-12 grid grid-cols-1 gap-4 lg:grid-cols-2">
           {education.map((entry, i) => (
             <article
               key={entry.institution}
-              className="group flex flex-col bg-background p-7 transition-colors duration-200 hover:bg-card"
+              className="group flex flex-col rounded-xl border border-line bg-card p-6 transition-colors duration-200 hover:border-ink/30"
             >
               <div className="flex items-center justify-between gap-4">
                 <span className="font-mono text-xs text-silver">
@@ -36,7 +36,7 @@ export function Education() {
               </div>
 
               <div className="mt-6 flex items-start gap-3">
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-line text-silver transition-colors duration-200 group-hover:border-ink/50 group-hover:text-ink">
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-line text-silver transition-colors duration-200 group-hover:border-accent group-hover:text-accent">
                   <GraduationCap size={15} />
                 </span>
                 <div>
@@ -58,7 +58,7 @@ export function Education() {
                   href={entry.credentialUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="focus-ring mt-6 inline-flex w-fit items-center gap-1.5 rounded-md border border-line px-3 py-1.5 font-mono text-xs text-silver transition-colors duration-200 hover:border-ink/60 hover:text-ink"
+                  className="focus-ring mt-6 inline-flex w-fit items-center gap-1.5 rounded-md border border-line px-3 py-1.5 font-mono text-xs text-silver transition-colors duration-200 hover:border-accent hover:text-ink"
                 >
                   {t("View Diploma")}
                   <ArrowUpRight size={13} />

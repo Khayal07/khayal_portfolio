@@ -55,7 +55,7 @@ export function Certifications() {
               className={[
                 "focus-ring rounded-md border px-3.5 py-1.5 font-mono text-xs transition-colors duration-200",
                 active === tab
-                  ? "border-ink/60 bg-card text-ink"
+                  ? "border-accent bg-card text-ink"
                   : "border-line text-silver hover:border-ink/40 hover:text-ink",
               ].join(" ")}
             >
@@ -65,7 +65,7 @@ export function Certifications() {
         </div>
 
         {/* Certificate grid */}
-        <div className="mt-8 grid grid-cols-1 gap-px border border-line bg-line sm:grid-cols-2">
+        <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
           {visible.map((cert, i) => {
             const isImageCert = Boolean(cert.imageUrl && !cert.pdfUrl);
             const viewUrl = cert.pdfUrl ?? cert.imageUrl ?? "#";
@@ -73,7 +73,7 @@ export function Certifications() {
             return (
               <article
                 key={cert.id}
-                className="group flex flex-col bg-background p-6 transition-colors duration-200 hover:bg-card"
+                className="group flex flex-col rounded-xl border border-line bg-card p-6 transition-colors duration-200 hover:border-ink/30"
               >
                 <div className="flex items-center justify-between gap-4">
                   <span className="font-mono text-xs text-silver">
@@ -85,7 +85,7 @@ export function Certifications() {
                 </div>
 
                 <div className="mt-6 flex items-start gap-3">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-line text-silver transition-colors duration-200 group-hover:border-ink/50 group-hover:text-ink">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-line text-silver transition-colors duration-200 group-hover:border-accent group-hover:text-accent">
                     <Award size={15} />
                   </span>
                   <div>
@@ -107,7 +107,7 @@ export function Certifications() {
                 <ul className="mt-5 flex flex-wrap gap-1.5">
                   {cert.skills.map((skill) => (
                     <li key={skill}>
-                      <span className="inline-block rounded border border-line px-2 py-1 font-mono text-[11px] text-silver transition-colors duration-200 group-hover:border-ink/50 group-hover:text-ink">
+                      <span className="inline-block rounded border border-line px-2 py-1 font-mono text-[11px] text-silver">
                         {skill}
                       </span>
                     </li>
@@ -120,7 +120,7 @@ export function Certifications() {
                     href={viewUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="focus-ring inline-flex items-center gap-1.5 rounded-md border border-line px-3 py-1.5 font-mono text-xs text-silver transition-colors duration-200 hover:border-ink/60 hover:text-ink"
+                    className="focus-ring inline-flex items-center gap-1.5 rounded-md border border-line px-3 py-1.5 font-mono text-xs text-silver transition-colors duration-200 hover:border-accent hover:text-ink"
                   >
                     {isImageCert ? <ImageIcon size={13} /> : <FileText size={13} />}
                     {t(isImageCert ? "View Certificate" : "View PDF")}
@@ -132,7 +132,7 @@ export function Certifications() {
                     href={cert.verifyUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="focus-ring inline-flex items-center gap-1.5 rounded-md border border-line px-3 py-1.5 font-mono text-xs text-silver transition-colors duration-200 hover:border-ink/60 hover:text-ink"
+                    className="focus-ring inline-flex items-center gap-1.5 rounded-md border border-line px-3 py-1.5 font-mono text-xs text-silver transition-colors duration-200 hover:border-accent hover:text-ink"
                   >
                     <ExternalLink size={13} />
                     {t("Verify")}
@@ -145,7 +145,7 @@ export function Certifications() {
                       href={cert.profileUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="focus-ring inline-flex items-center gap-1.5 rounded-md border border-line px-3 py-1.5 font-mono text-xs text-silver transition-colors duration-200 hover:border-ink/60 hover:text-ink"
+                      className="focus-ring inline-flex items-center gap-1.5 rounded-md border border-line px-3 py-1.5 font-mono text-xs text-silver transition-colors duration-200 hover:border-accent hover:text-ink"
                     >
                       {cert.profileLabel}
                       <ArrowUpRight size={13} />
@@ -158,7 +158,7 @@ export function Certifications() {
                       href={socials.hackerrank}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="focus-ring inline-flex items-center gap-1.5 rounded-md border border-line px-3 py-1.5 font-mono text-xs text-silver transition-colors duration-200 hover:border-ink/60 hover:text-ink"
+                      className="focus-ring inline-flex items-center gap-1.5 rounded-md border border-line px-3 py-1.5 font-mono text-xs text-silver transition-colors duration-200 hover:border-accent hover:text-ink"
                     >
                       HackerRank
                       <ArrowUpRight size={13} />
@@ -175,7 +175,7 @@ export function Certifications() {
             type="button"
             onClick={() => setExpanded((v) => !v)}
             aria-expanded={expanded}
-            className="focus-ring mt-6 inline-flex items-center gap-1.5 rounded-md border border-line px-3.5 py-1.5 font-mono text-xs text-silver transition-colors duration-200 hover:border-ink/60 hover:text-ink"
+            className="focus-ring mt-6 inline-flex items-center gap-1.5 rounded-md border border-line px-3.5 py-1.5 font-mono text-xs text-silver transition-colors duration-200 hover:border-accent hover:text-ink"
           >
             {expanded ? t("Show less") : `${t("Show all")} (+${hiddenCount})`}
             <ChevronDown

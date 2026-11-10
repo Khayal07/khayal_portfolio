@@ -49,7 +49,7 @@ export function Hero() {
           </a>
           <a
             href={hero.secondaryCta.href}
-            className="focus-ring inline-flex items-center gap-2 rounded-md border border-line px-5 py-2.5 text-sm font-medium text-ink transition-colors duration-200 hover:border-ink/60"
+            className="focus-ring inline-flex items-center gap-2 rounded-md border border-line px-5 py-2.5 text-sm font-medium text-ink transition-colors duration-200 hover:border-accent"
           >
             {t(hero.secondaryCta.label)}
           </a>
@@ -57,7 +57,7 @@ export function Hero() {
             href={identity.cvUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="focus-ring inline-flex items-center gap-2 rounded-md border border-line px-5 py-2.5 text-sm font-medium text-ink transition-colors duration-200 hover:border-ink/60"
+            className="focus-ring inline-flex items-center gap-2 rounded-md border border-line px-5 py-2.5 text-sm font-medium text-ink transition-colors duration-200 hover:border-accent"
           >
             <Download size={15} />
             {t("Download CV")}

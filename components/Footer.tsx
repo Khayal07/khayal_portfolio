@@ -21,7 +21,7 @@ export function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
-            className="rounded-md border border-line p-2 text-silver transition-colors duration-200 hover:border-ink/60 hover:text-ink"
+            className="rounded-md border border-line p-2 text-silver transition-colors duration-200 hover:border-accent hover:text-ink"
           >
             <GithubIcon size={14} />
           </a>
@@ -30,7 +30,7 @@ export function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="rounded-md border border-line p-2 text-silver transition-colors duration-200 hover:border-ink/60 hover:text-ink"
+            className="rounded-md border border-line p-2 text-silver transition-colors duration-200 hover:border-accent hover:text-ink"
           >
             <LinkedinIcon size={14} />
           </a>

@@ -59,7 +59,7 @@ export function Navbar() {
             href={identity.cvUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="focus-ring inline-flex items-center gap-1.5 rounded-md border border-line px-3 py-2 text-sm text-silver transition-colors duration-200 hover:border-ink/60 hover:text-ink"
+            className="focus-ring inline-flex items-center gap-1.5 rounded-md border border-line px-3 py-2 text-sm text-silver transition-colors duration-200 hover:border-accent hover:text-ink"
           >
             <Download size={14} />
             <span className="hidden lg:inline">{t("Download CV")}</span>
@@ -71,7 +71,7 @@ export function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
-            className="focus-ring rounded-md border border-line p-2 text-silver transition-colors duration-200 hover:border-ink/60 hover:text-ink"
+            className="focus-ring rounded-md border border-line p-2 text-silver transition-colors duration-200 hover:border-accent hover:text-ink"
           >
             <GithubIcon size={15} />
           </a>
@@ -80,7 +80,7 @@ export function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="focus-ring rounded-md border border-line p-2 text-silver transition-colors duration-200 hover:border-ink/60 hover:text-ink"
+            className="focus-ring rounded-md border border-line p-2 text-silver transition-colors duration-200 hover:border-accent hover:text-ink"
           >
             <LinkedinIcon size={15} />
           </a>
@@ -116,7 +116,7 @@ export function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
-                className="focus-ring inline-flex items-center gap-2 rounded-md border border-line px-3 py-2 text-sm text-silver transition-colors duration-200 hover:border-ink/60 hover:text-ink"
+                className="focus-ring inline-flex items-center gap-2 rounded-md border border-line px-3 py-2 text-sm text-silver transition-colors duration-200 hover:border-accent hover:text-ink"
               >
                 <Download size={14} />
                 {t("Download CV")}

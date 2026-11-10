@@ -18,7 +18,7 @@ type Status = "idle" | "submitting" | "success" | "error";
 const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
 
 const inputClass =
-  "focus-ring w-full rounded-md border border-line bg-card px-3.5 py-2.5 text-sm text-ink placeholder:text-silver/50 transition-colors duration-200 focus:border-ink/60";
+  "focus-ring w-full rounded-md border border-line bg-card px-3.5 py-2.5 text-sm text-ink placeholder:text-silver/50 transition-colors duration-200 focus:border-accent";
 
 export function Contact() {
   const { identity, socials, contact } = portfolio;
@@ -150,7 +150,7 @@ export function Contact() {
             <button
               type="submit"
               disabled={status === "submitting"}
-              className="focus-ring inline-flex w-full items-center justify-center gap-2 rounded-md bg-ink px-6 py-3 text-sm font-medium text-background transition-all duration-200 hover:bg-white disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+              className="focus-ring inline-flex w-full items-center justify-center gap-2 rounded-md bg-accent px-6 py-3 text-sm font-medium text-card transition-colors duration-200 hover:bg-accent/90 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
             >
               {status === "submitting" ? (
                 <>
@@ -192,7 +192,7 @@ export function Contact() {
               href={socials.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="focus-ring inline-flex items-center gap-2 rounded-md border border-line px-4 py-2 text-sm text-silver transition-colors duration-200 hover:border-ink/60 hover:text-ink"
+              className="focus-ring inline-flex items-center gap-2 rounded-md border border-line px-4 py-2 text-sm text-silver transition-colors duration-200 hover:border-accent hover:text-ink"
             >
               <GithubIcon size={14} />
               GitHub
@@ -201,7 +201,7 @@ export function Contact() {
               href={socials.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="focus-ring inline-flex items-center gap-2 rounded-md border border-line px-4 py-2 text-sm text-silver transition-colors duration-200 hover:border-ink/60 hover:text-ink"
+              className="focus-ring inline-flex items-center gap-2 rounded-md border border-line px-4 py-2 text-sm text-silver transition-colors duration-200 hover:border-accent hover:text-ink"
             >
               <LinkedinIcon size={14} />
               LinkedIn

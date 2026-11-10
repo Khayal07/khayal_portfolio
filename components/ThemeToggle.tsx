@@ -14,7 +14,7 @@ export function ThemeToggle() {
       onClick={toggleTheme}
       aria-label={label}
       title={label}
-      className="focus-ring rounded-md border border-line p-2 text-silver transition-colors duration-200 hover:border-ink/60 hover:text-ink"
+      className="focus-ring rounded-md border border-line p-2 text-silver transition-colors duration-200 hover:border-accent hover:text-ink"
     >
       {theme === "dark" ? <Sun size={15} /> : <Moon size={15} />}
     </button>
