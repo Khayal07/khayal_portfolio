@@ -19,9 +19,26 @@ const geistMono = localFont({
 
 const themeInit = `(function(){try{var t=localStorage.getItem("theme");if(t==="light"){document.documentElement.classList.add("light");}}catch(e){}})();`;
 
+const siteTitle = `${portfolio.identity.name} | ${portfolio.identity.title}`;
+
 export const metadata: Metadata = {
-  title: `${portfolio.identity.name} | ${portfolio.identity.title}`,
+  metadataBase: new URL(portfolio.identity.siteUrl),
+  title: siteTitle,
   description: portfolio.identity.tagline,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: portfolio.identity.name,
+    title: siteTitle,
+    description: portfolio.identity.tagline,
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: portfolio.identity.tagline,
+  },
 };
 
 export default function RootLayout({
