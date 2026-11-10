@@ -9,7 +9,10 @@ export const contentType = "image/png";
 
 export default async function OpengraphImage() {
   const { identity, hero } = portfolio;
-  const display = await readFile(join(process.cwd(), "app/fonts/BricolageGrotesque-500.woff"));
+  const [display, mono] = await Promise.all([
+    readFile(join(process.cwd(), "app/fonts/BricolageGrotesque-500.woff")),
+    readFile(join(process.cwd(), "app/fonts/GeistMono-500.woff")),
+  ]);
 
   return new ImageResponse(
     (
@@ -26,9 +29,15 @@ export default async function OpengraphImage() {
           fontFamily: "sans-serif",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 24, color: "#6B6157" }}>
-          <div style={{ width: 10, height: 10, borderRadius: 999, background: "#3E9B5B" }} />
-          {hero.status}
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <div style={{ display: "flex", alignItems: "flex-end", fontFamily: "Mono", fontSize: 40, color: "#1F1A15" }}>
+            khayal
+            <div style={{ width: 24, height: 6, marginLeft: 2, marginBottom: 9, background: "#B4532A" }} />
+          </div>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 22, color: "#6B6157" }}>
+            <div style={{ width: 10, height: 10, borderRadius: 999, background: "#3E9B5B" }} />
+            {hero.status}
+          </div>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>
@@ -54,6 +63,9 @@ export default async function OpengraphImage() {
         </div>
       </div>
     ),
-    { ...size, fonts: [{ name: "Bricolage", data: display, weight: 500, style: "normal" }] }
+    { ...size, fonts: [
+        { name: "Bricolage", data: display, weight: 500, style: "normal" },
+        { name: "Mono", data: mono, weight: 500, style: "normal" },
+      ], }
   );
 }
