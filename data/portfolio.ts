@@ -42,7 +42,7 @@ export interface Certification {
   issuer: string;
   platform: "HackerRank" | "Kaggle";
   issueDate: string;
-  credentialId: string;
+  credentialId?: string;
   /** PDF path, or undefined when the credential is an image */
   pdfUrl?: string;
   /** Image path for image-based certificates (e.g. Kaggle PNG) */
@@ -129,7 +129,6 @@ export const portfolio = {
       issuer: "Kaggle",
       issueDate: "Oct 2026",
       platform: "Kaggle",
-      credentialId: "Kaggle Verified",
       imageUrl: "/certificates/kaggle-intermediate-machine-learning.png",
       verifyUrl: "https://www.kaggle.com/learn/certification/xyalsmaylzad/intermediate-machine-learning",
       profileUrl: "https://github.com/Khayal07/kaggle-ai-roadmap/tree/main/04_intermediate_machine_learning",
@@ -142,7 +141,6 @@ export const portfolio = {
       issuer: "Kaggle",
       issueDate: "Oct 2026",
       platform: "Kaggle",
-      credentialId: "Kaggle Verified",
       imageUrl: "/certificates/kaggle-intro-to-machine-learning.png",
       verifyUrl: "https://www.kaggle.com/learn/certification/xyalsmaylzad/intro-to-machine-learning",
       profileUrl: "https://github.com/Khayal07/kaggle-ai-roadmap/tree/main/03_machine_learning",
@@ -155,7 +153,6 @@ export const portfolio = {
       issuer: "Kaggle",
       platform: "Kaggle",
       issueDate: "Oct 2026",
-      credentialId: "Kaggle Verified",
       imageUrl: "/certificates/kaggle-python.png",
       verifyUrl: "https://www.kaggle.com/learn/certification/xyalsmaylzad/python",
       profileUrl: "https://github.com/Khayal07/kaggle-ai-roadmap/tree/main/01_python",
@@ -179,7 +176,6 @@ export const portfolio = {
       issuer: "Kaggle",
       issueDate: "Oct 2026",
       platform: "Kaggle",
-      credentialId: "Kaggle Verified",
       imageUrl: "/certificates/kaggle-pandas.png",
       verifyUrl: "https://www.kaggle.com/learn/certification/xyalsmaylzad/pandas",
       profileUrl: "https://github.com/Khayal07/kaggle-ai-roadmap/tree/main/02_pandas",
@@ -225,7 +221,6 @@ export const portfolio = {
       issuer: "Kaggle",
       issueDate: "Nov 2026",
       platform: "Kaggle",
-      credentialId: "Kaggle Verified",
       imageUrl: "/certificates/kaggle-data-visualization.png",
       verifyUrl: "https://www.kaggle.com/learn/certification/xyalsmaylzad/data-visualization",
       profileUrl: "https://github.com/Khayal07/kaggle-ai-roadmap/tree/main/05_data_visualization",

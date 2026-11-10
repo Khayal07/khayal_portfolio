@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowUpRight, Award, ExternalLink, FileText, Image as ImageIcon } from "lucide-react";
+import { ArrowUpRight, Award, ChevronDown, ExternalLink, FileText, Image as ImageIcon } from "lucide-react";
 import { portfolio } from "@/data/portfolio";
 import { SectionHeading } from "@/components/SectionHeading";
 import { useI18n } from "@/components/LanguageProvider";
@@ -10,15 +10,28 @@ type Platform = "All" | "Kaggle" | "HackerRank";
 
 const TABS: Platform[] = ["All", "Kaggle", "HackerRank"];
 
+const INITIAL_COUNT = 4;
+
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+function dateValue(issueDate: string) {
+  const [month, year] = issueDate.split(" ");
+  return Number(year) * 12 + MONTHS.indexOf(month);
+}
+
 export function Certifications() {
   const { certifications, socials } = portfolio;
   const { t } = useI18n();
   const [active, setActive] = useState<Platform>("All");
+  const [expanded, setExpanded] = useState(false);
 
-  const visible =
+  const filtered = (
     active === "All"
-      ? certifications
-      : certifications.filter((c) => c.platform === active);
+      ? [...certifications]
+      : certifications.filter((c) => c.platform === active)
+  ).sort((a, b) => dateValue(b.issueDate) - dateValue(a.issueDate));
+  const visible = expanded ? filtered : filtered.slice(0, INITIAL_COUNT);
+  const hiddenCount = filtered.length - visible.length;
 
   return (
     <section id="certifications" className="section-anchor border-t border-line/70">
@@ -60,7 +73,7 @@ export function Certifications() {
             return (
               <article
                 key={cert.id}
-                className="group flex flex-col bg-background p-7 transition-colors duration-200 hover:bg-card"
+                className="group flex flex-col bg-background p-6 transition-colors duration-200 hover:bg-card"
               >
                 <div className="flex items-center justify-between gap-4">
                   <span className="font-mono text-xs text-silver">
@@ -85,9 +98,11 @@ export function Certifications() {
                   </div>
                 </div>
 
-                <p className="mt-4 font-mono text-xs text-silver">
-                  {t("Credential ID")}: {cert.credentialId}
-                </p>
+                {cert.credentialId && (
+                  <p className="mt-4 font-mono text-xs text-silver">
+                    {t("Credential ID")}: {cert.credentialId}
+                  </p>
+                )}
 
                 <ul className="mt-5 flex flex-wrap gap-1.5">
                   {cert.skills.map((skill) => (
@@ -154,6 +169,21 @@ export function Certifications() {
             );
           })}
         </div>
+
+        {filtered.length > INITIAL_COUNT && (
+          <button
+            type="button"
+            onClick={() => setExpanded((v) => !v)}
+            aria-expanded={expanded}
+            className="focus-ring mt-6 inline-flex items-center gap-1.5 rounded-md border border-line px-3.5 py-1.5 font-mono text-xs text-silver transition-colors duration-200 hover:border-ink/60 hover:text-ink"
+          >
+            {expanded ? t("Show less") : `${t("Show all")} (+${hiddenCount})`}
+            <ChevronDown
+              size={13}
+              className={`transition-transform duration-200 ${expanded ? "rotate-180" : ""}`}
+            />
+          </button>
+        )}
       </div>
     </section>
   );
