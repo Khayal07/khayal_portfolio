@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { ExternalLink, ArrowUpRight } from "lucide-react";
 import { GithubIcon } from "@/components/icons/BrandIcons";
 import type { Project } from "@/data/portfolio";
@@ -15,6 +16,17 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 
   return (
     <article className="group relative flex flex-col bg-background p-6 transition-colors duration-200 hover:bg-card">
+      {project.image && (
+        <div className="relative -mx-6 -mt-6 mb-6 aspect-video overflow-hidden border-b border-line bg-card">
+          <Image
+            src={project.image}
+            alt={`${project.title} preview`}
+            fill
+            sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+            className="object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]"
+          />
+        </div>
+      )}
       <div className="flex items-center justify-between">
         <span className="font-mono text-xs text-silver">
           {t(project.category)}

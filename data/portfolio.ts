@@ -4,6 +4,8 @@ export interface Project {
   tech: string[];
   github: string;
   demo?: string;
+  /** Screenshot or diagram under public/projects/, 16:9 works best */
+  image?: string;
   category: ProjectCategory;
 }
 
