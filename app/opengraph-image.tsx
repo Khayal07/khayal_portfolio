@@ -1,3 +1,5 @@
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { ImageResponse } from "next/og";
 import { portfolio } from "@/data/portfolio";
 
@@ -5,8 +7,9 @@ export const alt = `${portfolio.identity.name} — ${portfolio.identity.title}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function OpengraphImage() {
+export default async function OpengraphImage() {
   const { identity, hero } = portfolio;
+  const display = await readFile(join(process.cwd(), "app/fonts/BricolageGrotesque-500.woff"));
 
   return new ImageResponse(
     (
@@ -18,20 +21,20 @@ export default function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "72px 80px",
-          background: "#0c0d10",
-          color: "#f4f4f5",
+          background: "#F3EDE2",
+          color: "#1F1A15",
           fontFamily: "sans-serif",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 24, color: "#a1a1aa" }}>
-          <div style={{ width: 10, height: 10, borderRadius: 999, background: "#22c55e" }} />
+        <div style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 24, color: "#6B6157" }}>
+          <div style={{ width: 10, height: 10, borderRadius: 999, background: "#3E9B5B" }} />
           {hero.status}
         </div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ fontSize: 88, fontWeight: 600, letterSpacing: -2 }}>{identity.name}</div>
-          <div style={{ marginTop: 12, fontSize: 40, color: "#a1a1aa" }}>{identity.title}</div>
-          <div style={{ marginTop: 32, fontSize: 28, color: "#a1a1aa", maxWidth: 900, lineHeight: 1.4 }}>
+          <div style={{ fontSize: 96, fontFamily: "Bricolage", letterSpacing: -3 }}>{identity.name}</div>
+          <div style={{ marginTop: 8, fontSize: 44, fontFamily: "Bricolage", color: "#B4532A" }}>{identity.title}</div>
+          <div style={{ marginTop: 28, fontSize: 28, color: "#6B6157", maxWidth: 900, lineHeight: 1.4 }}>
             {identity.tagline}
           </div>
         </div>
@@ -40,10 +43,10 @@ export default function OpengraphImage() {
           style={{
             display: "flex",
             justifyContent: "space-between",
-            borderTop: "1px solid #27272a",
+            borderTop: "1px solid #E2D8C6",
             paddingTop: 28,
             fontSize: 22,
-            color: "#a1a1aa",
+            color: "#6B6157",
           }}
         >
           <span>khayaliszade.vercel.app</span>
@@ -51,6 +54,6 @@ export default function OpengraphImage() {
         </div>
       </div>
     ),
-    size
+    { ...size, fonts: [{ name: "Bricolage", data: display, weight: 500, style: "normal" }] }
   );
 }
