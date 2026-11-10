@@ -1,7 +1,7 @@
 export interface DiagramNode {
   id: string;
   label: string;
-  /** Position in a 300x160 canvas */
+  /** Top-left corner in a 320x200 canvas; width defaults to the label length */
   x: number;
   y: number;
   w?: number;
@@ -259,6 +259,18 @@ export const portfolio = {
         "An AI-powered search system designed to retrieve movies, games, books, or media from vague, partial memory fragments (e.g., 'twelve people voting in one room') using vector search and confidence scoring.",
       tech: ["FastAPI", "React", "PostgreSQL", "Semantic Search", "Tailwind CSS", "Docker"],
       github: "https://github.com/Khayal07/MemoryLens",
+      diagram: {
+        nodes: [
+          { id: "q", label: "fragment", x: 6, y: 50 },
+          { id: "e", label: "embedding", x: 74, y: 50 },
+          { id: "v", label: "vector search", x: 148, y: 50, accent: true },
+          { id: "db", label: "PostgreSQL", x: 243, y: 50 },
+          { id: "c", label: "confidence", x: 156, y: 120 },
+          { id: "m", label: "match", x: 82, y: 120 },
+        ],
+        edges: [["q", "e"], ["e", "v"], ["v", "db"], ["v", "c"], ["c", "m"]],
+        caption: "vague memory → real title",
+      },
       demo: "https://memory-lens-teal.vercel.app",
       images: [
         "/projects/memorylens.jpg",
@@ -273,6 +285,18 @@ export const portfolio = {
         "An AI travel orchestrator powered by 4 specialized agents (Interest, Budget, Logistics, Planner) that negotiate in real-time via Server-Sent Events (SSE) to generate optimized itineraries with interactive map visualization.",
       tech: ["FastAPI", "Multi-Agent Systems", "TypeScript", "SSE", "OpenStreetMap", "Docker"],
       github: "https://github.com/Khayal07/Voyagent-",
+      diagram: {
+        nodes: [
+          { id: "u", label: "user", x: 8, y: 89 },
+          { id: "o", label: "orchestrator", x: 56, y: 89, accent: true },
+          { id: "i", label: "interest", x: 156, y: 20, w: 64 },
+          { id: "b", label: "budget", x: 156, y: 62, w: 64 },
+          { id: "l", label: "logistics", x: 156, y: 104, w: 64 },
+          { id: "p", label: "planner", x: 156, y: 146, w: 64 },
+          { id: "s", label: "SSE → map", x: 246, y: 89 },
+        ],
+        edges: [["u", "o"], ["o", "i"], ["o", "b"], ["o", "l"], ["o", "p"], ["i", "s"], ["b", "s"], ["l", "s"], ["p", "s"]],
+      },
       category: "AI & Agentic Systems",
     },
     {
@@ -281,6 +305,19 @@ export const portfolio = {
         "An AI-powered multi-agent platform that estimates international education costs, discovers scholarship opportunities, and builds personalized study budgets grounded in verified, cited sources.",
       tech: ["FastAPI", "Next.js", "LangChain", "PostgreSQL", "pgvector", "Docker"],
       github: "https://github.com/Khayal07/study-cost-planner-agent",
+      diagram: {
+        nodes: [
+          { id: "u", label: "profile", x: 6, y: 70 },
+          { id: "o", label: "orchestrator", x: 70, y: 70, accent: true },
+          { id: "c", label: "costs", x: 166, y: 24, w: 82 },
+          { id: "s", label: "scholarships", x: 166, y: 70, w: 82 },
+          { id: "b", label: "budget", x: 166, y: 116, w: 82 },
+          { id: "r", label: "report", x: 264, y: 70 },
+          { id: "k", label: "pgvector", x: 81, y: 136 },
+        ],
+        edges: [["u", "o"], ["o", "c"], ["o", "s"], ["o", "b"], ["c", "r"], ["s", "r"], ["b", "r"], ["o", "k"]],
+        caption: "every figure cites its source",
+      },
       category: "AI & Agentic Systems",
     },
     {
@@ -289,6 +326,17 @@ export const portfolio = {
         "An end-to-end multi-output Machine Learning pipeline predicting customer policy choices across 7 distinct components simultaneously, featuring behavioral feature engineering and gradient boosting, reaching 92.53% average accuracy across the 7 components.",
       tech: ["Python", "Machine Learning", "Feature Engineering", "Ensemble Learning", "Jupyter"],
       github: "https://github.com/Khayal07/Insurance-Product-Purchase-Prediction-ML",
+      diagram: {
+        nodes: [
+          { id: "d", label: "raw data", x: 8, y: 44 },
+          { id: "f", label: "behavior features", x: 78, y: 44 },
+          { id: "m", label: "gradient boosting", x: 200, y: 44, accent: true },
+          { id: "o", label: "7 outputs", x: 200, y: 116, w: 106 },
+          { id: "a", label: "92.5% avg accuracy", x: 72, y: 116 },
+        ],
+        edges: [["d", "f"], ["f", "m"], ["m", "o"], ["o", "a"]],
+        caption: "one prediction per policy component",
+      },
       category: "Machine Learning & Analytics",
     },
     {
@@ -297,6 +345,17 @@ export const portfolio = {
         "A lightweight developer CLI tool that inspects local git diffs to automatically generate structured Conventional Commit messages and release notes using LLM automation.",
       tech: ["Python", "Typer", "OpenAI API", "Git", "CLI"],
       github: "https://github.com/Khayal07/Smart-Git-CLI",
+      diagram: {
+        nodes: [
+          { id: "g", label: "git diff", x: 8, y: 50 },
+          { id: "p", label: "diff parser", x: 78, y: 50 },
+          { id: "l", label: "OpenAI API", x: 166, y: 50, accent: true },
+          { id: "c", label: "commit message", x: 110, y: 124 },
+          { id: "r", label: "release notes", x: 216, y: 124 },
+        ],
+        edges: [["g", "p"], ["p", "l"], ["l", "c"], ["l", "r"]],
+        caption: "Conventional Commits from a diff",
+      },
       category: "AI Tools & Applications",
     },
     {
@@ -305,6 +364,18 @@ export const portfolio = {
         "A lightweight, Raycast-inspired Windows search overlay triggered by a global hotkey (Alt + Space). Supports multi-provider AI streaming across OpenAI, Gemini, and local Ollama models.",
       tech: ["Python", "PySide6", "Qt6", "OpenAI API", "Gemini API", "Ollama"],
       github: "https://github.com/Khayal07/omnisearch-ai",
+      diagram: {
+        nodes: [
+          { id: "h", label: "Alt + Space", x: 6, y: 89 },
+          { id: "u", label: "Qt overlay", x: 92, y: 89 },
+          { id: "r", label: "router", x: 173, y: 89, accent: true },
+          { id: "a", label: "OpenAI", x: 238, y: 34, w: 72 },
+          { id: "g", label: "Gemini", x: 238, y: 89, w: 72 },
+          { id: "o", label: "Ollama", x: 238, y: 144, w: 72 },
+        ],
+        edges: [["h", "u"], ["u", "r"], ["r", "a"], ["r", "g"], ["r", "o"]],
+        caption: "streamed answers",
+      },
       category: "AI Tools & Applications",
     },
   ] satisfies Project[],

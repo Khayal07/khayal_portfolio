@@ -31,7 +31,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
     <article className="group flex flex-col overflow-hidden rounded-xl border border-line bg-card transition-colors duration-200 hover:border-ink/30">
       {(hasDiagram || hasImages) && (
         <div className="border-b border-line">
-          {tabs.length > 1 && (
+          {tabs.length > 0 && (
             <div className="flex gap-1.5 border-b border-line px-3 py-2" role="tablist">
               {tabs.map((tab) => (
                 <button
