@@ -85,6 +85,9 @@ export const azContent: Record<string, string> = {
   "Live Demo": "Canlı Demo",
   "Show screenshot": "Ekran görüntüsü",
   architecture: "arxitektura",
+  "Enlarge diagram": "Sxemi böyüt",
+  Close: "Bağla",
+  "Swipe sideways to see the whole diagram": "Sxemin hamısını görmək üçün yana sürüşdür",
   screenshots: "şəkillər",
 
   "MemoryLens — AI Semantic Search Engine":
