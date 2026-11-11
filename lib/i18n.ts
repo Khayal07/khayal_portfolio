@@ -108,10 +108,10 @@ export const azContent: Record<string, string> = {
   "Smart Git CLI": "Smart Git CLI",
   "A lightweight developer CLI tool that inspects local git diffs to automatically generate structured Conventional Commit messages and release notes using LLM automation.":
     "Lokal git diff-lərini analiz edib LLM avtomatlaşdırması ilə strukturlaşdırılmış Conventional Commit mesajları və buraxılış qeydləri avtomatik yaradan yüngül developer CLI alətidir.",
-  "OmniSearch AI — Desktop Spotlight Overlay":
-    "OmniSearch AI — Desktop Spotlight Overlay",
-  "A lightweight, Raycast-inspired Windows search overlay triggered by a global hotkey (Alt + Space). Supports multi-provider AI streaming across OpenAI, Gemini, and local Ollama models.":
-    "Qlobal isti düymə (Alt + Space) ilə çağırılan, Raycast-dən ilhamlanan yüngül Windows axtarış overlay-i. OpenAI, Gemini və lokal Ollama modellərində multi-provayder AI streaming-i dəstəkləyir.",
+  "AI CV Screening — Explainable Match Scoring":
+    "AI CV Screening — İzahlı uyğunluq balı",
+  "Compares a CV with a job description and returns a 0–100 match score with every point explained. Personal details are removed before any model call, the LLM only extracts structured data, and plain Python computes the score. Passes 33 of 34 labeled evaluation cases.":
+    "CV-ni vakansiya təsviri ilə müqayisə edir və hər balı izah olunan 0–100 uyğunluq balı qaytarır. Model çağırışından əvvəl şəxsi məlumatlar silinir, LLM yalnız strukturlaşdırılmış data çıxarır, balı isə sadə Python hesablayır. 34 etiketlənmiş qiymətləndirmə halından 33-ünü keçir.",
 
   contact: "Əlaqə",
   "Let's build something together.": "Gəlin birlikdə bir şey quraq.",

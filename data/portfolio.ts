@@ -254,6 +254,34 @@ export const portfolio = {
   ] satisfies Certification[],
   projects: [
     {
+      title: "AI CV Screening — Explainable Match Scoring",
+      description:
+        "Compares a CV with a job description and returns a 0–100 match score with every point explained. Personal details are removed before any model call, the LLM only extracts structured data, and plain Python computes the score. Passes 33 of 34 labeled evaluation cases.",
+      tech: ["FastAPI", "Python", "OpenAI API", "Pydantic", "pypdf", "Docker"],
+      github: "https://github.com/Khayal07/ai-cv-screening",
+      demo: "https://cv-screening-lpi1.onrender.com/",
+      images: [
+        "/projects/cv-screening-result.jpg",
+        "/projects/cv-screening.jpg",
+        "/projects/cv-screening-reasons.jpg",
+        "/projects/cv-screening-eval.jpg",
+      ],
+      diagram: {
+        nodes: [
+          { id: "cv", label: "CV · PDF", x: 6, y: 26 },
+          { id: "ck", label: "doc check", x: 78, y: 26 },
+          { id: "an", label: "anonymize", x: 156, y: 26 },
+          { id: "ex", label: "LLM extract", x: 236, y: 26, accent: true },
+          { id: "jd", label: "job text", x: 150, y: 96 },
+          { id: "sc", label: "Python scoring", x: 210, y: 150 },
+          { id: "out", label: "score + reasons", x: 90, y: 150 },
+        ],
+        edges: [["cv", "ck"], ["ck", "an"], ["an", "ex"], ["jd", "ex"], ["ex", "sc"], ["sc", "out"]],
+        caption: "33 / 34 eval cases pass · no model in the score",
+      },
+      category: "AI Tools & Applications",
+    },
+    {
       title: "MemoryLens — AI Semantic Search Engine",
       description:
         "Finds movies, series, songs, books, games and actors from half-remembered fragments. Hybrid retrieval, cross-encoder reranking and LLM reasoning lift top-1 accuracy from 54% to 92% on a 48-query benchmark.",
@@ -362,27 +390,6 @@ export const portfolio = {
         ],
         edges: [["d", "l"], ["l", "p"], ["p", "c"], ["t", "l"], ["l", "n"]],
         caption: "smart-git commit · smart-git release",
-      },
-      category: "AI Tools & Applications",
-    },
-    {
-      title: "OmniSearch AI — Desktop Spotlight Overlay",
-      description:
-        "A lightweight, Raycast-inspired Windows search overlay triggered by a global hotkey (Alt + Space). Supports multi-provider AI streaming across OpenAI, Gemini, and local Ollama models.",
-      tech: ["Python", "PySide6", "Qt6", "OpenAI API", "Gemini API", "Ollama"],
-      github: "https://github.com/Khayal07/omnisearch-ai",
-      diagram: {
-        nodes: [
-          { id: "h", label: "Alt+Space", x: 6, y: 89 },
-          { id: "u", label: "Qt overlay", x: 81, y: 89 },
-          { id: "r", label: "intent router", x: 161, y: 89, accent: true },
-          { id: "t", label: "local tools", x: 152, y: 24 },
-          { id: "l", label: "LLM chain", x: 172, y: 154 },
-          { id: "f", label: "apps · files", x: 236, y: 24 },
-          { id: "p", label: "Ollama/GPT/Gemini", x: 52, y: 154 },
-        ],
-        edges: [["h", "u"], ["u", "r"], ["r", "t"], ["r", "l"], ["t", "f"], ["l", "p"]],
-        caption: "streamed Markdown · offline tools need no API",
       },
       category: "AI Tools & Applications",
     },
