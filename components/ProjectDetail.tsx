@@ -241,6 +241,7 @@ export function ProjectDetail({ slug }: { slug: string }) {
                       alt={`${project.title} screenshot ${i + 1}`}
                       fill
                       sizes="(min-width: 1024px) 480px, (min-width: 640px) 50vw, 100vw"
+                      quality={90}
                       className="object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]"
                     />
                   </div>

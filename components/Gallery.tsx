@@ -68,6 +68,7 @@ export function Gallery({
           fill
           draggable={false}
           sizes={sizes}
+          quality={90}
           className={`object-cover object-top transition-opacity duration-200 ${
             i === shot ? "opacity-100" : "opacity-0"
           }`}

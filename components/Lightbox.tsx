@@ -90,7 +90,8 @@ export function Lightbox({ images, title, index, onChange, onClose }: LightboxPr
             src={images[index]}
             alt={`${title} screenshot ${index + 1}`}
             fill
-            sizes="100vw"
+            sizes="(min-width: 1200px) 1152px, 100vw"
+            quality={90}
             className="object-contain"
             priority
           />
