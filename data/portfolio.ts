@@ -15,6 +15,8 @@ export interface Diagram {
 }
 
 export interface Project {
+  /** URL segment for the detail page: /projects/<slug> */
+  slug: string;
   title: string;
   description: string;
   tech: string[];
@@ -83,11 +85,11 @@ export const portfolio = {
     hackerrank: "https://www.hackerrank.com/profile/khayal_izada39",
   },
   nav: [
-    { label: "About", href: "#about" },
-    { label: "Projects", href: "#projects" },
-    { label: "Education", href: "#education" },
-    { label: "Certifications", href: "#certifications" },
-    { label: "Contact", href: "#contact" },
+    { label: "About", href: "/#about" },
+    { label: "Projects", href: "/#projects" },
+    { label: "Education", href: "/#education" },
+    { label: "Certifications", href: "/#certifications" },
+    { label: "Contact", href: "/#contact" },
   ] satisfies NavItem[],
   hero: {
     status: "Open to AI engineering roles & projects",
@@ -259,6 +261,7 @@ export const portfolio = {
   ] satisfies Certification[],
   projects: [
     {
+      slug: "cv-screening",
       title: "AI CV Screening — Explainable Match Scoring",
       description:
         "Compares a CV with a job description and returns a 0–100 match score with every point explained. Personal details are removed before any model call, the LLM only extracts structured data, and plain Python computes the score. Passes 33 of 34 labeled evaluation cases.",
@@ -287,6 +290,7 @@ export const portfolio = {
       category: "AI Tools & Applications",
     },
     {
+      slug: "memorylens",
       title: "MemoryLens — AI Semantic Search Engine",
       description:
         "Finds movies, series, songs, books, games and actors from half-remembered fragments. Hybrid retrieval, cross-encoder reranking and LLM reasoning lift top-1 accuracy from 54% to 92% on a 48-query benchmark.",
@@ -315,6 +319,7 @@ export const portfolio = {
       category: "AI Tools & Applications",
     },
     {
+      slug: "voyagent",
       title: "Voyagent — AI Multi-Agent Travel Planner",
       description:
         "Four agents plan a trip together: Interest proposes places, Budget and Logistics object when the plan breaks the budget or the schedule, and Planner builds the timed route. The negotiation streams live over SSE onto an interactive map.",
@@ -336,6 +341,7 @@ export const portfolio = {
       category: "AI & Agentic Systems",
     },
     {
+      slug: "study-cost-planner",
       title: "Study Cost Planner Agent",
       description:
         "Nine-agent platform that plans studying abroad end to end: total real cost, scholarship eligibility, net cost after aid and an application plan. The LLM handles language, Python handles every number, and each figure cites its source.",
@@ -360,6 +366,7 @@ export const portfolio = {
       category: "AI & Agentic Systems",
     },
     {
+      slug: "insurance-prediction",
       title: "Multi-Output Insurance Purchase Prediction Pipeline",
       description:
         "End-to-end multi-output pipeline that predicts 7 insurance policy options at once from quote-journey logs. Benchmarked against the 92.48% last-quote baseline: tuned XGBoost reaches 92.54% and beats it on 6 of 7 options, with the biggest gain on the hardest target.",
@@ -379,6 +386,7 @@ export const portfolio = {
       category: "Machine Learning & Analytics",
     },
     {
+      slug: "smart-git-cli",
       title: "Smart Git CLI",
       description:
         "A lightweight developer CLI tool that inspects local git diffs to automatically generate structured Conventional Commit messages and release notes using LLM automation.",

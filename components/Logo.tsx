@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 
 const REST = "hayal";
 
-export default function Logo({ href = "#home" }: { href?: string }) {
+export default function Logo({ href = "/#home" }: { href?: string }) {
   const [shown, setShown] = useState(0);
   const target = useRef(0);
   const timer = useRef<ReturnType<typeof setInterval> | null>(null);

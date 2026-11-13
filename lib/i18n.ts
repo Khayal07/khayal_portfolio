@@ -1,3 +1,5 @@
+import { azProjectContent } from "./i18n-projects";
+
 export type Locale = "en" | "az";
 
 export const azContent: Record<string, string> = {
@@ -135,6 +137,6 @@ export const azContent: Record<string, string> = {
 };
 
 export function translate(locale: Locale, key: string): string {
-  if (locale === "az") return azContent[key] ?? key;
+  if (locale === "az") return azContent[key] ?? azProjectContent[key] ?? key;
   return key;
 }

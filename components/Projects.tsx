@@ -56,8 +56,8 @@ export function Projects() {
         </div>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {filtered.map((project, i) => (
-            <ProjectCard key={project.title} project={project} index={i} />
+          {filtered.map((project) => (
+            <ProjectCard key={project.slug} project={project} />
           ))}
         </div>
       </div>
