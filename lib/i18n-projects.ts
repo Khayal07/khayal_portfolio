@@ -384,4 +384,10 @@ export const azProjectContent: Record<string, string> = {
     "Canlı demonu yoxla",
   "Project not found":
     "Layihə tapılmadı",
+  "Enlarge screenshot":
+    "Şəkli böyüt",
+  "Previous screenshot":
+    "Əvvəlki şəkil",
+  "Next screenshot":
+    "Növbəti şəkil",
 };

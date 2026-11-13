@@ -14,6 +14,7 @@ import {
   Users,
 } from "lucide-react";
 import { GithubIcon } from "@/components/icons/BrandIcons";
+import { Lightbox } from "@/components/Lightbox";
 import { ArchDiagram } from "@/components/ArchDiagram";
 import { useI18n } from "@/components/LanguageProvider";
 import { portfolio } from "@/data/portfolio";
@@ -72,6 +73,7 @@ function RunBlock({ command }: { command: string }) {
 
 export function ProjectDetail({ slug }: { slug: string }) {
   const { t } = useI18n();
+  const [openShot, setOpenShot] = useState<number | null>(null);
   const projects = portfolio.projects;
   const index = projects.findIndex((p) => p.slug === slug);
   const project = projects[index];
@@ -227,12 +229,11 @@ export function ProjectDetail({ slug }: { slug: string }) {
           <ul className="grid gap-4 sm:grid-cols-2">
             {images.map((src, i) => (
               <li key={src}>
-                <a
-                  href={src}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${project.title} screenshot ${i + 1}`}
-                  className="focus-ring group block overflow-hidden rounded-xl border border-line bg-card transition-colors duration-200 hover:border-accent"
+                <button
+                  type="button"
+                  onClick={() => setOpenShot(i)}
+                  aria-label={`${t("Enlarge screenshot")} ${i + 1}`}
+                  className="focus-ring group block w-full cursor-zoom-in overflow-hidden rounded-xl border border-line bg-card transition-colors duration-200 hover:border-accent"
                 >
                   <div className="relative aspect-[16/10]">
                     <Image
@@ -243,10 +244,19 @@ export function ProjectDetail({ slug }: { slug: string }) {
                       className="object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]"
                     />
                   </div>
-                </a>
+                </button>
               </li>
             ))}
           </ul>
+          {openShot !== null && (
+            <Lightbox
+              images={images}
+              title={t(project.title)}
+              index={openShot}
+              onChange={setOpenShot}
+              onClose={() => setOpenShot(null)}
+            />
+          )}
         </Section>
       )}
 
