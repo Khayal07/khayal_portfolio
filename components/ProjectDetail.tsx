@@ -315,39 +315,45 @@ export function ProjectDetail({ slug }: { slug: string }) {
 
       <nav
         aria-label={t("Projects")}
-        className="grid gap-3 border-t border-line/70 pt-10 sm:grid-cols-2"
+        className="grid grid-cols-2 gap-2.5 border-t border-line/70 pt-6 sm:gap-3 sm:pt-10"
       >
         {prev ? (
           <Link
             href={`/projects/${prev.slug}`}
-            className="focus-ring group rounded-xl border border-line bg-card p-5 transition-colors duration-200 hover:border-accent"
+            className="focus-ring group flex flex-col rounded-xl border border-line bg-card p-3.5 sm:p-5 transition-colors duration-200 hover:border-accent"
           >
-            <span className="inline-flex items-center gap-1.5 font-mono text-xs text-silver">
+            <span className="inline-flex items-center gap-1 font-mono text-[11px] text-silver sm:gap-1.5 sm:text-xs">
               <ArrowLeft size={13} />
               {t("Previous project")}
             </span>
-            <span className="mt-2 block font-display text-lg font-medium text-ink group-hover:text-accent">
-              {t(prev.title)}
+            <span className="mt-1.5 block font-display text-sm font-medium leading-snug text-ink group-hover:text-accent sm:mt-2 sm:text-lg">
+              <span className="line-clamp-2 sm:hidden">{shortTitle(t(prev.title))}</span>
+              <span className="hidden sm:inline">{t(prev.title)}</span>
             </span>
           </Link>
         ) : (
-          <span className="hidden sm:block" />
+          <span aria-hidden />
         )}
         {next && (
           <Link
             href={`/projects/${next.slug}`}
-            className="focus-ring group rounded-xl border border-line bg-card p-5 text-right transition-colors duration-200 hover:border-accent"
+            className="focus-ring group flex flex-col rounded-xl border border-line bg-card items-end p-3.5 text-right sm:p-5 transition-colors duration-200 hover:border-accent"
           >
-            <span className="inline-flex items-center gap-1.5 font-mono text-xs text-silver">
+            <span className="inline-flex items-center gap-1 font-mono text-[11px] text-silver sm:gap-1.5 sm:text-xs">
               {t("Next project")}
               <ArrowRight size={13} />
             </span>
-            <span className="mt-2 block font-display text-lg font-medium text-ink group-hover:text-accent">
-              {t(next.title)}
+            <span className="mt-1.5 block font-display text-sm font-medium leading-snug text-ink group-hover:text-accent sm:mt-2 sm:text-lg">
+              <span className="line-clamp-2 sm:hidden">{shortTitle(t(next.title))}</span>
+              <span className="hidden sm:inline">{t(next.title)}</span>
             </span>
           </Link>
         )}
       </nav>
     </article>
   );
+}
+
+function shortTitle(title: string) {
+  return title.split(" — ")[0];
 }
