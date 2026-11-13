@@ -43,6 +43,8 @@ export interface Education {
   period: string;
   description: string;
   credentialUrl?: string;
+  /** Official site of the institution */
+  website?: string;
 }
 
 export interface Certification {
@@ -114,6 +116,7 @@ export const portfolio = {
   education: [
     {
       institution: "Azerbaijan State Oil and Industry University (ASOIU)",
+      website: "https://asoiu.edu.az",
       degree: "B.Sc. in Computer Engineering",
       period: "2024 — Present (3rd Year)",
       description:
@@ -121,6 +124,7 @@ export const portfolio = {
     },
     {
       institution: "Div Academy",
+      website: "https://div.edu.az",
       degree: "AI Engineering Professional Diploma",
       period: "Oct 2025 — 2026 (8-Month Intensive)",
       description:
@@ -129,6 +133,7 @@ export const portfolio = {
     },
     {
       institution: "AI Academy",
+      website: "https://aiacademy.az",
       degree: "Artificial Intelligence Program",
       period: "2026 – Present",
       description:

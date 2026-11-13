@@ -42,6 +42,7 @@ export const azContent: Record<string, string> = {
     "LLM arxitekturaları, RAG sistemləri, multi-agent iş axınları və tamdövrə AI tətbiq mühəndisliyini əhatə edən praktik xüsusi proqram.",
   "Oct 2025 — 2026 (8-Month Intensive)": "Okt 2025 — 2026 (8 aylıq intensiv)",
   "View Diploma": "Diploma Bax",
+  "official website": "rəsmi sayt",
   "Artificial Intelligence Program": "Süni İntellekt Proqramı",
   "2026 – Present": "2026 – Hazırda",
   "Intensive 10-month program structured into 4 months of foundational mathematics for AI (linear algebra, calculus, probability & statistics) followed by 6 months of advanced engineering programming and AI systems development.":

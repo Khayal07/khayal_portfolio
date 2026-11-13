@@ -41,7 +41,24 @@ export function Education() {
                 </span>
                 <div>
                   <h3 className="text-base font-medium text-ink">
-                    {entry.institution}
+                    {entry.website ? (
+                      <a
+                        href={entry.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${entry.institution} — ${t("official website")}`}
+                        className="focus-ring group/link inline rounded decoration-accent/60 underline-offset-4 transition-colors duration-200 hover:text-accent hover:underline"
+                      >
+                        {entry.institution}
+                        <ArrowUpRight
+                          size={14}
+                          aria-hidden="true"
+                          className="ml-1 inline-block -translate-y-px text-silver transition-colors duration-200 group-hover/link:text-accent"
+                        />
+                      </a>
+                    ) : (
+                      entry.institution
+                    )}
                   </h3>
                   <p className="mt-1 font-mono text-xs text-silver">
                     {t(entry.degree)}
