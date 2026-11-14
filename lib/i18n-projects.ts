@@ -366,6 +366,16 @@ export const azProjectContent: Record<string, string> = {
     "Texnologiyalar",
   "Run it locally":
     "Lokal işə sal",
+  "Play":
+    "Oynat",
+  "Pause":
+    "Dayandır",
+  "Replay":
+    "Yenidən",
+  "Previous step":
+    "Əvvəlki addım",
+  "Next step":
+    "Növbəti addım",
   "Previous project":
     "Əvvəlki layihə",
   "Next project":

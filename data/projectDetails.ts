@@ -1,6 +1,16 @@
+/** One move of the flow animation: a dot travels along the diagram edge from -> to */
+export type FlowHop = [from: string, to: string];
+
 export interface ProjectStep {
   title: string;
   text: string;
+  /** Diagram nodes this step lights up */
+  lit?: string[];
+  /**
+   * Phases played in order. Hops inside one phase run at the same time (parallel work);
+   * separate phases run one after another (sequential work). A hop may run an edge backwards.
+   */
+  flow?: FlowHop[][];
 }
 
 export interface ProjectMetric {
@@ -37,22 +47,32 @@ export const projectDetails: Record<string, ProjectDetails> = {
       {
         title: "Document check",
         text: "Text that does not look like a CV, such as a pasted job posting, is rejected before any model call.",
+        lit: ["cv", "ck"],
+        flow: [[["cv", "ck"]]],
       },
       {
         title: "Anonymization",
         text: "Name, date of birth, gender, photo references, contact details and referees are removed.",
+        lit: ["an"],
+        flow: [[["ck", "an"]]],
       },
       {
         title: "Structured extraction",
         text: "The LLM turns the CV and the job into skills, dated roles, education and languages, validated with Pydantic.",
+        lit: ["ex", "jd"],
+        flow: [[["an", "ex"], ["jd", "ex"]]],
       },
       {
         title: "Deterministic scoring",
         text: "Weighted rules: required skills 50, nice-to-have 15, experience 20, education 10, languages 5.",
+        lit: ["sc"],
+        flow: [[["ex", "sc"]]],
       },
       {
         title: "Explained result",
         text: "A 0–100 score with a per-component breakdown, matched and missing skills, reasons and warnings.",
+        lit: ["out"],
+        flow: [[["sc", "out"]]],
       },
     ],
     features: [
@@ -92,22 +112,32 @@ export const projectDetails: Record<string, ProjectDetails> = {
       {
         title: "Understand the query",
         text: "The query is validated, cleaned and read inside the chosen category, which works as a hard filter.",
+        lit: ["q", "u"],
+        flow: [[["q", "u"]]],
       },
       {
         title: "Hybrid retrieval",
         text: "Vector search in pgvector and keyword search run together and are fused with weighted RRF.",
+        lit: ["h", "db"],
+        flow: [[["u", "h"]], [["h", "db"]], [["db", "h"]]],
       },
       {
         title: "Rerank",
         text: "A local cross-encoder reorders the candidates.",
+        lit: ["r"],
+        flow: [[["h", "r"]]],
       },
       {
         title: "LLM reasoning",
         text: "The model reorders the shortlist and explains why each title fits.",
+        lit: ["l"],
+        flow: [[["r", "l"]]],
       },
       {
         title: "Confidence and fallback",
         text: "Each result gets a confidence score; weak matches trigger a labeled world-knowledge answer.",
+        lit: ["c", "m"],
+        flow: [[["l", "c"]], [["c", "m"]]],
       },
     ],
     features: [
@@ -147,22 +177,32 @@ export const projectDetails: Record<string, ProjectDetails> = {
       {
         title: "Trip request",
         text: "City, dates (up to 5 days), budget, group size and interests.",
+        lit: ["f", "o"],
+        flow: [[["f", "o"]]],
       },
       {
         title: "Interest proposes",
         text: "The LLM suggests real places and activities that match the interests.",
+        lit: ["i"],
+        flow: [[["o", "i"]]],
       },
       {
         title: "Budget and Logistics check",
         text: "Code checks the total cost and whether each day fits a realistic schedule, using OpenStreetMap coordinates.",
+        lit: ["b", "l"],
+        flow: [[["i", "b"], ["i", "l"]]],
       },
       {
         title: "Negotiation",
         text: "On an objection, Interest proposes alternatives, for at most two rounds.",
+        lit: ["i", "b", "l"],
+        flow: [[["b", "i"], ["l", "i"]], [["i", "b"], ["i", "l"]]],
       },
       {
         title: "Planner builds the route",
         text: "The approved plan becomes a timed daily schedule, streamed over SSE and shown on the map.",
+        lit: ["p", "s"],
+        flow: [[["b", "p"], ["l", "p"]], [["p", "s"]]],
       },
     ],
     features: [
@@ -202,26 +242,38 @@ export const projectDetails: Record<string, ProjectDetails> = {
       {
         title: "Intake",
         text: "A budget form or a chat message is turned into a structured profile.",
+        lit: ["i"],
+        flow: [],
       },
       {
         title: "Retrieval",
         text: "Candidate universities and programs are found with SQL and pgvector.",
+        lit: ["r"],
+        flow: [[["i", "r"]]],
       },
       {
         title: "Cost and currency",
         text: "Tuition and living costs come from the database with sources; currencies are normalized with FX risk.",
+        lit: ["t", "c"],
+        flow: [[["r", "t"]], [["t", "c"]]],
       },
       {
         title: "Scenarios and budget",
         text: "Frugal, moderate and comfortable scenarios are matched against the budget.",
+        lit: ["s", "b"],
+        flow: [[["c", "s"]], [["s", "b"]]],
       },
       {
         title: "Scholarships and eligibility",
         text: "Applicable awards are gathered, and each gets an explainable eligibility verdict.",
+        lit: ["h", "e"],
+        flow: [[["b", "h"]], [["h", "e"]]],
       },
       {
         title: "Net value and verification",
         text: "Universities are ranked by cost after aid, and a verifier checks sources and calculations.",
+        lit: ["n", "v"],
+        flow: [[["e", "n"]], [["n", "v"]]],
       },
     ],
     features: [
@@ -261,22 +313,32 @@ export const projectDetails: Record<string, ProjectDetails> = {
       {
         title: "Exploratory analysis",
         text: "Profiling the quote sequences and finding how dominant the last-quote signal is.",
+        lit: ["d", "b"],
+        flow: [],
       },
       {
         title: "Journey features",
         text: "Cost statistics, price volatility and how often each option switched between quotes.",
+        lit: ["f"],
+        flow: [[["d", "f"]]],
       },
       {
         title: "Leakage-free preprocessing",
         text: "Imputation and encoding are fitted on the training split only.",
+        lit: ["m"],
+        flow: [[["f", "m"]]],
       },
       {
         title: "Multi-output models",
         text: "Random Forest, XGBoost and CatBoost inside MultiOutputClassifier, side by side with the baseline.",
+        lit: ["o", "b"],
+        flow: [[["m", "o"], ["b", "o"]]],
       },
       {
         title: "Tuning and interpretation",
         text: "RandomizedSearchCV on the hardest target, cross-validation, a confusion matrix and SHAP.",
+        lit: ["m", "o"],
+        flow: [[["m", "o"]]],
       },
     ],
     features: [
@@ -315,18 +377,26 @@ export const projectDetails: Record<string, ProjectDetails> = {
       {
         title: "Read the diff",
         text: "Uses the staged diff, or the unstaged diff when nothing is staged.",
+        lit: ["d"],
+        flow: [],
       },
       {
         title: "Generate the message",
         text: "gpt-4o-mini writes a Conventional Commit message from a short prompt.",
+        lit: ["l"],
+        flow: [[["d", "l"]]],
       },
       {
         title: "Confirm",
         text: "A preview with a [Y/n] prompt appears before anything is committed.",
+        lit: ["p", "c"],
+        flow: [[["l", "p"]], [["p", "c"]]],
       },
       {
         title: "Release notes",
         text: "smart-git release collects the commits from the last tag to HEAD into CHANGELOG.md.",
+        lit: ["t", "n"],
+        flow: [[["t", "l"]], [["l", "n"]]],
       },
     ],
     features: [
