@@ -77,7 +77,7 @@ export const portfolio = {
     email: "khayal.izada39@gmail.com",
     location: "Sumqayit, Azerbaijan",
     cvUrl: "/cv.pdf",
-    siteUrl: "https://khayaliszade.vercel.app",
+    siteUrl: "https://www.khayaliszade.com",
   },
   socials: {
     github: "https://github.com/Khayal07",

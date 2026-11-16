@@ -58,7 +58,7 @@ export default async function OpengraphImage() {
             color: "#6B6157",
           }}
         >
-          <span>khayaliszade.vercel.app</span>
+          <span>khayaliszade.com</span>
           <span>{identity.location}</span>
         </div>
       </div>
