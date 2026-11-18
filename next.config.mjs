@@ -36,6 +36,9 @@ const securityHeaders = [
       "camera=(), microphone=(), geolocation=(), payment=(), usb=(), serial=(), browsing-topics=()",
   },
   { key: "Cross-Origin-Opener-Policy", value: "same-origin" },
+  // Only this site may read its responses from scripts or embed its files
+  { key: "Cross-Origin-Resource-Policy", value: "same-site" },
+  { key: "Access-Control-Allow-Origin", value: "https://www.khayaliszade.com" },
   { key: "X-DNS-Prefetch-Control", value: "on" },
 ];
 
