@@ -16,6 +16,12 @@ import { useI18n } from "@/components/LanguageProvider";
 type Status = "idle" | "submitting" | "success" | "error";
 
 const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
+const LIMITS = { name: 100, email: 254, message: 5000 };
+const COOLDOWN_MS = 30_000;
+
+/** Single line, no control characters: the name ends up in the email subject */
+const clean = (value: string, max: number) =>
+  value.replace(/[\u0000-\u001f\u007f]+/g, " ").trim().slice(0, max);
 
 const inputClass =
   "focus-ring w-full rounded-md border border-line bg-card px-3.5 py-2.5 text-sm text-ink placeholder:text-silver/50 transition-colors duration-200 focus:border-accent";
@@ -29,9 +35,34 @@ export function Contact() {
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [statusText, setStatusText] = useState("");
+  const [botcheck, setBotcheck] = useState(false);
+  const [lastSent, setLastSent] = useState(0);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    // Hidden field only bots fill in: pretend it worked and send nothing
+    if (botcheck) {
+      setStatusText(t("Your message has been sent successfully!"));
+      setStatus("success");
+      return;
+    }
+
+    if (Date.now() - lastSent < COOLDOWN_MS) {
+      setStatusText(t("Please wait a moment before sending another message."));
+      setStatus("error");
+      return;
+    }
+
+    const safeName = clean(name, LIMITS.name);
+    const safeEmail = clean(email, LIMITS.email);
+    const safeMessage = message.trim().slice(0, LIMITS.message);
+    if (!safeName || !safeEmail || !safeMessage) {
+      setStatusText(t("Please fill in all fields."));
+      setStatus("error");
+      return;
+    }
+
     setStatus("submitting");
 
     if (!contact.formAccessKey || contact.formAccessKey.startsWith("YOUR_")) {
@@ -49,10 +80,11 @@ export function Contact() {
         },
         body: JSON.stringify({
           access_key: contact.formAccessKey,
-          subject: `Portfolio message from ${name}`,
-          from_name: name,
-          email,
-          message,
+          subject: `Portfolio message from ${safeName}`,
+          from_name: safeName,
+          email: safeEmail,
+          message: safeMessage,
+          botcheck: false,
         }),
       });
       const result = (await response.json()) as { success: boolean };
@@ -61,6 +93,7 @@ export function Contact() {
         setName("");
         setEmail("");
         setMessage("");
+        setLastSent(Date.now());
         setStatusText(t("Your message has been sent successfully!"));
         setStatus("success");
       } else {
@@ -101,6 +134,7 @@ export function Contact() {
                   name="name"
                   required
                   autoComplete="name"
+                  maxLength={LIMITS.name}
                   value={name}
                   onChange={(event) => setName(event.target.value)}
                   placeholder={t("Your name")}
@@ -120,6 +154,7 @@ export function Contact() {
                   name="email"
                   required
                   autoComplete="email"
+                  maxLength={LIMITS.email}
                   value={email}
                   onChange={(event) => setEmail(event.target.value)}
                   placeholder={t("Your email")}
@@ -140,12 +175,24 @@ export function Contact() {
                 name="message"
                 required
                 rows={5}
+                maxLength={LIMITS.message}
                 value={message}
                 onChange={(event) => setMessage(event.target.value)}
                 placeholder={t("Your message")}
                 className={`${inputClass} resize-none`}
               />
             </div>
+
+            <input
+              type="checkbox"
+              name="botcheck"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              checked={botcheck}
+              onChange={(event) => setBotcheck(event.target.checked)}
+              className="hidden"
+            />
 
             <button
               type="submit"

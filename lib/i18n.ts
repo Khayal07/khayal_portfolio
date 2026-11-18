@@ -128,6 +128,10 @@ export const azContent: Record<string, string> = {
   "Your message has been sent successfully!": "Mesajınız uğurla çatdırıldı!",
   "Something went wrong. Please try again later.":
     "Xəta baş verdi. Zəhmət olmasa bir az sonra yenidən cəhd edin.",
+  "Please wait a moment before sending another message.":
+    "Başqa mesaj göndərməzdən əvvəl bir az gözləyin.",
+  "Please fill in all fields.":
+    "Zəhmət olmasa bütün xanaları doldurun.",
   "Contact form is not configured yet.":
     "Əlaqə formu hələ konfiqurasiya olunmayıb.",
 

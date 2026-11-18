@@ -39,7 +39,7 @@ export function HowItWorks({
   const scrollerRef = useRef<HTMLDivElement>(null);
   const token = useRef(0);
   const frame = useRef(0);
-  const holdTimer = useRef<ReturnType<typeof setTimeout>>();
+  const holdTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
   const autoStarted = useRef(false);
 
   const nodes = useMemo(() => new Map(diagram?.nodes.map((n) => [n.id, n]) ?? []), [diagram]);

@@ -8,7 +8,7 @@ import { portfolio } from "@/data/portfolio";
 import { projectDetails } from "@/data/projectDetails";
 
 interface PageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export const dynamicParams = false;
@@ -17,9 +17,10 @@ export function generateStaticParams() {
   return portfolio.projects.map((project) => ({ slug: project.slug }));
 }
 
-export function generateMetadata({ params }: PageProps): Metadata {
-  const project = portfolio.projects.find((p) => p.slug === params.slug);
-  const details = projectDetails[params.slug];
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const project = portfolio.projects.find((p) => p.slug === slug);
+  const details = projectDetails[slug];
   if (!project || !details) return {};
 
   const title = `${project.title} | ${portfolio.identity.name}`;
@@ -37,14 +38,15 @@ export function generateMetadata({ params }: PageProps): Metadata {
   };
 }
 
-export default function ProjectPage({ params }: PageProps) {
-  if (!projectDetails[params.slug]) notFound();
+export default async function ProjectPage({ params }: PageProps) {
+  const { slug } = await params;
+  if (!projectDetails[slug]) notFound();
 
   return (
     <>
       <Navbar />
       <main>
-        <ProjectDetail slug={params.slug} />
+        <ProjectDetail slug={slug} />
       </main>
       <Footer />
       <BackToTop />
