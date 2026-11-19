@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Khayal Ismayilzada — AI Engineer — CV</title>
+<style>
+  @font-face { font-family: "Geist"; src: url("../app/fonts/GeistVF.woff") format("woff"); font-weight: 100 900; }
+  @font-face { font-family: "Geist Mono"; src: url("../app/fonts/GeistMonoVF.woff") format("woff"); font-weight: 100 900; }
+  @font-face { font-family: "Bricolage"; src: url("../public/fonts/bricolage-grotesque-latin-wght-normal.woff2") format("woff2"); font-weight: 200 800; }
+
+  @page { size: A4; margin: 0; }
+  :root {
+    --ink: #1f1b18;
+    --body: #3d3833;
+    --muted: #7a726a;
+    --line: #e4ddd5;
+    --accent: #b4532a;
+    --soft: #f7efe8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #fff; }
+  body {
+    width: 210mm; height: 297mm; overflow: hidden;
+    padding: 10.5mm 13mm 9mm;
+    font-family: "Geist", system-ui, sans-serif;
+    font-size: 8.55pt; line-height: 1.38; color: var(--body);
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  a { color: inherit; text-decoration: none; }
+  .mono { font-family: "Geist Mono", monospace; }
+
+  /* Header */
+  header { display: flex; gap: 6mm; align-items: center; padding-bottom: 3.2mm; border-bottom: 1.2pt solid var(--ink); }
+  body.no-photo .photo { display: none; }
+  .photo { width: 23mm; height: 28.5mm; border-radius: 2.5mm; object-fit: cover; flex: none; }
+  .who { flex: 1; min-width: 0; }
+  h1 { font-family: "Bricolage", sans-serif; font-weight: 700; font-size: 25pt; line-height: 1; letter-spacing: -0.02em; color: var(--ink); }
+  .role { margin-top: 1.6mm; font-family: "Bricolage", sans-serif; font-weight: 600; font-size: 11.5pt; color: var(--accent); }
+  .tagline { margin-top: 0.8mm; font-size: 9pt; color: var(--muted); }
+  .contacts { margin-top: 2.4mm; display: flex; flex-wrap: wrap; gap: 1.2mm 4.5mm; font-size: 8.3pt; color: var(--ink); }
+  .contacts span { display: inline-flex; align-items: center; gap: 1.4mm; }
+  .contacts svg { width: 3.1mm; height: 3.1mm; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+
+  /* Sections */
+  section { margin-top: 3.4mm; }
+  h2 {
+    display: flex; align-items: center; gap: 2.5mm; margin-bottom: 1.8mm;
+    font-family: "Bricolage", sans-serif; font-weight: 700; font-size: 10.5pt;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink);
+  }
+  h2::before { content: ""; width: 1.6mm; height: 1.6mm; background: var(--accent); border-radius: 0.3mm; flex: none; }
+  h2::after { content: ""; flex: 1; height: 0.6pt; background: var(--line); }
+
+  .summary { color: var(--body); }
+  .summary b { color: var(--ink); font-weight: 600; }
+
+  /* Projects */
+  .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 2mm 4mm; }
+  .project { padding: 1.8mm 2.6mm 1.9mm; border: 0.6pt solid var(--line); border-radius: 1.8mm; break-inside: avoid; display: flex; flex-direction: column; }
+  .p-title { font-weight: 600; font-size: 9.5pt; color: var(--ink); line-height: 1.25; }
+  .p-top { display: flex; justify-content: space-between; align-items: baseline; gap: 2mm; }
+  .p-sub { font-size: 7.8pt; color: var(--accent); margin-top: 0.1mm; }
+  .project p { margin-top: 0.8mm; flex: 1; }
+  .stack { margin-top: 1mm; }
+  .stack { font-size: 7.1pt; color: var(--muted); line-height: 1.35; }
+  .p-links { flex: none; font-size: 7.3pt; color: var(--accent); }
+  .p-links a + a::before { content: "·"; color: var(--muted); margin: 0 1.1mm; }
+  .metric { color: var(--ink); font-weight: 600; }
+
+  /* Education */
+  .edu { display: grid; grid-template-columns: 1fr auto; column-gap: 4mm; padding: 0.9mm 0; }
+  .edu + .edu { border-top: 0.5pt solid var(--line); }
+  .edu .school { font-weight: 600; color: var(--ink); font-size: 9.4pt; }
+  .edu .degree { color: var(--accent); font-weight: 500; }
+  .edu .when { font-size: 7.8pt; color: var(--muted); text-align: right; white-space: nowrap; padding-top: 0.4mm; }
+  .edu p { grid-column: 1 / -1; margin-top: 0.3mm; }
+  .badge { display: inline-block; margin-left: 1.5mm; padding: 0 1.6mm; border-radius: 1mm; background: var(--soft); color: var(--accent); font-size: 7.3pt; font-weight: 600; vertical-align: 0.3mm; }
+
+  /* Bottom grid */
+  .cols { display: grid; grid-template-columns: 1.4fr 1fr; gap: 6mm; }
+  .skills { display: grid; grid-template-columns: 27mm 1fr; row-gap: 1mm; column-gap: 3mm; }
+  .skills dt { font-weight: 600; color: var(--ink); }
+  .certs p { margin-bottom: 1.1mm; }
+  .certs b { color: var(--ink); font-weight: 600; }
+  .langs { display: flex; flex-wrap: wrap; gap: 0.6mm 4mm; }
+  .langs b { color: var(--ink); font-weight: 600; }
+  .note { margin-top: 2.6mm; font-size: 7.6pt; color: var(--muted); }
+  .note a { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<header>
+  <img class="photo" src="photo.jpg" alt="Khayal Ismayilzada">
+  <div class="who">
+    <h1>Khayal Ismayilzada</h1>
+    <div class="role">AI Engineer</div>
+    <div class="tagline">RAG pipelines · multi-agent systems · semantic search · ML pipelines</div>
+    <div class="contacts">
+      <span><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+994506840239">+994 50 684 02 39</a></span>
+      <span><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg><a href="mailto:khayal.izada39@gmail.com">khayal.izada39@gmail.com</a></span>
+      <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><a href="https://www.khayaliszade.com">khayaliszade.com</a></span>
+      <span><svg viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.1-1.3-.3-2.5-1-3.5.3-1.2.3-2.4 0-3.5 0 0-1 0-3 1.5a10.3 10.3 0 0 0-6 0C8 2 7 2 7 2c-.3 1.1-.3 2.3 0 3.5a5.4 5.4 0 0 0-1 3.5c0 3.5 3 5.5 6 5.5-.4.5-.7 1-.8 1.6-.2.6-.2 1.2-.2 1.9v4"/><path d="M9 18c-4.5 2-5-2-7-2"/></svg><a href="https://github.com/Khayal07">github.com/Khayal07</a></span>
+      <span><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg><a href="https://www.linkedin.com/in/khayal-ismayilzada-891882338">linkedin.com/in/khayal-ismayilzada</a></span>
+      <span><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Sumqayit, Azerbaijan</span>
+    </div>
+  </div>
+</header>
+
+<section>
+  <h2>Profile</h2>
+  <p class="summary">
+    Computer Engineering student at ASOIU and graduate of the Div Academy AI Engineering program (<b>1st Degree Diploma</b>).
+    I build AI systems end to end: retrieval and semantic search pipelines, multi-agent backends, ML models and the APIs around them,
+    on <b>Python, FastAPI, PostgreSQL with pgvector and Docker</b>. Every project is measured against a labeled benchmark or baseline. Open to AI engineering roles.
+  </p>
+</section>
+
+<section>
+  <h2>Projects</h2>
+  <div class="projects">
+  <div class="project">
+    <div class="p-top"><div class="p-title">AI CV Screening</div><div class="p-links mono"><a href="https://cv-screening-lpi1.onrender.com/">demo</a><a href="https://github.com/Khayal07/ai-cv-screening">github</a><a href="https://www.khayaliszade.com/projects/cv-screening">details</a></div></div>
+    <div class="p-sub">Explainable match scoring</div>
+    <p>Compares a CV with a job description and returns a 0–100 score with every point explained. Personal data is removed before any model call; the LLM only extracts, Python scores. Passes <span class="metric">33 of 34</span> labeled cases.</p>
+    <div class="stack mono">FastAPI · OpenAI API · Pydantic · pypdf · Docker</div>
+  </div>
+  <div class="project">
+    <div class="p-top"><div class="p-title">MemoryLens</div><div class="p-links mono"><a href="https://github.com/Khayal07/MemoryLens">github</a><a href="https://www.khayaliszade.com/projects/memorylens">details</a></div></div>
+    <div class="p-sub">AI semantic search engine</div>
+    <p>Finds movies, series, songs, books, games and actors from half-remembered descriptions. Hybrid retrieval, cross-encoder reranking and LLM reasoning lift top-1 accuracy from <span class="metric">54% to 92%</span> on a 48-query benchmark.</p>
+    <div class="stack mono">FastAPI · React · PostgreSQL · pgvector · Redis · sentence-transformers</div>
+  </div>
+  <div class="project">
+    <div class="p-top"><div class="p-title">Voyagent</div><div class="p-links mono"><a href="https://github.com/Khayal07/Voyagent-">github</a><a href="https://www.khayaliszade.com/projects/voyagent">details</a></div></div>
+    <div class="p-sub">Multi-agent travel planner</div>
+    <p><span class="metric">Four agents</span> plan a trip together: Interest proposes places, Budget and Logistics object when the plan breaks the budget or schedule, Planner builds the timed route. The negotiation streams live over SSE onto a map.</p>
+    <div class="stack mono">FastAPI · React · PostgreSQL · SSE · Leaflet · Docker</div>
+  </div>
+  <div class="project">
+    <div class="p-top"><div class="p-title">Study Cost Planner Agent</div><div class="p-links mono"><a href="https://github.com/Khayal07/study-cost-planner-agent">github</a><a href="https://www.khayaliszade.com/projects/study-cost-planner">details</a></div></div>
+    <div class="p-sub">Study-abroad cost and scholarship planner</div>
+    <p><span class="metric">Nine-agent</span> platform that estimates the total real cost, scholarship eligibility, net cost after aid and an application plan. The LLM handles language, Python handles every number, and each figure cites its source.</p>
+    <div class="stack mono">FastAPI · Next.js · PostgreSQL · pgvector · fastembed · Docker</div>
+  </div>
+  <div class="project">
+    <div class="p-top"><div class="p-title">Insurance Purchase Prediction</div><div class="p-links mono"><a href="https://github.com/Khayal07/Insurance-Product-Purchase-Prediction-ML">github</a><a href="https://www.khayaliszade.com/projects/insurance-prediction">details</a></div></div>
+    <div class="p-sub">Multi-output ML pipeline</div>
+    <p>Predicts 7 policy options at once from quote-journey logs. Tuned XGBoost reaches <span class="metric">92.54%</span> against the 92.48% last-quote baseline and beats it on 6 of 7 options.</p>
+    <div class="stack mono">XGBoost · CatBoost · scikit-learn · SHAP</div>
+  </div>
+  <div class="project">
+    <div class="p-top"><div class="p-title">Smart Git CLI</div><div class="p-links mono"><a href="https://github.com/Khayal07/Smart-Git-CLI">github</a><a href="https://www.khayaliszade.com/projects/smart-git-cli">details</a></div></div>
+    <div class="p-sub">LLM commit and release-note generator</div>
+    <p>Developer CLI that reads local git diffs and writes structured Conventional Commit messages and release notes.</p>
+    <div class="stack mono">Python · Typer · OpenAI API · Git</div>
+  </div>
+  </div>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <div class="edu">
+    <div><span class="school">Azerbaijan State Oil and Industry University (ASOIU)</span> — <span class="degree">B.Sc. Computer Engineering</span></div>
+    <div class="when mono">Sep 2024 – Jun 2028 (expected)</div>
+    <p>Algorithms, computer architecture, ML fundamentals, software engineering. Full scores (50/50) in C++, HTML and CSS.</p>
+  </div>
+  <div class="edu">
+    <div><span class="school">Div Academy</span> — <span class="degree">AI Engineering Professional Diploma</span><span class="badge">1st Degree</span></div>
+    <div class="when mono">Oct 2025 – Jun 2026</div>
+    <p>8 months on a 100% scholarship (“Future Programmers”): ML, deep learning, computer vision, RAG and AI agents.</p>
+  </div>
+  <div class="edu">
+    <div><span class="school">AI Academy</span> — <span class="degree">Artificial Intelligence Program</span></div>
+    <div class="when mono">2026 – present</div>
+    <p>10 months: mathematics for AI (linear algebra, calculus, probability and statistics), then AI systems engineering.</p>
+  </div>
+</section>
+
+<div class="cols">
+  <section>
+    <h2>Skills</h2>
+    <dl class="skills">
+      <dt>AI &amp; LLM</dt><dd>RAG, multi-agent systems, semantic search, embeddings, rerankers, NLP, OpenAI API, LangChain</dd>
+      <dt>Machine learning</dt><dd>scikit-learn, XGBoost, CatBoost, feature engineering, model evaluation, SHAP, pandas, NumPy, Matplotlib</dd>
+      <dt>Backend &amp; data</dt><dd>Python, FastAPI, Pydantic, SQL (PostgreSQL), pgvector, ChromaDB, Redis, REST APIs, SSE</dd>
+      <dt>Tools</dt><dd>Docker, Git, React, Next.js, Photoshop, Canva</dd>
+      <dt>Soft skills</dt><dd>Communication, teamwork, problem solving, attention to detail, fast learner</dd>
+    </dl>
+  </section>
+
+  <section class="certs">
+    <h2>Certifications</h2>
+    <p><b>Kaggle</b> — Intermediate Machine Learning, Intro to Machine Learning, Python, Pandas, Data Visualization</p>
+    <p><b>HackerRank</b> — SQL (Advanced), SQL (Intermediate), SQL (Basic), Python (Basic), Problem Solving (Basic)</p>
+
+    <h2 style="margin-top:3.4mm">Languages</h2>
+    <div class="langs">
+      <span><b>Azerbaijani</b> — native</span>
+      <span><b>Turkish</b> — advanced</span>
+      <span><b>English</b> — intermediate</span>
+    </div>
+    <p class="note">Every certificate, project and diagram: <a href="https://www.khayaliszade.com">khayaliszade.com</a></p>
+  </section>
+</div>
+
+</body>
+</html>
